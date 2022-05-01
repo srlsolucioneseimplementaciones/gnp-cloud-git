@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+	<html ng-app="MyApp">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html charset=UTF-8" />
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="shortcut icon" type="image/jpg" href="/content/images/SRL.ico" />
+		<link rel="stylesheet" href="/content/css/messages.css">
+		<link rel="stylesheet" href="/content/css/bootstrap_4_1_3.css">
+		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+		<link rel="stylesheet" href="/content/css/angular-moment-picker.css" />
+		<title>CloudWhats</title>
+	</head>
+	<body ng-controller="mainController">
+		<div class="imgAlign">
+			<img class="topImage" src="/content/images/gnp_logo.png" />
+		</div>
+		<form name="whatsForm" novalidate submit-form>
+			<div class="mainContainer">
+				<div class="fieldRow">
+					<label>Numero origen:</label>
+					<select class="form-control form-control-sm" obtener-telefonos ng-options="x as x for x in telefonos" ng-model="mensaje.origen" required>
+						<option value="">Selecciona....</option>
+					</select>
+				</div>
+				<div class="fieldRow">
+					<label>Numero destino:</label>
+					<input type="text" class="form-control form-control-sm" ng-pattern="/^[521]{3}[0-9]{10}/g" maxlength="13" ng-model="mensaje.destino" required />
+				</div>
+				<div class="fieldRow">
+					<label>Cola:</label>
+					<select class="form-control form-control-sm" ng-options="cola as cola.name for cola in cloudUser.queues" ng-model="mensaje.cola" required>
+						<option value="">Selecciona....</option>
+					</select>
+				</div>
+				<div class="fieldRow">
+					<label>Template {{mensaje.cola.name}}:</label>
+					<select class="form-control form-control-sm" ng-options="s as s.etiqueta for s in templates | filter:mensaje.cola.name" ng-model="template" required>
+						<option value="">Selecciona....</option>
+					</select>
+				</div>
+				<div class="checkRow">
+					<div>
+						<input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" ng-checked="true" ng-model="mensaje.callback">
+						<small class="form-check-label" for="flexCheckChecked">
+							Callback
+						</small>
+					</div>
+				</div>
+				<div>
+					<template-preview />
+				</div>
+				<div class="buttonRow">
+					<button class="btn btn-info" data-toggle="modal" data-target="#variablesModal" ng-disabled="!template" type="button">Variables</button>
+					<button class="btn" ng-class="{'btn-secondary': whatsForm.$invalid, 'btn-primary': whatsForm.$valid}" type="submit" ng-disabled="whatsForm.$invalid">Enviar</button>
+				</div>
+			</div>
+		</form>
+		<div class="imgLeft">
+			<img class="bottomImage" src="/content/images/srl_logo.png" />
+		</div>
+		<div class="modal fade" id="variablesModal" tabindex="-1">
+			<div class="modal-dialog modal-dialog-centered">
+				<div class="modal-content">
+					<div class="modal-header bg-info">
+						<h5 class="modal-title text-white" id="exampleModalLongTitle">Variables</h5>
+						<a href="" class="close" data-dismiss="modal">
+							<span class="text-white">&times;</span>
+						</a>
+					</div>
+					<div class="modal-body">
+						<div class="variablesRow" ng-repeat="x in template.variables">
+							<div>
+								<small>Variable:</small>
+								<input type="text" class="form-control form-control-sm" ng-model="x.name" disabled />
+							</div>
+							<div>
+								<small>Valor:</small>
+								<input type="text" class="form-control form-control-sm" ng-model="x.valor" />
+							</div>
+						</div>
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-info" update-template>Aplicar</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="modal fade" id="confirmationModal" tabindex="-1" data-backdrop="static">
+			<div class="modal-dialog modal-dialog-centered">
+				<div class="modal-content">
+					<div class="modal-header" ng-class="{'bg-success': mensajeEstatus == 'Enviado', 'bg-info': mensajeEstatus == 'Enviando', 'bg-danger': mensajeEstatus == 'Error'}">
+						<h5 class="modal-title text-white" id="exampleModalLongTitle">{{mensajeEstatus}}</h5>
+					</div>
+					<div class="modal-body">
+						{{mensajeDescripcion}}
+					</div>
+				</div>
+			</div>
+		</div>
+		<script src="/scripts/angular_1_7_7.js" type="text/javascript" charset="UTF-8"></script>
+		<script src="/scripts/jquery_3_3_1.js" type="text/javascript" charset="UTF-8"></script>
+		<script src="/scripts/popper_1_14_3.js" type="text/javascript" charset="UTF-8"></script>
+		<script src="/scripts/bootstrap_4_1_3.js" type="text/javascript" charset="UTF-8"></script>
+		<script src="/scripts/moment_2_24_0.js" type="text/javascript" charset="UTF-8"></script>
+		<script src="/app.js" type="text/javascript" charset="UTF-8"></script>
+		<script src="/app/controllers/controller.js" type="text/javascript" charset="UTF-8"></script>
+		<script src="/app/services/services.js" type="text/javascript" charset="UTF-8"></script>
+		<script src="/app/directives/directives.js" type="text/javascript" charset="UTF-8"></script>
+		<script src="/app/filters/filters.js" type="text/javascript" charset="UTF-8"></script>
+		<script src="https://sdk-cdn.mypurecloud.com/javascript/40.1.0/purecloud-platform-client-v2.min.js"></script>
+	</body>
+</html>

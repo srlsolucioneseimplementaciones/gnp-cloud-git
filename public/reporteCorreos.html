@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+	<html ng-app="MyApp">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html charset=UTF-8" />
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="shortcut icon" type="image/jpg" href="/content/images/SRL.ico" />
+		<link rel="stylesheet" href="/content/css/correos.css">
+		<link rel="stylesheet" href="/content/css/bootstrap_4_1_3.css">
+		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+		<link rel="stylesheet" href="/content/css/angular-moment-picker.css" />
+		<title>Reporte correos</title>
+	</head>
+	<body ng-controller="mainController" ng-init="filtroDireccion = 'inbound'">
+		<div class="general-container">
+			<div class="report-container">
+				<div class="sidebar">
+					<ul>
+						<li>
+							<a class="correo-sections" href="" ng-model="filtroDireccion" ng-click="filtroDireccion = 'inbound'" ng-class="{'text-success': filtroDireccion == 'inbound'}" clear-filters>
+								<i class="fa fa-inbox pr-2"></i> Recibidos ({{conteoInbound || 0}})
+							</a>
+						</li>
+						<li>
+							<a class="correo-sections" href="" ng-model="filtroDireccion" ng-click="filtroDireccion = 'outbound'" ng-class="{'text-success': filtroDireccion == 'outbound'}" clear-filters>
+								<i class="fa fa-paper-plane pr-2"></i> Enviados ({{conteoOutbound || 0}})
+							</a>
+						</li>
+						<li>
+							<a class="correo-sections" href="" ng-click="obtenerEmails()">
+								<i class="fa fa-sync-alt pr-2"></i> Actualizar
+							</a>
+						</li>
+					</ul>
+				</div>
+				<div class="report-main-window">
+					<div class="report-main-window-header">
+						<div>
+							<input type="text" class="form-control form-control-sm" placeholder="De:" ng-model="filtroCorreoDe" ng-show="filtroDireccion == 'inbound'" />
+							<input type="text" class="form-control form-control-sm" placeholder="Para:" ng-model="filtroCorreoPara" ng-show="filtroDireccion == 'outbound'" />
+						</div>
+						<div>
+							<input type="text" class="form-control form-control-sm" placeholder="Asunto:" ng-model="filtroCorreoAsunto" />
+						</div>
+						<div>
+							<input type="text" class="form-control form-control-sm" placeholder="Calificacion:" ng-model="filtroCorreoWrapup" />
+						</div>
+						<div>
+							<input type="text" class="form-control form-control-sm" placeholder="Fecha inicio:" ng-model="filtroCorreoFechaI" />
+						</div>
+						<div>
+							<input type="text" class="form-control form-control-sm" placeholder="Fecha final:" ng-model="filtroCorreoFechaF" />
+						</div>
+						<div>
+							<input type="text" class="form-control form-control-sm" placeholder="Notas:" ng-model="filtroCorreoNotas" />
+						</div>
+						<div>
+							<a href="" clear-filters title="Borrar filtros"><i class="fas fa-eraser"></i></a>
+							<span class="text-white"><i class="fas fa-eraser"></i></span>
+							<span class="text-white"><i class="fas fa-eraser"></i></span>
+						</div>
+					</div>
+					<div class="correos-container" ng-repeat="x in inbound.slice((currentPageInb -1) * itemsPerPage, currentPageInb * itemsPerPage) | orderBy:'-fechaInicial' | filter: {direccion:filtroDireccion} | filter:{de:filtroCorreoDe} | filter:{para:filtroCorreoPara} | filter:{asunto:filtroCorreoAsunto} | filter:{calificacion:filtroCorreoWrapup} | filter:{fechaInicial:filtroCorreoFechaI}" ng-show="filtroDireccion == 'inbound'">
+						<div>
+							<div ng-show="x.direccion == 'inbound'" title="{{x.de}}">{{x.de | limitTo:25}}</div>
+							<div ng-show="x.direccion == 'outbound'" title="{{x.para}}">{{x.para | limitTo:25}}</div>
+						</div>
+						<div title="{{x.asunto}}">{{x.asunto | limitTo:50}}</div>
+						<div>{{x.calificacion}}</div>
+						<div>{{x.fechaInicial}}</div>
+						<div>{{x.fechaFinal}}</div>
+						<div title="{{x.nota}}">{{x.nota | limitTo:30}}</div>
+						<div class="correos-call-to-action">
+							<div><a href="https://apps.mypurecloud.com/directory/#/engage/admin/interactions/{{x.conversationId}}" title="Abrir conversacion" target="_top"><i class="fas fa-external-link-alt"></i></a></div>
+							<div><a href="" title="Ver contenido" show-modal><i class="fa fa-eye"></i></a></div>
+							<div><a href="" title="Responder" reply-email><i class="fas fa-reply"></i></a></div>
+						</div>
+					</div>
+					<div class="correos-container" ng-repeat="x in outbound.slice((currentPageOut -1) * itemsPerPage, currentPageOut * itemsPerPage) | orderBy:'-fechaInicial' | filter: {direccion:filtroDireccion} | filter:{de:filtroCorreoDe} | filter:{para:filtroCorreoPara} | filter:{asunto:filtroCorreoAsunto} | filter:{calificacion:filtroCorreoWrapup} | filter:{fechaInicial:filtroCorreoFechaI}" ng-show="filtroDireccion == 'outbound'">
+						<div>
+							<div ng-show="x.direccion == 'inbound'" title="{{x.de}}">{{x.de | limitTo:25}}</div>
+							<div ng-show="x.direccion == 'outbound'" title="{{x.para}}">{{x.para | limitTo:25}}</div>
+						</div>
+						<div title="{{x.asunto}}">{{x.asunto | limitTo:60}}</div>
+						<div>{{x.calificacion}}</div>
+						<div>{{x.fechaInicial}}</div>
+						<div>{{x.fechaFinal}}</div>
+						<div title="{{x.nota}}">{{x.nota | limitTo:30}}</div>
+						<div class="correos-call-to-action">
+							<div><a href="https://apps.mypurecloud.com/directory/#/engage/admin/interactions/{{x.conversationId}}" title="Abrir conversacion" target="_top"><i class="fas fa-external-link-alt"></i></a></div>
+							<div><a href="" title="Ver contenido" show-modal><i class="fa fa-eye"></i></a></div>
+							<div><a href="" title="Responder" reply-email><i class="fas fa-reply"></i></a></div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="navigation">
+				<nav ng-show="filtroDireccion == 'inbound'" class="justify-content-end">
+					<ul class="pagination">
+						<li class="page-item" ng-class="{'disabled': inboundPages.length == 1}">
+							<a class="page-link" href="#" subtract-page-in>Anterior</a>
+						</li>
+						<li class="page-item" ng-class="{'active': currentPageInb == t}" ng-repeat="t in inboundPages">
+							<a class="page-link" href="#" change-page-inb>{{t}}</a>
+						</li>
+						<li class="page-item" ng-class="{'disabled': inboundPages.length == 1}">
+							<a class="page-link" href="#" add-page-in>Siguiente</a>
+						</li>
+					</ul>
+				</nav>
+				<nav ng-show="filtroDireccion == 'outbound'">
+					<ul class="pagination">
+						<li class="page-item" ng-class="{'disabled': outboundPages.length == 1}">
+							<a class="page-link" href="#" subtract-page-out>Anterior</a>
+						</li>
+						<li class="page-item" ng-class="{'active': currentPageOut == y}" ng-repeat="y in outboundPages">
+							<a class="page-link" href="#" change-page-out>{{y}}</a>
+						</li>
+						<li class="page-item" ng-class="{'disabled': outboundPages.length == 1}">
+							<a class="page-link" href="#" add-page-out>Siguiente</a>
+						</li>
+					</ul>
+				</nav>
+			</div>
+		</div>
+		<div class="modal fade" id="contentModal" tabindex="-1">
+			<div class="modal-dialog modal-lg">
+				<div class="modal-content">
+					<div class="modal-header">
+						<h5 class="modal-title">
+							Detalles
+						</h5>
+						<button type="button" class="close" data-dismiss="modal">
+							<i class="fa fa-times"></i>
+						</button>
+					</div>
+					<div class="modal-body">
+						<div class="email-message-block" ng-repeat="x in curEmailMessages | orderBy:'-time'">
+							<div><strong>De:</strong> {{x.from.email}}</div>
+							<div><strong>Enviado:</strong>{{x.fecha}}</div>
+							<div><strong>Para:</strong> {{x.to[0].email}}</div>
+							<div><strong>Asunto:</strong> {{x.subject}}</div>
+							<div class="attachments-container">
+								<span ng-repeat="a in x.attachments" class="pr-2"><a href="{{a.contentUri}}">{{a.name}}</a></span>
+							</div>
+							<div class="textBody">
+								{{x.textBody}}
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<script src="/scripts/angular_1_7_7.js" type="text/javascript" charset="UTF-8"></script>
+		<script src="/scripts/jquery_3_3_1.js" type="text/javascript" charset="UTF-8"></script>
+		<script src="/scripts/popper_1_14_3.js" type="text/javascript" charset="UTF-8"></script>
+		<script src="/scripts/bootstrap_4_1_3.js" type="text/javascript" charset="UTF-8"></script>
+		<script src="/scripts/moment_2_24_0.js" type="text/javascript" charset="UTF-8"></script>
+		<script src="/appCorreos.js" type="text/javascript" charset="UTF-8"></script>
+		<script src="/app/controllers/controllerCorreos.js" type="text/javascript" charset="UTF-8"></script>
+		<script src="/app/services/servicesCorreos.js" type="text/javascript" charset="UTF-8"></script>
+		<script src="/app/directives/directivesCorreos.js" type="text/javascript" charset="UTF-8"></script>
+		<script src="/app/filters/filtersCorreos.js" type="text/javascript" charset="UTF-8"></script>
+		<script src="https://sdk-cdn.mypurecloud.com/javascript/40.1.0/purecloud-platform-client-v2.min.js"></script>
+	</body>
+</html>
