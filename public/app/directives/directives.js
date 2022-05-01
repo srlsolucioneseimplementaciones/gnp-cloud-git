@@ -1,6 +1,6 @@
 app.directive('templatePreview', function () {
     return {
-        templateUrl: './app/Templates/templatePreview.html',
+        templateUrl: '/app/templates/templatePreview.html',
         link: function (scope, elem, attrs) {
             scope.$watch('template', function (newV, oldV) {
                 if (newV) {
