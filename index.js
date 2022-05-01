@@ -1,3 +1,5 @@
+const fs = require('fs');
+const express = require('express');
 const path = require('path');
 const bodyParser = require('body-parser');
 const cors = require('cors');
@@ -12,7 +14,7 @@ app.use(bodyParser.json());
 app.use(cors());
 
 app.listen(PORT, () => {
-    log.Info('Escuchando en el puerto ' + PORT);
+    console.log('Escuchando en el puerto ' + PORT);
 });
 
 app.use(express.static(path.join(__dirname, 'public')));
