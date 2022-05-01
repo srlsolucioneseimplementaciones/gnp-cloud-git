@@ -5,7 +5,7 @@ const cors = require('cors');
 const reporte = path.join(__dirname + '/public/reporteCorreos.html');
 
 const app = express();
-const PORT = process.env.PORT;
+const PORT = 8443;
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
