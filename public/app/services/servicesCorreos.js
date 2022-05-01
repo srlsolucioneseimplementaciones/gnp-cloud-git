@@ -35,7 +35,7 @@ app.service('ApiService', function ($http) {
         var queryStringData = {
             response_type: "token",
             client_id: clientId,
-            redirect_uri: "https://ec2-54-208-78-74.compute-1.amazonaws.com/reporte"
+            redirect_uri: "https://ma2tskinym.us-east-1.awsapprunner.com/reporte"
         }
 
         window.location.replace("https://login.mypurecloud.com/oauth/authorize?" + jQuery.param(queryStringData));
