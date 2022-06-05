@@ -1,5 +1,4 @@
-app.controller('mainController', ['$scope', 'ApiService', function ($scope, ApiService) {
-
+app.controller('mainController', ['$scope', 'ApiService', '$timeout', function ($scope, ApiService, $timeout) {
 	const platformClient = require('platformClient');
     $scope.Token = {};
     $scope.cloudUser =  {
@@ -8,6 +7,12 @@ app.controller('mainController', ['$scope', 'ApiService', function ($scope, ApiS
         username: '',
         queues: []
     }
+
+    $scope.itemsPerPage = 50;
+    $scope.currentPage = 1;
+    $scope.pages = [];
+    $scope.Ids = [];
+    $scope.filter = false;
 
     $scope.regex = '/^[0-9]*$/';
 
@@ -33,7 +38,7 @@ app.controller('mainController', ['$scope', 'ApiService', function ($scope, ApiS
             $scope.cloudUser.name = userObject.name;
             $scope.cloudUser.username = userObject.username;
             $scope.getQueues($scope.cloudUser.id);
-            $scope.obtenerEmails();
+            $scope.conteoPaginas = $scope.obtenerConteoEmails();
         });
     }
 
@@ -52,14 +57,21 @@ app.controller('mainController', ['$scope', 'ApiService', function ($scope, ApiS
     }
 
     $scope.obtenerEmails = () => {
-        var request = ApiService.obtenerEmails($scope.cloudUser.id);
+        var query = '';
+
+        var firstId = $scope.currentPage * $scope.itemsPerPage - $scope.itemsPerPage;
+        var lastId = ($scope.currentPage * $scope.itemsPerPage - 1) > $scope.ids.length ? $scope.ids.length - 1 : $scope.currentPage * $scope.itemsPerPage - 1;
+
+        for (var i = firstId; i <= lastId; i++) {
+            query = query + $scope.ids[i] + ',';
+        }
+
+        query = query.slice(0, -1);
+        
+        var request = ApiService.obtenerEmails($scope.cloudUser.id, query);
         request.then((response) => {
-
-            console.log(response);
-
             $scope.conversations = [];
             response.forEach((val, index) => {
-
                 var conversation = {
                     conversationId: val.conversationId,
                     fechaInicial: val.conversationStart,
@@ -69,10 +81,12 @@ app.controller('mainController', ['$scope', 'ApiService', function ($scope, ApiS
 
                 val.participants.forEach((participant, pIndex) => {
                     if (participant.purpose == 'agent') {
-                        conversation.de = participant.sessions[0].addressFrom;
-                        conversation.para = participant.sessions[0].addressTo;
+                        conversation.usuario = participant.user;
 
-                        participant.sessions.forEach((session, sIndex) => { 
+                        participant.sessions.forEach((session, sIndex) => {
+
+                            conversation.remote = session.remote;
+
                             session.segments.forEach((segment, sIndex) => {
                                 if (segment.segmentType == 'wrapup') {
                                     
@@ -92,50 +106,103 @@ app.controller('mainController', ['$scope', 'ApiService', function ($scope, ApiS
 
                 $scope.conversations.push(conversation);
             })
-
-
-            $scope.inbound = [];
-            $scope.outbound = [];
-            
-            $scope.conteoInbound = 0;
-            $scope.conteoOutbound = 0;
-
-            $scope.currentPageInb = 1;
-            $scope.currentPageOut = 1;
-            $scope.itemsPerPage = 50;
-            $scope.maxSize = 50;
-            $scope.totalItemsInb = $scope.conteoInbound;
-            $scope.totalItemsOut = $scope.conteoOutbound;
-
-            for (var i = 0; i < $scope.conversations.length; i++) {
-                if ($scope.conversations[i].direccion == 'inbound') {
-                    $scope.conteoInbound++;
-                    $scope.inbound.push($scope.conversations[i]);
-                } else {
-                    $scope.conteoOutbound++;
-                    $scope.outbound.push($scope.conversations[i]);
-                    $scope.numOfPagesOutbound();
-                    $scope.numOfPagesInbound();
-                }
-            }
         })
     }
 
-    $scope.numOfPagesOutbound = function () {
-        $scope.outboundPages = [];
-        for (var i = 0; i < Math.ceil($scope.outbound.length / $scope.itemsPerPage); i++) {
-            $scope.outboundPages.push(i + 1);
-        }
-    };
+    $scope.obtenerEmailsAll = () => {
+        var query = '';
 
-    $scope.numOfPagesInbound = function () {
-        $scope.inboundPages = [];
-        for (var i = 0; i < Math.ceil($scope.inbound.length / $scope.itemsPerPage); i++) {
-            $scope.inboundPages.push(i + 1);
+        var firstId = $scope.currentPage * $scope.itemsPerPage - $scope.itemsPerPage;
+        var lastId = ($scope.currentPage * $scope.itemsPerPage - 1) > $scope.ids.length ? $scope.ids.length - 1 : $scope.currentPage * $scope.itemsPerPage - 1;
+
+        for (var i = firstId; i <= lastId; i++) {
+            query = query + $scope.ids[i] + ',';
         }
-    };
+
+        query = query.slice(0, -1);
+
+        var request = ApiService.obtenerEmailsAll(query);
+        request.then((response) => {
+            $scope.conversations = [];
+            response.forEach((val, index) => {
+                var conversation = {
+                    conversationId: val.conversationId,
+                    fechaInicial: val.conversationStart,
+                    fechaFinal: val.conversationEnd,
+                    direccion: val.originatingDirection,
+                };
+
+                val.participants.forEach((participant, pIndex) => {
+                    if (participant.purpose == 'agent') {
+                        conversation.de = participant.sessions[0].addressFrom;
+                        conversation.para = participant.sessions[0].addressTo;
+
+                        participant.sessions.forEach((session, sIndex) => {
+
+                            conversation.remote = session.remote;
+
+                            session.segments.forEach((segment, sIndex) => {
+                                if (segment.segmentType == 'wrapup') {
+
+                                    if (!conversation.calificacion) {
+                                        conversation.calificacion = segment.wrapUpName;
+                                    }
+
+                                    conversation.nota = segment.wrapUpNote;
+                                    conversation.asunto = segment.subject;
+                                    conversation.queueId = segment.queueId;
+                                }
+                            })
+                        })
+
+                    }
+                })
+
+                $scope.conversations.push(conversation);
+            })
+        })
+    }
+
+    $scope.obtenerConteoEmails = () => {
+        $scope.filter = false;
+        $scope.currentPage = 1;
+        $scope.pages = [];
+        $scope.ids = [];
+        var request = ApiService.obtenerConteoEmails($scope.cloudUser.id);
+        request.then((response) => {
+            $scope.ids = response;
+
+            for (var i = 0; i < (Math.ceil(Number(response.length) / $scope.itemsPerPage)) ; i++) {
+                try {
+                    $scope.pages.push(i + 1);
+                } catch (e) {
+
+                }
+            }
+
+            $scope.obtenerEmails();
+        })
+    }
+
+    $scope.obtenerConteoEmailsFilter = (query, field) => {
+        $scope.filter = true;
+        $scope.pages = [];
+        $scope.ids = [];
+        var request = ApiService.obtenerConteoEmailsFilter(query, field);
+        request.then((response) => {
+            $scope.ids = response.data;
+            for (var i = 0; i < (Math.ceil(Number(response.data.length) / $scope.itemsPerPage)); i++) {
+                try {
+                    $scope.pages.push(i + 1);
+                } catch (e) {
+
+                }
+            }
+
+            $scope.obtenerEmailsAll();
+        })
+    }
 
     $scope.CheckSession();
-
     $scope.getUser();
 }]);
