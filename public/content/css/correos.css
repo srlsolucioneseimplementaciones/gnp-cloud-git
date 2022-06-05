@@ -20,8 +20,8 @@ body, html {
 
 .report-container {
     display: grid;
-    grid-template-columns: auto 7fr;
-    grid-column-gap: .5rem;
+    grid-template-rows: auto 7fr;
+    grid-row-gap: .5rem;
     padding: 1rem;
 }
 
@@ -84,3 +84,35 @@ ul {
 .textBody {
     margin-top: 1rem;
 }
+
+.btn-search {
+    border-radius: 0 !important;
+}
+
+.my-row {
+    display: grid;
+    grid-template-rows: repeat(auto-fit, auto);
+    grid-row-gap: 1rem;
+    padding: 1rem;
+    align-items: center;
+    font-size: .9rem;
+}
+
+    .my-row:nth-child(even) {
+        background-color: #F2F4FF;
+        border: 1px solid #ced4da;
+    }
+
+    .my-row:nth-child(odd) {
+        border-right: 1px solid #ced4da;
+        border-left: 1px solid #ced4da;
+    }
+
+    .my-row:nth-last-child(-n+1) {
+        border-bottom: 1px solid #ced4da !important;
+    }
+
+    .my-row:hover {
+        background-color: #CAE5FF;
+        transition: linear all 500ms;
+    }
