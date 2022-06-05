@@ -67,9 +67,17 @@ app.directive('showModal', (ApiService) => {
                     .then((response) => {
                         scope.$parent.curItem = scope.x;
                         scope.$parent.curEmailMessages = response;
-
+                       
                         response.forEach((val, index) => {
                             val.fecha = moment(val.time).format('DD/MM/YYYY HH:mm:ss');
+
+                            if (val.htmlBody) {
+                                var t = jQuery.parseHTML(val.htmlBody);
+                                val.convertedText = "";
+                                t.forEach((v, i) => {
+                                    val.convertedText = val.convertedText + v.textContent;
+                                })
+                            }
                         });
 
                         $('#contentModal').modal('show');
@@ -82,89 +90,96 @@ app.directive('showModal', (ApiService) => {
     }
 })
 
-app.directive('changePageOut', () => {
+app.directive('changePage', () => {
     return {
         link: (scope, elem, attrs) => {
             elem.on('click', (e) => {
                 e.preventDefault();
-                scope.$apply(scope.$parent.currentPageOut = scope.y);
-            })
-        }
-    }
-})
+                scope.$apply(scope.$parent.currentPage = scope.t);
 
-app.directive('changePageInb', () => {
-    return {
-        link: (scope, elem, attrs) => {
-            elem.on('click', (e) => {
-                e.preventDefault();
-                scope.$apply(scope.$parent.currentPageInb = scope.t);
-            })
-        }
-    }
-})
-
-app.directive('addPageOut', () => {
-    return {
-        link: (scope, elem, attrs) => {
-            elem.on('click', (e) => {
-                e.preventDefault();
-
-                if (scope.currentPageOut < scope.outboundPages.length) {
-                    scope.$apply(scope.currentPageOut++);
+                if (!scope.filter) {
+                    scope.obtenerEmails();
                 } else {
-                    scope.$apply(scope.currentPageOut = 1);
-                }
-
-            })
-        }
-    }
-})
-
-app.directive('subtractPageOut', () => {
-    return {
-        link: (scope, elem, attrs) => {
-            elem.on('click', (e) => {
-                e.preventDefault();
-
-                if (scope.currentPageOut >= scope.outboundPages.length || scope.currentPageOut == 2) {
-                    scope.$apply(scope.currentPageOut--);
-                } else {
-                    scope.$apply(scope.currentPageOut = scope.outboundPages.length);
+                    scope.obtenerEmailsAll();
                 }
             })
         }
     }
 })
 
-app.directive('addPageIn', () => {
+app.directive('addPage', () => {
     return {
         link: (scope, elem, attrs) => {
             elem.on('click', (e) => {
                 e.preventDefault();
 
-                if (scope.currentPageInb < scope.inboundPages.length) {
-                    scope.$apply(scope.currentPageInb++);
+                if (scope.currentPage < scope.pages.length) {
+                    scope.$apply(scope.currentPage++);
                 } else {
-                    scope.$apply(scope.currentPageInb = 1);
+                    scope.$apply(scope.currentPage = 1);
                 }
 
+                if (!scope.filter) {
+                    scope.obtenerEmails();
+                } else {
+                    scope.obtenerEmailsAll();
+                }
             })
         }
     }
 })
 
-app.directive('subtractPageIn', () => {
+app.directive('subtractPage', () => {
     return {
         link: (scope, elem, attrs) => {
             elem.on('click', (e) => {
                 e.preventDefault();
 
-                if (scope.currentPageInb >= scope.inboundPages.length || scope.currentPageInb == 2) {
-                    scope.$apply(scope.currentPageInb--);
+                if (scope.currentPage >= scope.pages.length || scope.currentPage == 2) {
+                    scope.$apply(scope.currentPage--);
                 } else {
-                    scope.$apply(scope.currentPageInb = scope.inboundPages.length);
+                    scope.$apply(scope.currentPage = scope.pages.length);
                 }
+
+                if (!scope.filter) {
+                    scope.obtenerEmails();
+                } else {
+                    scope.obtenerEmailsAll();
+                }
+            })
+        }
+    }
+})
+
+app.directive('searchEmailsRemote', (ApiService) => {
+    return {
+        link: (scope, elem, attrs) => {
+            elem.on('click', (e) => {
+                scope.obtenerConteoEmailsFilter(scope.filtroCorreoRemote, 'remote');
+                scope.filtroCorreoRemote = null;
+            })
+        }
+    }
+})
+
+app.directive('searchEmailsSubject', (ApiService) => {
+    return {
+        link: (scope, elem, attrs) => {
+            elem.on('click', (e) => {
+                scope.obtenerConteoEmailsFilter(scope.filtroCorreoAsunto, 'subject');
+                scope.filtroCorreoAsunto = null;
+            })
+        }
+    }
+})
+
+app.directive('getLink', () => {
+    return {
+        link: (scope, elem, attrs) => {
+            elem.on('click', (e) => {
+                e.preventDefault();
+                navigator.clipboard.writeText('https://apps.mypurecloud.com/directory/#/engage/admin/interactions/' + scope.x.conversationId);
+                alert("Link copiado");
             })
         }
     }
