@@ -42,7 +42,7 @@ app.service('ApiService', function ($http) {
     }
 
     this.getClientId = (data) =>  {
-        return $http.post('/api/cloud/get/clientid').then(function (response) {
+        return $http.post('https://941b-54-208-78-74.ngrok.io/api/cloud/get/clientid').then(function (response) {
             return response.data;
         })
             .catch((error) => {
