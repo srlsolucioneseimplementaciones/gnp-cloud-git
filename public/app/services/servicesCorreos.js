@@ -12,7 +12,7 @@ app.service('ApiService', function ($http) {
     }
 
     this.sendMessage = (data) =>  {
-        return $http.post('https://941b-54-208-78-74.ngrok.io/api/messages/outbound', data, { timeout: 20000 })
+        return $http.post('/api/messages/outbound', data, { timeout: 20000 })
 			.then(function (response) {
 				return response;
 			})
@@ -22,7 +22,7 @@ app.service('ApiService', function ($http) {
     }
 
     this.obtenerTelefonos = () => {
-        return $http.get('https://941b-54-208-78-74.ngrok.io/api/configuraciones/telefonos')
+        return $http.get('/api/configuraciones/telefonos')
             .then((response) => {
                 return response.data;
             })
@@ -35,14 +35,14 @@ app.service('ApiService', function ($http) {
         var queryStringData = {
             response_type: "token",
             client_id: clientId,
-            redirect_uri: "https://ma2tskinym.us-east-1.awsapprunner.com/reporte"
+            redirect_uri: "https://localhost:8443/reporte"
         }
 
         window.location.replace("https://login.mypurecloud.com/oauth/authorize?" + jQuery.param(queryStringData));
     }
 
     this.getClientId = (data) =>  {
-        return $http.post('https://941b-54-208-78-74.ngrok.io/api/cloud/get/clientid').then(function (response) {
+        return $http.post('/api/cloud/get/clientid').then(function (response) {
             return response.data;
         })
             .catch((error) => {
@@ -51,18 +51,45 @@ app.service('ApiService', function ($http) {
             })
     }
 
-    this.obtenerEmails = (userId) => {
-        return $http.post('https://941b-54-208-78-74.ngrok.io/api/cloud/get/emails', { user: userId }).then((response) => {
+    this.obtenerEmails = (userId, q) => {
+        return $http.post('/api/cloud/get/emails', { user: userId, query: q}).then((response) => {
             return response.data.conversations;
         })
             .catch((error) => {
-                console.log(error);
                 return null;
             })
     }
 
+    this.obtenerEmailsAll = (q) => {
+        return $http.post('/api/cloud/get/emails/all', { query: q }).then((response) => {
+            return response.data.conversations;
+        })
+        .catch((error) => {
+            return null;
+        })
+    }
+
+    this.obtenerConteoEmails = (userId) => {
+        return $http.get('/api/cloud/get/correos/conteo?user=' + userId).then((response) => {
+            return response.data;
+        })
+        .catch((error) => {
+            console.log(error);
+            return null;
+        })
+    }
+
+    this.obtenerConteoEmailsFilter = (q, field) => {
+        return $http.get('/api/cloud/get/correos/conteo/filtro?q=' + q + '&field=' + field).then((response) => {
+            return response;
+        })
+        .catch((error) => {
+            console.log(error);
+        })
+    }
+
     this.obtenerMensajes = (conversationId) => {
-        return $http.post('https://941b-54-208-78-74.ngrok.io/api/cloud/get/email/messages', { conversationId: conversationId }).then((response) => {
+        return $http.post('/api/cloud/get/email/messages', { conversationId: conversationId }).then((response) => {
             return response.data;
         })
             .catch((error) => {
