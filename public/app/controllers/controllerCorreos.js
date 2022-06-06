@@ -133,6 +133,7 @@ app.controller('mainController', ['$scope', 'ApiService', '$timeout', function (
                     fechaInicial: val.conversationStart,
                     fechaFinal: val.conversationEnd,
                     direccion: val.originatingDirection,
+                    remoteEmail : val.remoteEmail
                 };
 
                 val.participants.forEach((participant, pIndex) => {
