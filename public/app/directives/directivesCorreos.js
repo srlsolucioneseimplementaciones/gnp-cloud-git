@@ -33,7 +33,7 @@ app.directive('replyEmail', (ApiService) => {
 
                         var body = {
                             "queueId": scope.x.queueId,
-                            "toAddress": scope.x.direccion == "inbound" ? scope.x.de: scope.x.para,
+                            "toAddress": scope.x.remote,
                             "subject": scope.x.asunto,
                             "direction": "OUTBOUND",
                             "htmlBody": text
