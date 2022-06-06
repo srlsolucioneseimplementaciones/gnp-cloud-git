@@ -178,8 +178,8 @@ app.directive('getLink', () => {
         link: (scope, elem, attrs) => {
             elem.on('click', (e) => {
                 e.preventDefault();
-                navigator.clipboard.writeText('https://apps.mypurecloud.com/directory/#/engage/admin/interactions/' + scope.x.conversationId);
-                alert("Link copiado");
+                 var link = 'https://apps.mypurecloud.com/directory/#/engage/admin/interactions/' + scope.x.conversationId;
+                alert(link);
             })
         }
     }
