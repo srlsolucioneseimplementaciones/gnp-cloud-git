@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+	<html ng-app="MyApp">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html charset=UTF-8" />
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="shortcut icon" type="image/jpg" href="/content/images/SRL.ico" />
+		<link rel="stylesheet" href="/content/css/correos.css">
+		<link rel="stylesheet" href="/content/css/bootstrap_4_1_3.css">
+		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+		<link rel="stylesheet" href="/content/css/angular-moment-picker.css" />
+		<title>Reporte whatsapp HSM</title>
+	</head>
+	<body ng-controller="mainController">
+		<div class="general-container">
+			<div class="report-container">
+				<div class="report-main-window">
+					<table class="table table-sm table-striped">
+						<thead>
+							<tr>
+								<th>Id</th>
+								<th>Fecha</th>
+								<th>Nombre</th>
+								<th>Telefono</th>
+								<th colspan="2">Usuario</th>
+							</tr>
+							<tr>
+								<th>
+									<div class="input-group">
+										<input type="text" class="form-control form-control-sm" placeholder="Id" ng-model="filtroId" />
+										<button class="btn btn-sm btn-search" search-hsm-id>
+											<i class="fas fa-search"></i>
+										</button>
+									</div>
+								</th>
+								<th>
+									<div class="input-group">
+										<input type="text" class="form-control form-control-sm" placeholder="Fecha" ng-model="filtroFecha" />
+										<button class="btn btn-sm btn-search" search-hsm-fecha>
+											<i class="fas fa-search"></i>
+										</button>
+									</div>
+								</th>
+								<th>
+									<div class="input-group">
+										<input type="text" class="form-control form-control-sm" placeholder="Nombre" ng-model="filtroNombre" />
+										<button class="btn btn-sm btn-search" search-hsm-nombre>
+											<i class="fas fa-search"></i>
+										</button>
+									</div>
+								</th>
+								<th>
+									<div class="input-group">
+										<input type="text" class="form-control form-control-sm" placeholder="Telefono" ng-model="filtroTelefono" />
+										<button class="btn btn-sm btn-search" search-hsm-telefono>
+											<i class="fas fa-search"></i>
+										</button>
+									</div>
+								</th>
+								<th>
+									<div class="input-group">
+										<input type="text" class="form-control form-control-sm" placeholder="Usuario" ng-model="filtroUsuario" />
+										<button class="btn btn-sm btn-search" search-hsm-usuario>
+											<i class="fas fa-search"></i>
+										</button>
+									</div>
+								</th>
+								<th colspan="2">
+									<a class="correo-sections pt-2" title="Recargar" href="" ng-click="obtenerConteoHSM()">
+										<i class="fa fa-sync-alt pr-2 ml-2"></i>
+									</a>
+									<a class="correo-sections pt-2" title="Descargar filtro actual" href="" ng-click="downloadReportHSM()">
+										<i class="fas fa-download pr-2"></i>
+									</a>
+									<a href="correo-sections pt-2" title="Restablecer filtros" clear-filters>
+										<i class="fas fa-undo pr-2"></i>
+									</a>
+								</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr ng-repeat="x in registros | orderBy:'-Id'">
+								<td>{{x.Id}}</td>
+								<td>{{x.fecha | date:'yyyy-MM-dd HH:mm'}}</td>
+								<td>{{x.nombre}}</td>
+								<td>{{x.telefono}}</td>
+								<td colspan="2">{{x.usuario}}</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+			<div class="navigation">
+				<nav class="justify-content-end">
+					<ul class="pagination">
+						<li class="page-item" ng-class="{'disabled': pages.length == 1}">
+							<a class="page-link" href="#" subtract-page>Anterior</a>
+						</li>
+						<li class="page-item" ng-class="{'active': currentPage == t}" ng-repeat="t in pages">
+							<a class="page-link" href="#" change-page>{{t}}</a>
+						</li>
+						<li class="page-item" ng-class="{'disabled': pages.length == 1}">
+							<a class="page-link" href="#" add-page>Siguiente</a>
+						</li>
+					</ul>
+				</nav>
+			</div>
+		</div>
+		<script src="/scripts/angular_1_7_7.js" type="text/javascript" charset="UTF-8"></script>
+		<script src="/scripts/jquery_3_3_1.js" type="text/javascript" charset="UTF-8"></script>
+		<script src="/scripts/popper_1_14_3.js" type="text/javascript" charset="UTF-8"></script>
+		<script src="/scripts/bootstrap_4_1_3.js" type="text/javascript" charset="UTF-8"></script>
+		<script src="/scripts/moment_2_24_0.js" type="text/javascript" charset="UTF-8"></script>
+		<script src="/appWhatsapp.js" type="text/javascript" charset="UTF-8"></script>
+		<script src="/app/controllers/controllerWhatsapp.js" type="text/javascript" charset="UTF-8"></script>
+		<script src="/app/services/servicesWhatsapp.js" type="text/javascript" charset="UTF-8"></script>
+		<script src="/app/directives/directivesWhatsapp.js" type="text/javascript" charset="UTF-8"></script>
+		<script src="/app/filters/filtersWhatsapp.js" type="text/javascript" charset="UTF-8"></script>
+		<script src="https://sdk-cdn.mypurecloud.com/javascript/40.1.0/purecloud-platform-client-v2.min.js"></script>
+	</body>
+</html>
