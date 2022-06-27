@@ -5,6 +5,8 @@ const bodyParser = require('body-parser');
 const cors = require('cors');
 
 const reporte = path.join(__dirname + '/public/reporteCorreos.html');
+const whatsappHsm = path.join(__dirname + '/public/reporteWhatsappHSM.html');
+const whatsappMsj = path.join(__dirname + '/public/reporteWhatsappMSJ.html');
 
 const app = express();
 const PORT = 8443;
@@ -25,4 +27,12 @@ app.get('/', (req, res) => {
 
 app.get('/reporte', (req, res) => {
     res.status(200).sendFile(reporte);
+})
+
+app.get('/whatsapp/hsm', (req, res) => {
+    res.status(200).sendFile(whatsappHsm);
+})
+
+app.get('/whatsapp/msj', (req, res) => {
+    res.status(200).sendFile(whatsappMsj);
 })
