@@ -36,3 +36,7 @@ app.get('/whatsapp/hsm', (req, res) => {
 app.get('/whatsapp/msj', (req, res) => {
     res.status(200).sendFile(whatsappMsj);
 })
+
+app.get('/api/configuraciones/telefonos', (req, res) => {
+    res.status(200).json({ respuesta: JSON.parse(process.env.NUMEROS_WHATSAPP_YALO) });
+});
