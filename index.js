@@ -40,3 +40,10 @@ app.get('/whatsapp/msj', (req, res) => {
 app.get('/api/configuraciones/telefonos', (req, res) => {
     res.status(200).json({ respuesta: JSON.parse(process.env.NUMEROS_WHATSAPP_YALO) });
 });
+
+app.get('/api/templates/get', (req, res) => {
+    var data = fs.readFileSync('templates.json');
+    var templates = JSON.parse(data);
+
+    res.status(200).json(templates);
+});
