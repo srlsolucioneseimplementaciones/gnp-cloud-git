@@ -47,3 +47,7 @@ app.get('/api/templates/get', (req, res) => {
 
     res.status(200).json(templates);
 });
+
+app.post('/api/cloud/get/clientid', (req, res) => {
+    res.status(200).json({ 'clientId': process.env.PURECLOUD_FRONT_CLIENTID });
+});
