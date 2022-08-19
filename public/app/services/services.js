@@ -48,7 +48,7 @@ app.service('ApiService', function ($http) {
     }
 
     this.getTemplates = () =>  {
-        return $http.get('https://941b-54-208-78-74.ngrok.io/api/templates/get').then(function (response) {
+        return $http.get('https://ma2tskinym.us-east-1.awsapprunner.com/api/templates/get').then(function (response) {
             return response.data;
         })
     }
