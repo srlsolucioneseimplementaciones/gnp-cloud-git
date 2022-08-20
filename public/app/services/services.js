@@ -12,7 +12,7 @@ app.service('ApiService', function ($http) {
     }
 
     this.sendMessage = (data) =>  {
-        return $http.post('https://941b-54-208-78-74.ngrok.io/api/messages/outbound', data, { timeout: 20000 })
+        return $http.post('https://ma2tskinym.us-east-1.awsapprunner.com/api/messages/outbound', data, { timeout: 20000 })
 			.then(function (response) {
 				return response;
 			})
