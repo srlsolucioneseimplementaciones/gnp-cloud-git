@@ -1,3 +1,6 @@
+const config = require('./config/config');
+config.load();
+
 const fs = require('fs');
 const express = require('express');
 const path = require('path');
