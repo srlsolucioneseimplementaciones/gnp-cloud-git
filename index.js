@@ -3,6 +3,7 @@ const express = require('express');
 const path = require('path');
 const bodyParser = require('body-parser');
 const cors = require('cors');
+const outbound = require('./services/outbound');
 
 const reporte = path.join(__dirname + '/public/reporteCorreos.html');
 const whatsappHsm = path.join(__dirname + '/public/reporteWhatsappHSM.html');
