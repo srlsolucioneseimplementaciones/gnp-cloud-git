@@ -461,5 +461,17 @@
 				"valor": ""
 			}
 		]
+	},
+	{
+		"etiqueta": "Intermitencia sistema GNP",
+		"cola": "Soy Cliente",
+		"nombre": "intermitenciasistemagnp",
+		"template": "Hola te escribe {{nombre_agente}}. En días pasados presentamos intermitencias en nuestro servicio de WhatsApp. ¿En qué podemos ayudarte?",
+		"variables": [
+			{
+				"name": "nombre_agente",
+				"valor": ""
+			}
+		]
 	}
 ]
