@@ -117,10 +117,33 @@
 				"valor": ""
 			}
 		]
+	},{
+		"etiqueta": "Respuesta peticion",
+		"cola": "Reparaciones",
+		"nombre": "gnprespuesta",
+		"template": "Tenemos una respuesta a tu petición {{peticion}}",
+		"variables": [
+			{
+				"name": "peticion",
+				"valor": ""
+			}
+		]
 	},
 	{
 		"etiqueta": "Dando seguimiento",
 		"cola": "Soy Cliente",
+		"nombre": "gnpseguimiento",
+		"template": "Dando seguimiento a tu caso {{caso}}",
+		"variables": [
+			{
+				"name": "caso",
+				"valor": ""
+			}
+		]
+	},
+	{
+		"etiqueta": "Dando seguimiento",
+		"cola": "Reparaciones",
 		"nombre": "gnpseguimiento",
 		"template": "Dando seguimiento a tu caso {{caso}}",
 		"variables": [
@@ -439,7 +462,7 @@
 		]
 	},
 	{
-		"etiqueta": "Recordatorio entraga vehiculo pago deducible v3",
+		"etiqueta": "Recordatorio entrega vehiculo pago deducible v3",
 		"cola": "Reparaciones",
 		"nombre": "gnprecordatorioentregavehiculopagodeduciblev3",
 		"template": "Apreciable Cliente Buen día, mi nombre es {{nombre_agente}}, de GNP, le escribo para confirmar su cita en el centro de reparación. Recuerde que mañana es el día para recoger su vehículo, por ello le compartimos algunas recomendaciones: 🔹Traer consigo una Identificación oficial 🔹Llevar su comprobante de pago de deducible digital o impreso 🔹Verificar que la reparación se haya realizado de acuerdo a lo estipulado. Al momento de recibir su vehículo, el centro de reparación le entregará una carta de garantía que ampara la reparación realizada a su vehículo.",
