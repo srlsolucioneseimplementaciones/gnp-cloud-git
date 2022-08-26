@@ -12,7 +12,7 @@ app.service('ApiService', function ($http) {
     }
 
     this.sendMessage = (data) =>  {
-        return $http.post('https://941b-54-208-78-74.ngrok.io/api/messages/outbound', data, { timeout: 20000 })
+        return $http.post('https://e5c3-54-208-78-74.ngrok.io/api/messages/outbound', data, { timeout: 20000 })
 			.then(function (response) {
 				return response;
 			})
@@ -22,7 +22,7 @@ app.service('ApiService', function ($http) {
     }
 
     this.obtenerTelefonos = () => {
-        return $http.get('https://941b-54-208-78-74.ngrok.io/api/configuraciones/telefonos')
+        return $http.get('https://e5c3-54-208-78-74.ngrok.io/api/configuraciones/telefonos')
             .then((response) => {
                 return response.data;
             })
@@ -42,7 +42,7 @@ app.service('ApiService', function ($http) {
     }
 
     this.getClientId = (data) =>  {
-        return $http.post('https://941b-54-208-78-74.ngrok.io/api/cloud/get/clientid').then(function (response) {
+        return $http.post('https://e5c3-54-208-78-74.ngrok.io/api/cloud/get/clientid').then(function (response) {
             return response.data;
         })
             .catch((error) => {
@@ -52,7 +52,7 @@ app.service('ApiService', function ($http) {
     }
 
     this.obtenerHSM = (q) => {
-        return $http.post('https://941b-54-208-78-74.ngrok.io/api/cloud/get/whatsapp/hsm', { query: q}).then((response) => {
+        return $http.post('https://e5c3-54-208-78-74.ngrok.io/api/cloud/get/whatsapp/hsm', { query: q}).then((response) => {
             return response.data;
         })
             .catch((error) => {
@@ -61,7 +61,7 @@ app.service('ApiService', function ($http) {
     }
 
     this.obtenerHSMFiltro = (q) => {
-        return $http.post('https://941b-54-208-78-74.ngrok.io/api/cloud/get/whatsapp/hsm/filtro', { query: q }).then((response) => {
+        return $http.post('https://e5c3-54-208-78-74.ngrok.io/api/cloud/get/whatsapp/hsm/filtro', { query: q }).then((response) => {
             return response.data;
         })
         .catch((error) => {
@@ -70,7 +70,7 @@ app.service('ApiService', function ($http) {
     }
 
     this.obtenerConteoHSM = (userId) => {
-        return $http.get('https://941b-54-208-78-74.ngrok.io/api/cloud/get/whatsapp/hsm/conteo').then((response) => {
+        return $http.get('https://e5c3-54-208-78-74.ngrok.io/api/cloud/get/whatsapp/hsm/conteo').then((response) => {
             return response.data;
         })
         .catch((error) => {
@@ -89,7 +89,7 @@ app.service('ApiService', function ($http) {
     }
 
     this.obtenerUserId = (user) => {
-        return $http.get('https://941b-54-208-78-74.ngrok.io/api/cloud/get/whatsapp/userid?user=' + user).then((response) => {
+        return $http.get('https://e5c3-54-208-78-74.ngrok.io/api/cloud/get/whatsapp/userid?user=' + user).then((response) => {
             return response.data;
         })
             .catch((error) => {
@@ -98,7 +98,7 @@ app.service('ApiService', function ($http) {
     }
 
     this.downloadReportHSM = (ids) => {
-        return $http.post('https://941b-54-208-78-74.ngrok.io/api/cloud/get/whatsapp/hsm/download', { "ids": ids }).then((response) => {
+        return $http.post('https://e5c3-54-208-78-74.ngrok.io/api/cloud/get/whatsapp/hsm/download', { "ids": ids }).then((response) => {
             return response.data;
         })
             .catch((error) => {
