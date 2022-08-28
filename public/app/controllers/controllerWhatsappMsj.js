@@ -145,7 +145,7 @@ app.controller('mainController', ['$scope', 'ApiService', '$timeout', function (
             var a = document.createElement('a');
             document.body.appendChild(a);
             a.download = "reporteMensajes.csv";
-            a.href = "https://941b-54-208-78-74.ngrok.io/reporteMSJ.csv";
+            a.href = "https://ma2tskinym.us-east-1.awsapprunner.com/reporteMSJ.csv";
             a.click();
         })
             .catch((error) => {
