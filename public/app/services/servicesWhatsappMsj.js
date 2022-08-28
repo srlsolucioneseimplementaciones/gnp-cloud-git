@@ -70,7 +70,7 @@ app.service('ApiService', function ($http) {
     }
 
     this.obtenerConteoMSJ = (userId) => {
-        return $http.get('https://e5c3-54-208-78-74.ngrok.io/api/cloud/get/whatsapp/msj/conteo').then((response) => {
+        return $http.get('https://ma2tskinym.us-east-1.awsapprunner.com/api/cloud/get/whatsapp/msj/conteo').then((response) => {
             return response.data;
         })
         .catch((error) => {
@@ -89,7 +89,7 @@ app.service('ApiService', function ($http) {
     }
 
     this.obtenerUserId = (user) => {
-        return $http.get('https://e5c3-54-208-78-74.ngrok.io/api/cloud/get/whatsapp/userid?user=' + user).then((response) => {
+        return $http.get('https://ma2tskinym.us-east-1.awsapprunner.com/api/cloud/get/whatsapp/userid?user=' + user).then((response) => {
             return response.data;
         })
             .catch((error) => {
