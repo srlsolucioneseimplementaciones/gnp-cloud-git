@@ -220,6 +220,7 @@ var newHSM = (interaction) => {
 }
 
 var getHSMScript = (telefono) => {
+	console.log(telefono)
     return new Promise((resolve, reject) => {
         mssql.connect(config).then(pool => {
             return pool.request()
@@ -227,9 +228,12 @@ var getHSMScript = (telefono) => {
                 .execute('SP_OBTENER_HSM')
         })
             .then(result => {
+		console.log('result');
                 resolve(result);
             })
             .catch(err => {
+		console.log('error db');
+		console.log(err);
                 reject(err);
             });
     })
