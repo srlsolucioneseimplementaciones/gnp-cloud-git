@@ -12,7 +12,7 @@ app.service('ApiService', function ($http) {
     }
 
     this.sendMessage = (data) =>  {
-        return $http.post('https://e5c3-54-208-78-74.ngrok.io/api/messages/outbound', data, { timeout: 20000 })
+        return $http.post('https://ma2tskinym.us-east-1.awsapprunner.com/api/messages/outbound', data, { timeout: 20000 })
 			.then(function (response) {
 				return response;
 			})
@@ -22,7 +22,7 @@ app.service('ApiService', function ($http) {
     }
 
     this.obtenerTelefonos = () => {
-        return $http.get('https://e5c3-54-208-78-74.ngrok.io/api/configuraciones/telefonos')
+        return $http.get('https://ma2tskinym.us-east-1.awsapprunner.com/api/configuraciones/telefonos')
             .then((response) => {
                 return response.data;
             })
@@ -42,7 +42,7 @@ app.service('ApiService', function ($http) {
     }
 
     this.getClientId = (data) =>  {
-        return $http.post('https://e5c3-54-208-78-74.ngrok.io/api/cloud/get/clientid').then(function (response) {
+        return $http.post('https://ma2tskinym.us-east-1.awsapprunner.com/api/cloud/get/clientid').then(function (response) {
             return response.data;
         })
             .catch((error) => {
@@ -52,7 +52,7 @@ app.service('ApiService', function ($http) {
     }
 
     this.obtenerMSJ = (q) => {
-        return $http.post('https://e5c3-54-208-78-74.ngrok.io/api/cloud/get/whatsapp/msj', { query: q}).then((response) => {
+        return $http.post('https://ma2tskinym.us-east-1.awsapprunner.com/api/cloud/get/whatsapp/msj', { query: q}).then((response) => {
             return response.data;
         })
             .catch((error) => {
@@ -61,7 +61,7 @@ app.service('ApiService', function ($http) {
     }
 
     this.obtenerMSJFiltro = (q) => {
-        return $http.post('https://e5c3-54-208-78-74.ngrok.io/api/cloud/get/whatsapp/msj/filtro', { query: q }).then((response) => {
+        return $http.post('https://ma2tskinym.us-east-1.awsapprunner.com/api/cloud/get/whatsapp/msj/filtro', { query: q }).then((response) => {
             return response.data;
         })
         .catch((error) => {
@@ -80,7 +80,7 @@ app.service('ApiService', function ($http) {
     }
 
     this.obtenerConteoMSJFilter = (q, field) => {
-        return $http.get('https://e5c3-54-208-78-74.ngrok.io/api/cloud/get/whatsapp/msj/conteo/filtro?q=' + q + '&field=' + field).then((response) => {
+        return $http.get('https://ma2tskinym.us-east-1.awsapprunner.com/api/cloud/get/whatsapp/msj/conteo/filtro?q=' + q + '&field=' + field).then((response) => {
             return response;
         })
         .catch((error) => {
@@ -99,7 +99,7 @@ app.service('ApiService', function ($http) {
 
 
     this.obtenerQueueId = (queue) => {
-        return $http.get('https://e5c3-54-208-78-74.ngrok.io/api/cloud/get/whatsapp/queueId?queue=' + queue).then((response) => {
+        return $http.get('https://ma2tskinym.us-east-1.awsapprunner.com/api/cloud/get/whatsapp/queueId?queue=' + queue).then((response) => {
             return response.data;
         })
             .catch((error) => {
@@ -108,7 +108,7 @@ app.service('ApiService', function ($http) {
     }
 
     this.downloadReportMSJ = (ids) => {
-        return $http.post('https://e5c3-54-208-78-74.ngrok.io/api/cloud/get/whatsapp/msj/download', { "ids": ids }).then((response) => {
+        return $http.post('https://ma2tskinym.us-east-1.awsapprunner.com/api/cloud/get/whatsapp/msj/download', { "ids": ids }).then((response) => {
             return response.data;
         })
             .catch((error) => {
