@@ -101,6 +101,8 @@ var getHSM = (req, res) => {
 	return new Promise((resolve, reject)=>{
 		dbServices.getHSMScript(telefono)
 		.then((response)=>{
+			console.log('respuesta de la bd');
+			console.log(response);
 			
 			var mensaje = "";
 			
@@ -112,9 +114,14 @@ var getHSM = (req, res) => {
 			
 			mensaje = mensaje.replaceAll('jump_remove','\r\n');
 			
+			console.log('mensaje listo para irse');
+			console.log('mensaje');
+			
 			res.status(200).json({'mensaje':mensaje});
 		})
 		.catch((error)=>{
+			console.log('error en regresar');
+			console.log(error);
 			res.status(500);
 		})
 	});
