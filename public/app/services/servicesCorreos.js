@@ -12,7 +12,7 @@ app.service('ApiService', function ($http) {
     }
 
     this.sendMessage = (data) =>  {
-        return $http.post('https://941b-54-208-78-74.ngrok.io/api/messages/outbound', data, { timeout: 20000 })
+        return $http.post('https://ma2tskinym.us-east-1.awsapprunner.com/api/messages/outbound', data, { timeout: 20000 })
 			.then(function (response) {
 				return response;
 			})
@@ -22,7 +22,7 @@ app.service('ApiService', function ($http) {
     }
 
     this.obtenerTelefonos = () => {
-        return $http.get('https://941b-54-208-78-74.ngrok.io/api/configuraciones/telefonos')
+        return $http.get('https://ma2tskinym.us-east-1.awsapprunner.com/api/configuraciones/telefonos')
             .then((response) => {
                 return response.data;
             })
@@ -42,7 +42,7 @@ app.service('ApiService', function ($http) {
     }
 
     this.getClientId = (data) =>  {
-        return $http.post('https://941b-54-208-78-74.ngrok.io/api/cloud/get/clientid').then(function (response) {
+        return $http.post('https://ma2tskinym.us-east-1.awsapprunner.com/api/cloud/get/clientid').then(function (response) {
             return response.data;
         })
             .catch((error) => {
@@ -52,7 +52,7 @@ app.service('ApiService', function ($http) {
     }
 
     this.obtenerEmails = (userId, q) => {
-        return $http.post('https://941b-54-208-78-74.ngrok.io/api/cloud/get/emails', { user: userId, query: q}).then((response) => {
+        return $http.post('https://ma2tskinym.us-east-1.awsapprunner.com/api/cloud/get/emails', { user: userId, query: q}).then((response) => {
             return response.data.conversations;
         })
             .catch((error) => {
@@ -61,7 +61,7 @@ app.service('ApiService', function ($http) {
     }
 
     this.obtenerEmailsAll = (q) => {
-        return $http.post('https://941b-54-208-78-74.ngrok.io/api/cloud/get/emails/all', { query: q }).then((response) => {
+        return $http.post('https://ma2tskinym.us-east-1.awsapprunner.com/api/cloud/get/emails/all', { query: q }).then((response) => {
             return response.data.conversations;
         })
         .catch((error) => {
@@ -70,7 +70,7 @@ app.service('ApiService', function ($http) {
     }
 
     this.obtenerConteoEmails = (userId) => {
-        return $http.get('https://941b-54-208-78-74.ngrok.io/api/cloud/get/correos/conteo?user=' + userId).then((response) => {
+        return $http.get('https://ma2tskinym.us-east-1.awsapprunner.com/api/cloud/get/correos/conteo?user=' + userId).then((response) => {
             return response.data;
         })
         .catch((error) => {
@@ -80,7 +80,7 @@ app.service('ApiService', function ($http) {
     }
 
     this.obtenerConteoEmailsFilter = (q, field) => {
-        return $http.get('https://941b-54-208-78-74.ngrok.io/api/cloud/get/correos/conteo/filtro?q=' + q + '&field=' + field).then((response) => {
+        return $http.get('https://ma2tskinym.us-east-1.awsapprunner.com/api/cloud/get/correos/conteo/filtro?q=' + q + '&field=' + field).then((response) => {
             return response;
         })
         .catch((error) => {
@@ -89,7 +89,7 @@ app.service('ApiService', function ($http) {
     }
 
     this.obtenerMensajes = (conversationId) => {
-        return $http.post('https://941b-54-208-78-74.ngrok.io/api/cloud/get/email/messages', { conversationId: conversationId }).then((response) => {
+        return $http.post('https://ma2tskinym.us-east-1.awsapprunner.com/api/cloud/get/email/messages', { conversationId: conversationId }).then((response) => {
             return response.data;
         })
             .catch((error) => {
