@@ -112,7 +112,7 @@ var getHSM = (req, res) => {
 				mensaje = mensaje + value.template + '\r\n';
 			});
 			
-			mensaje = mensaje.replaceAll('jump_remove','\r\n');
+			mensaje = mensaje.toString().replaceAll('jump_remove','\r\n');
 			
 			console.log('mensaje listo para irse');
 			console.log('mensaje');
