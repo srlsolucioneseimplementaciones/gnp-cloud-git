@@ -109,7 +109,7 @@ var getHSM = (req, res) => {
 			var resp = response.recordsets[0];
 			
 			resp.forEach((value, index)=>{
-				mensaje = mensaje + value.template + '\r\n';
+				mensaje = mensaje + value.template.replaceAll('jump_remove','\r\n') + '\r\n';
 			});
 			
 			mensaje = mensaje.toString().replaceAll('jump_remove','\r\n');
