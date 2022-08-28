@@ -229,6 +229,7 @@ var getHSMScript = (telefono) => {
         })
             .then(result => {
 		console.log('result');
+		console.log(result);
                 resolve(result);
             })
             .catch(err => {
