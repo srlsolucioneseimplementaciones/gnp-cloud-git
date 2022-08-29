@@ -496,5 +496,32 @@
 				"valor": ""
 			}
 		]
+	},
+	{
+		"etiqueta": "Formato de servicios asistidos",
+		"cola": "Densidad",
+		"nombre": "formato_de_servicios_asistidos",
+		"template": "Formato de Servicios Asistidos",
+		"variables": []
+	},
+	{
+		"etiqueta": "The silence of sound",
+		"cola": "Soy Cliente",
+		"nombre": "the_silence_of_sound",
+		"template": "Hola {{nombre_cliente}}, Soy {{nombre_agente}} de GNP Seguros, te escribo para brindarte más información sobre tus accesos a “The Silence of Sound” para celebrar contigo por estos {{anio}} años de decir Soy Cliente GNP. ¿Estás listo para asistir a este evento increíble?",
+		"variables": [
+			{
+				"name": "nombre_cliente",
+				"valor": ""
+			},
+			{
+				"name": "nombre_agente",
+				"valor": ""
+			},
+			{
+				"name": "anio",
+				"valor": ""
+			}
+		]
 	}
 ]
