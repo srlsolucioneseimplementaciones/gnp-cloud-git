@@ -16,6 +16,30 @@
 		]
 	},
 	{
+		"etiqueta": "Envío de boletos",
+		"cola": "Soy Cliente",
+		"nombre": "gnpsegcaso",
+		"template": "Hola {{nombre_cliente}} Soy {{nombre_agente}} de GNP Seguros, te escribo para contarte que tus boletos 🎫 de {{evento}} ya se encuentrán {{estatus}} ",
+		"variables": [
+			{
+				"name": "nombre_cliente",
+				"valor": ""
+			},
+			{
+				"name": "nombre_agente",
+				"valor": ""
+			},
+			{
+				"name": "evento",
+				"valor": ""
+			},
+			{
+				"name": "estatus",
+				"valor": ""
+			}
+		]
+	},
+	{
 		"etiqueta": "Seguimiento de caso",
 		"cola": "Centro de Atención Virtual",
 		"nombre": "gnpsegcaso",
