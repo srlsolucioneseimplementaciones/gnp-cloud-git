@@ -40,6 +40,30 @@
 		]
 	},
 	{
+		"etiqueta": "Envío de boletos",
+		"cola": "Experiencia del cliente",
+		"nombre": "envo_de_boletos",
+		"template": "Hola {{nombre_cliente}} Soy {{nombre_agente}} de GNP Seguros, te escribo para contarte que tus boletos 🎫 de {{evento}} ya se encuentrán {{estatus}} ",
+		"variables": [
+			{
+				"name": "nombre_cliente",
+				"valor": ""
+			},
+			{
+				"name": "nombre_agente",
+				"valor": ""
+			},
+			{
+				"name": "evento",
+				"valor": ""
+			},
+			{
+				"name": "estatus",
+				"valor": ""
+			}
+		]
+	},
+	{
 		"etiqueta": "Seguimiento de caso",
 		"cola": "Centro de Atención Virtual",
 		"nombre": "gnpsegcaso",
@@ -152,6 +176,17 @@
 				"valor": ""
 			}
 		]
+	},{
+		"etiqueta": "Respuesta peticion",
+		"cola": "Experiencia del cliente",
+		"nombre": "gnprespuesta",
+		"template": "Tenemos una respuesta a tu petición {{peticion}}",
+		"variables": [
+			{
+				"name": "peticion",
+				"valor": ""
+			}
+		]
 	},
 	{
 		"etiqueta": "Dando seguimiento",
@@ -168,6 +203,18 @@
 	{
 		"etiqueta": "Dando seguimiento",
 		"cola": "Reparaciones",
+		"nombre": "gnpseguimiento",
+		"template": "Dando seguimiento a tu caso {{caso}}",
+		"variables": [
+			{
+				"name": "caso",
+				"valor": ""
+			}
+		]
+	},
+	{
+		"etiqueta": "Dando seguimiento",
+		"cola": "Experiencia del cliente",
 		"nombre": "gnpseguimiento",
 		"template": "Dando seguimiento a tu caso {{caso}}",
 		"variables": [
@@ -258,8 +305,32 @@
 		]
 	},
 	{
+		"etiqueta": "Buenas noticias",
+		"cola": "Experiencia del cliente",
+		"nombre": "gnpbuenasnoticias",
+		"template": "Le tengo buenas noticias {{noticia}}",
+		"variables": [
+			{
+				"name": "noticia",
+				"valor": ""
+			}
+		]
+	},
+	{
 		"etiqueta": "Estamos de regreso",
 		"cola": "Densidad",
+		"nombre": "gnpestamosderegreso",
+		"template": "Estamos de regreso para dar respuesta a {{peticion}}",
+		"variables": [
+			{
+				"name": "peticion",
+				"valor": ""
+			}
+		]
+	},
+	{
+		"etiqueta": "Estamos de regreso",
+		"cola": "Experiencia del cliente",
 		"nombre": "gnpestamosderegreso",
 		"template": "Estamos de regreso para dar respuesta a {{peticion}}",
 		"variables": [
@@ -522,6 +593,18 @@
 		]
 	},
 	{
+		"etiqueta": "Intermitencia sistema GNP",
+		"cola": "Experiencia del cliente",
+		"nombre": "intermitenciasistemagnp",
+		"template": "Hola te escribe {{nombre_agente}}. En días pasados presentamos intermitencias en nuestro servicio de WhatsApp. ¿En qué podemos ayudarte?",
+		"variables": [
+			{
+				"name": "nombre_agente",
+				"valor": ""
+			}
+		]
+	},
+	{
 		"etiqueta": "Formato de servicios asistidos",
 		"cola": "Densidad",
 		"nombre": "formato_de_servicios_asistidos",
@@ -531,6 +614,26 @@
 	{
 		"etiqueta": "The silence of sound evento",
 		"cola": "Soy Cliente",
+		"nombre": "the_silence_of_sound_evento",
+		"template": "Hola {{nombre_cliente}}, Soy {{nombre_agente}} de GNP Seguros, te escribo para brindarte más información sobre tus accesos a “The Silence of Sound” para celebrar contigo por estos {{anio}} años de decir Soy Cliente GNP. ¿Estás listo para asistir a este evento increíble?",
+		"variables": [
+			{
+				"name": "nombre_cliente",
+				"valor": ""
+			},
+			{
+				"name": "nombre_agente",
+				"valor": ""
+			},
+			{
+				"name": "anio",
+				"valor": ""
+			}
+		]
+	},
+	{
+		"etiqueta": "The silence of sound evento",
+		"cola": "Experiencia del cliente",
 		"nombre": "the_silence_of_sound_evento",
 		"template": "Hola {{nombre_cliente}}, Soy {{nombre_agente}} de GNP Seguros, te escribo para brindarte más información sobre tus accesos a “The Silence of Sound” para celebrar contigo por estos {{anio}} años de decir Soy Cliente GNP. ¿Estás listo para asistir a este evento increíble?",
 		"variables": [
