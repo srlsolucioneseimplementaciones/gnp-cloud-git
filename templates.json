@@ -16,6 +16,34 @@
 		]
 	},
 	{
+		"etiqueta": "Encuesta Evento v2",
+		"cola": "Experiencia del cliente",
+		"nombre": "encuesta_evento_v2",
+		"template": "Buen día {{nombre_cliente}}, Te saluda {{nombre_agente}} de GNP Seguros, para saber ¿cómo la pasaron {{dia}}? Nos encantaría conocer tu experiencia en {{evento}}. Sólo te tomará 3 minutos contestar nuestra encuesta en el siguiente enlace:👉🏼 {{Liga}} Gracias por tu tiempo, tomaremos en cuenta todos tus comentarios.",
+		"variables": [
+			{
+				"name": "nombre_cliente",
+				"valor": ""
+			},
+			{
+				"name": "nombre_agente",
+				"valor": ""
+			},
+			{
+				"name": "dia",
+				"valor": ""
+			},
+			{
+				"name": "evento",
+				"valor": ""
+			},
+			{
+				"name": "Liga",
+				"valor": ""
+			}
+		]
+	},
+	{
 		"etiqueta": "Envío de boletos",
 		"cola": "Soy Cliente",
 		"nombre": "envo_de_boletos",
