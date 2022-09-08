@@ -16,6 +16,30 @@
 		]
 	},
 	{
+		"etiqueta": "Cupon OV7",
+		"cola": "Experiencia del cliente",
+		"nombre": "cupn_ov7",
+		"template": "Hola {{nombre_cliente}} ¡Tenemos una sopresa 🎁 para ti! 1. Al llegar al Auditorio Nacional, localiza y visita el letreo de 'Vivir es increíble' 2. El Staff de GNP te estará esperando, solo dales tu nombre. 3. Te entregarán un cupón para alimentos y bebidas + un artículo oficial",
+		"variables": [
+			{
+				"name": "nombre_cliente",
+				"valor": ""
+			}
+		]
+	},
+	{
+		"etiqueta": "Te tengo noticias",
+		"cola": "Experiencia del cliente",
+		"nombre": "te_tengo_noticias",
+ 		"template": "👋 Hola {{nombre_cliente}} Te tengo buenas noticias noticia",
+		"variables": [
+			{
+				"name": "nombre_cliente",
+				"valor": ""
+			}
+		]
+	},
+	{
 		"etiqueta": "Encuesta Evento v2",
 		"cola": "Experiencia del cliente",
 		"nombre": "encuesta_evento_v2",
