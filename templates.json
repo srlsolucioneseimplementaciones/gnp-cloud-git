@@ -16,30 +16,6 @@
 		]
 	},
 	{
-		"etiqueta": "Cupon OV7",
-		"cola": "Experiencia del cliente",
-		"nombre": "cupn_ov7",
-		"template": "Hola {{nombre_cliente}} ¡Tenemos una sopresa 🎁 para ti! 1. Al llegar al Auditorio Nacional, localiza y visita el letreo de 'Vivir es increíble' 2. El Staff de GNP te estará esperando, solo dales tu nombre. 3. Te entregarán un cupón para alimentos y bebidas + un artículo oficial",
-		"variables": [
-			{
-				"name": "nombre_cliente",
-				"valor": ""
-			}
-		]
-	},
-	{
-		"etiqueta": "Te tengo noticias",
-		"cola": "Experiencia del cliente",
-		"nombre": "te_tengo_noticias",
- 		"template": "👋 Hola {{nombre_cliente}} Te tengo buenas noticias noticia",
-		"variables": [
-			{
-				"name": "nombre_cliente",
-				"valor": ""
-			}
-		]
-	},
-	{
 		"etiqueta": "Encuesta Evento v2",
 		"cola": "Experiencia del cliente",
 		"nombre": "encuesta_evento_v2",
@@ -473,166 +449,6 @@
 		]
 	},
 	{
-		"etiqueta": "Generico Version 3",
-		"cola": "Reparaciones",
-		"nombre": "gnpgenericov3",
-		"template": "Apreciable Cliente: Le escribo de GNP Seguros para darle seguimiento a la reparación de su vehículo {{marca_modelo}}. {{detalle_seguimiento}} ¿Tiene alguna duda respecto a la información que le acabo de proporcionar?", 
-		"variables": [
-			{
-				"name": "marca_modelo",
-				"valor": ""
-			},
-			{
-				"name": "detalle_seguimiento",
-				"valor": ""
-			}
-		]
-	},
-	{
-		"etiqueta": "Tardanza valuacion no se cumple fecha promesa 3 dias habiles",
-		"cola": "Reparaciones",
-		"nombre": "gnptardanzavaluacion_nosecumplefechapromesa3diashabilesv3",
-		"template": "Apreciable Cliente: Esperando se encuentre bien, en atención al siniestro con número de folio {{numero_siniestro}}, le informamos que el taller encargado de realizar la revisión de su vehículo continúa en el proceso de revisión y valoración de las condiciones de su unidad. Una vez que este proceso haya finalizado, nos pondremos en contacto con usted para indicarle los resultados de la revisión. Cualquier duda o comentario puede contactarme por este medio.",
-		"variables": [
-			{
-				"name": "numero_siniestro",
-				"valor": ""
-			}
-		]
-	},
-	{
-		"etiqueta": "Termino valuacion autoriza inicio reparacion V3",
-		"cola": "Reparaciones",
-		"nombre": "gnpterminovaluacionautorizainicioreparacionv3",
-		"template": "Apreciable Cliente: Buen día, mi nombre es {{nombre_agente}}, le escribo para informarle que ha finalizado la revisión de los daños en su vehículo {{marca_modelo}}. Le mantendré informado de cualquier avance en el proceso de reparación de su vehículo, así como la fecha de entrega. En caso de requerir mayor información, puede contactarme por este medio.",
-		"variables": [
-			{
-				"name": "nombre_agente",
-				"valor": ""
-			},
-			{
-				"name": "marca_modelo",
-				"valor": ""
-			}
-		]
-	},
-	{
-		"etiqueta": "Tardanza reparacion falta pieza V3",
-		"cola": "Reparaciones",
-		"nombre": "gnptardanzareparacionfaltapiezav3",
-		"template": "Apreciable Cliente: Buen día, mi nombre es {{nombre_agente}}, le escribo para informarle que ha finalizado la revisión de los daños en su vehículo {{marca_modelo}}. Actualmente, estamos en proceso de búsqueda de algunas piezas necesarias para continuar con la reparación, las cuales están tomando más tiempo de lo planeado para localizarlas, por lo cual la duración de la reparación de su vehículo podría tardar más de lo habitual. En caso de requerir mayor información, puede contactarme por este medio.",
-		"variables": [
-			{
-				"name": "nombre_agente",
-				"valor": ""
-			},
-			{
-				"name": "marca_modelo",
-				"valor": ""
-			}
-		]
-	},
-	{
-		"etiqueta": "Tardanza reparacion daños adicionales v3",
-		"cola": "Reparaciones",
-		"nombre": "gnptardanzareparaciondaosadicionalesv3",
-		"template": "Apreciable Cliente: Buen día, mi nombre es {{nombre_agente}}, le escribo para informarle que ha finalizado la revisión de los daños en su vehículo {{marca_modelo}}. Le informo que se encontraron daños adicionales en su vehículo, por lo que será necesario realizar una segunda revisión, me pondré en contacto con usted nuevamente para informarle los resultados. En caso de requerir mayor información, puede contactarme por este medio.",
-		"variables": [
-			{
-				"name": "nombre_agente",
-				"valor": ""
-			},
-			{
-				"name": "marca_modelo",
-				"valor": ""
-			}
-		]
-	},
-	{
-		"etiqueta": "Tardanza reparacion saturacion servicio v3",
-		"cola": "Reparaciones",
-		"nombre": "gnptardanzareparacionsaturacionserviciov3",
-		"template": "Cliente: Buen día, mi nombre es {{nombre_agente}}, le escribo para informarle que ha finalizado la revisión de los daños en su vehículo {{marca_modelo}}. Debido al volumen de servicio con el que cuenta el centro de reparación, la fecha estimada de entrega de su vehículo ha cambiado, estimamos que estará listo el dia de mes. En caso de requerir mayor información, puede contactarme por este medio.",
-		"variables": [
-			{
-				"name": "nombre_agente",
-				"valor": ""
-			},
-			{
-				"name": "marca_modelo",
-				"valor": ""
-			}
-		]
-	},
-	{
-		"etiqueta": "Termino reparacion con pago deducible v3",
-		"cola": "Reparaciones",
-		"nombre": "gnpterminoreparacionconpagodeduciblev3",
-		"template": "Apreciable Cliente: Buen día, mi nombre es {{nombre_agente}}, de GNP, me comunico para brindarle la información de utilidad que deberá tomar en cuenta al momento de acudir al centro de reparación. La entrega ha sido programada para el día {{dia}}, a las {{horario}}, recuerde que para recoger su vehículo, es necesario: 🔹Realizar el pago del deducible correspondiente. 🔹Presentar el comprobante de pago impreso o enviarlo al correo electrónico {{correo_electronico}}, Si requiere modificar la fecha acordada, por favor indíquenos la nueva fecha y hora para informar el cambio al centro de reparación. Le comparto la guía con las opciones disponibles para realizar su pago de deducible.",
-		"variables": [
-			{
-				"name": "nombre_agente",
-				"valor": ""
-			},
-			{
-				"name": "dia",
-				"valor": ""
-			},
-			{
-				"name": "horario",
-				"valor": ""
-			},
-			{
-				"name": "correo_electronico",
-				"valor": ""
-			}
-		]
-	},
-	{
-		"etiqueta": "Termino reparacion sin pago deducible v3",
-		"cola": "Reparaciones",
-		"nombre": "gnpterminoreparacionsinpagodeduciblev3",
-		"template": "Apreciable Cliente: Buen día, mi nombre es {{nombre_agente}}, de GNP, me comunico para brindarle la información de utilidad que deberá tomar en cuenta al momento de acudir al centro de reparación. La entrega de su vehículo ha sido programada para el {{dia}}, a las {{horario}}. Si requiere modificar la fecha acordada, por favor indíquenos la nueva fecha y hora para informar el cambio al centro de reparación. En caso de tener alguna duda, puede hacérmela saber a través de este medio.",
-		"variables": [
-			{
-				"name": "nombre_agente",
-				"valor": ""
-			},
-			{
-				"name": "dia",
-				"valor": ""
-			},
-			{
-				"name": "horario",
-				"valor": ""
-			}
-		]
-	},
-	{
-		"etiqueta": "Recordatorio entrega vehiculo pago deducible v3",
-		"cola": "Reparaciones",
-		"nombre": "gnprecordatorioentregavehiculopagodeduciblev3",
-		"template": "Apreciable Cliente Buen día, mi nombre es {{nombre_agente}}, de GNP, le escribo para confirmar su cita en el centro de reparación. Recuerde que mañana es el día para recoger su vehículo, por ello le compartimos algunas recomendaciones: 🔹Traer consigo una Identificación oficial 🔹Llevar su comprobante de pago de deducible digital o impreso 🔹Verificar que la reparación se haya realizado de acuerdo a lo estipulado. Al momento de recibir su vehículo, el centro de reparación le entregará una carta de garantía que ampara la reparación realizada a su vehículo.",
-		"variables": [
-			{
-				"name": "nombre_agente",
-				"valor": ""
-			}
-		]
-	},
-	{
-		"etiqueta": "Recordatorio entraga vehiculo sin pago deducible v3",
-		"cola": "Reparaciones",
-		"nombre": "gnprecordatorioentregavehiculosinpagodeduciblev3",
-		"template": "Apreciable Cliente: Buen día, mi nombre es {{nombre_agente}}, de GNP, le escribo para confirmar su cita en el centro de reparación. Recuerde que mañana es el día para recoger su vehículo, por ello le compartimos algunas recomendaciones: 🔹Traer consigo una Identificación oficial 🔹Verificar que la reparación se haya realizado de acuerdo a lo estipulado. Al momento de recibir su vehículo, el centro de reparación le entregará una carta de garantía que ampara la reparación realizada a su vehículo.",
-		"variables": [
-			{
-				"name": "nombre_agente",
-				"valor": ""
-			}
-		]
-	},
-	{
 		"etiqueta": "Intermitencia sistema GNP",
 		"cola": "Soy Cliente",
 		"nombre": "intermitenciasistemagnp",
@@ -701,6 +517,135 @@
 				"name": "anio",
 				"valor": ""
 			}
+		]
+	},
+	{
+		"etiqueta": "Generica - Seguimiento al tramite V3",
+		"cola": "Reparaciones",
+		"nombre": "genrica_seguimiento_al_trmite_v3",
+		"template": "Apreciable Cliente Mi nombre es {{nombre_agente}}, le escribo de GNP Seguros para darle seguimiento a la reparación de su vehículo {{marca_modelo}}. Le informo que {{detalle_seguimiento}} ¿Tiene alguna duda respecto a la información que le acabo de proporcionar? ",
+		"variables": [
+			{
+				"name": "nombre_agente",
+				"valor": ""
+			},
+			{
+				"name": "marca_modelo",
+				"valor": ""
+			},
+			{
+				"name": "detalle_seguimiento",
+				"valor": ""
+			}
+		]
+	},
+	{
+		"etiqueta": "Tardanza en la valuacion",
+		"cola": "Reparaciones",
+		"nombre": "tardanza_en_la_valuacin",
+		"template": "Apreciable Cliente, Esperando se encuentre bien, en atención a la reparación de su vehículo {{marca_modelo}}, le informamos que el taller encargado continúa con el proceso de revisión y valoración de las condiciones de su unidad. Una vez que este proceso haya finalizado, me pondré en contacto con usted para indicarle los resultados de la revisión. ¿Tiene alguna duda respecto a la información que le acabo de proporcionar? ",
+		"variables": [
+			{
+				"name": "marca_modelo",
+				"valor": ""
+			}
+		]
+	},
+	{
+		"etiqueta": "Valuacion autorizada",
+		"cola": "Reparaciones",
+		"nombre": "valuacin_autorizada",
+		"template": "Apreciable Cliente, Le escribo para informarle que ha finalizado la revisión de los daños en su vehículo {{marca_modelo}}. Le mantendré informando del inicio de la reparación de su vehículo. En caso de requerir mayor información, puede contactarme por este medio.",
+		"variables": [
+			
+			{
+				"name": "marca_modelo",
+				"valor": ""
+			}
+		]
+	},
+	{
+		"etiqueta": "Inicio de la reparacion",
+		"cola": "Reparaciones",
+		"nombre": "inicio_de_la_reparacin",
+		"template": "Apreciable Cliente, Mi nombre es {{nombre_agente}}, le escribo para informarle que el taller ha iniciado con la reparación de los daños en su {{modelo_marca}} Le mantendré informando de cualquier avance en el proceso de reparación de su vehículo. ¿Tiene alguna duda respecto a la información que le acabo de proporcionar? ",
+		"variables": [
+			
+			{
+				"name": "nombre_agente",
+				"valor": ""
+			},
+			{
+				"name": "modelo_marca",
+				"valor": ""
+			}
+		]
+	},
+	{
+		"etiqueta": "Tardanza en la reparacion por falta de piezas 2.0",
+		"cola": "Reparaciones",
+		"nombre": "tardanza_en_la_reparacin_por_falta_de_piezas_20",
+		"template": " Apreciable Cliente Buen día, mi nombre es {{nombre_agente}}, le escribo para informarle que ha finalizado la revisión de los daños en su vehículo {{marca_modelo}}. Actualmente, estamos en proceso de búsqueda de algunas piezas necesarias para continuar con la reparación, las cuales están tomando más tiempo de lo planeado para localizarlas, por lo cual la duración de la reparación de su vehículo podría tardar más de lo habitual. En caso de requerir mayor información, puede contactarme por este medio.",
+		"variables": [
+			
+			{
+				"name": "nombre_agente",
+				"valor": ""
+			}
+		]
+	},
+	{
+		"name": "Tardanza en la reparacion por daños adicionales 2.0",
+		"cola": "Reparaciones",
+		"nombre": "tardanza_en_la_reparacin_por_daos_adicionales_20",
+		"template": " Apreciable Cliente Buen día, mi nombre es {{nombre_agente}}, le escribo para informarle que ha finalizado la revisión de los daños en su vehículo {{marca_modelo}}. Actualmente, estamos en proceso de búsqueda de algunas piezas necesarias para continuar con la reparación, las cuales están tomando más tiempo de lo planeado para localizarlas, por lo cual la duración de la reparación de su vehículo podría tardar más de lo habitual. En caso de requerir mayor información, puede contactarme por este medio.",
+		"variables": [
+			
+			{
+				"name": "nombre_agente",
+				"valor": ""
+			},
+			{
+				"name": "marca_modelo",
+				"valor": ""
+			}
+		]
+	},
+	{
+		"name": "Termino de la reparacion SIN pago de deducible 2.0",
+		"cola": "Reparaciones",
+		"nombre": "termino_de_la_reparacin_sin_pago_de_deducible_20",
+		"template": "Apreciable Cliente, Le informo que la reparación de su {{modelo_marca}} ha concluido. Para la entrega de su vehículo será necesario agendar una cita con el taller para programar la entrega, llamando al {{numero_taller}} ¿Tiene alguna duda respecto a la información que le acabo de proporcionar? ",
+		"variables": [
+			
+			{
+				"name": "modelo_marca",
+				"valor": ""
+			},
+			{
+				"name": "numero_taller",
+				"valor": ""
+			}
+		]
+	},
+	{
+		"name": "Recordatorio de la entrega del vehiculo CON pago de deducible 2.0",
+		"cola": "Reparaciones",
+		"nombre": "recordatorio_de_la_entrega_del_vehculo_con_pago_de_deducible_20",
+		"template": "Apreciable Cliente, Recuerde que mañana es el día para recoger su vehículo, por ello le compartimos algunas recomendaciones: 🔹Traer consigo una Identificación oficial 🔹Llevar su comprobante de pago de deducible digital o impreso 🔹Verificar que la reparación se haya realizado de acuerdo a lo estipulado. Al momento de recibir su vehículo, el centro de reparación le entregará una carta de garantía que ampara la reparación realizada a su vehículo. ¿Tiene alguna duda respecto a la información que le acabo de proporcionar?",
+		"variables": [
+			
+			
+		]
+	},
+	{
+		"name": "Recordatorio de la entrega del vehiculo SIN pago de deducible 2.0",
+		"cola": "Reparaciones",
+		"nombre": "recordatorio_de_la_entrega_del_vehculo_sin_pago_de_deducible_20",
+		"template": "Apreciable Cliente, Recuerde que mañana es el día para recoger su vehículo, por ello le compartimos algunas recomendaciones: 🔹Traer consigo una Identificación oficial 🔹Verificar que la reparación se haya realizado de acuerdo a lo estipulado. Al momento de recibir su vehículo, el centro de reparación le entregará una carta de garantía que ampara la reparación realizada a su vehículo. ¿Tiene alguna duda respecto a la información que le acabo de proporcionar?",
+		"variables": [
+			
+			
 		]
 	}
 ]
