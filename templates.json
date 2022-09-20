@@ -595,7 +595,7 @@
 		]
 	},
 	{
-		"name": "Tardanza en la reparacion por daños adicionales 2.0",
+		"etiqueta": "Tardanza en la reparacion por daños adicionales 2.0",
 		"cola": "Reparaciones",
 		"nombre": "tardanza_en_la_reparacin_por_daos_adicionales_20",
 		"template": " Apreciable Cliente Buen día, mi nombre es {{nombre_agente}}, le escribo para informarle que ha finalizado la revisión de los daños en su vehículo {{marca_modelo}}. Actualmente, estamos en proceso de búsqueda de algunas piezas necesarias para continuar con la reparación, las cuales están tomando más tiempo de lo planeado para localizarlas, por lo cual la duración de la reparación de su vehículo podría tardar más de lo habitual. En caso de requerir mayor información, puede contactarme por este medio.",
@@ -612,7 +612,7 @@
 		]
 	},
 	{
-		"name": "Termino de la reparacion SIN pago de deducible 2.0",
+		"etiqueta": "Termino de la reparacion SIN pago de deducible 2.0",
 		"cola": "Reparaciones",
 		"nombre": "termino_de_la_reparacin_sin_pago_de_deducible_20",
 		"template": "Apreciable Cliente, Le informo que la reparación de su {{modelo_marca}} ha concluido. Para la entrega de su vehículo será necesario agendar una cita con el taller para programar la entrega, llamando al {{numero_taller}} ¿Tiene alguna duda respecto a la información que le acabo de proporcionar? ",
@@ -629,7 +629,7 @@
 		]
 	},
 	{
-		"name": "Recordatorio de la entrega del vehiculo CON pago de deducible 2.0",
+		"etiqueta": "Recordatorio de la entrega del vehiculo CON pago de deducible 2.0",
 		"cola": "Reparaciones",
 		"nombre": "recordatorio_de_la_entrega_del_vehculo_con_pago_de_deducible_20",
 		"template": "Apreciable Cliente, Recuerde que mañana es el día para recoger su vehículo, por ello le compartimos algunas recomendaciones: 🔹Traer consigo una Identificación oficial 🔹Llevar su comprobante de pago de deducible digital o impreso 🔹Verificar que la reparación se haya realizado de acuerdo a lo estipulado. Al momento de recibir su vehículo, el centro de reparación le entregará una carta de garantía que ampara la reparación realizada a su vehículo. ¿Tiene alguna duda respecto a la información que le acabo de proporcionar?",
@@ -639,13 +639,30 @@
 		]
 	},
 	{
-		"name": "Recordatorio de la entrega del vehiculo SIN pago de deducible 2.0",
+		"etiqueta": "Recordatorio de la entrega del vehiculo SIN pago de deducible 2.0",
 		"cola": "Reparaciones",
 		"nombre": "recordatorio_de_la_entrega_del_vehculo_sin_pago_de_deducible_20",
 		"template": "Apreciable Cliente, Recuerde que mañana es el día para recoger su vehículo, por ello le compartimos algunas recomendaciones: 🔹Traer consigo una Identificación oficial 🔹Verificar que la reparación se haya realizado de acuerdo a lo estipulado. Al momento de recibir su vehículo, el centro de reparación le entregará una carta de garantía que ampara la reparación realizada a su vehículo. ¿Tiene alguna duda respecto a la información que le acabo de proporcionar?",
 		"variables": [
 			
 			
+		]
+	},
+	,
+	{
+		"etiqueta": "Termino de la reparacion con pago deducible 3.0",
+		"cola": "Reparaciones",
+		"nombre": "termino_de_la_reparacin_con_pago_de_deducible_30",
+		"template": "Apreciable Cliente, Le informo que la reparación de su {{modelo_marca}} ha concluido. Para la entrega de su vehículo será necesario: 🔹Agendar una cita con el taller para programar la entrega, llamando al {{numero_taller}} 🔹Realizar el pago del deducible correspondiente. 🔹Presentar el comprobante de pago impreso. Usted podrá obtener la referencia para el pago del duducible oprimiendo el siguiente botón.",
+		"variables": [
+			{
+				"name": "modelo_marca",
+				"valor": ""
+			},
+			{
+				"name": "numero_taller",
+				"valor": ""
+			}
 		]
 	}
 ]
