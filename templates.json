@@ -591,6 +591,10 @@
 			{
 				"name": "nombre_agente",
 				"valor": ""
+			},
+			{
+				"name": "marca_modelo",
+				"valor": ""
 			}
 		]
 	},
