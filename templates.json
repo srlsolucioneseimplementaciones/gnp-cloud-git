@@ -653,17 +653,13 @@
 		]
 	},
 	{
-		"etiqueta": "Termino de la reparacion con pago deducible 3.0",
+		"etiqueta": "Termino de la reparación CON pago de deducible 3.1",
 		"cola": "Reparaciones",
-		"nombre": "termino_de_la_reparacin_con_pago_de_deducible_30",
-		"template": "Apreciable Cliente, Le informo que la reparación de su {{modelo_marca}} ha concluido. Para la entrega de su vehículo será necesario: 🔹Agendar una cita con el taller para programar la entrega, llamando al {{numero_taller}} 🔹Realizar el pago del deducible correspondiente. 🔹Presentar el comprobante de pago impreso. Usted podrá obtener la referencia para el pago del duducible oprimiendo el siguiente botón.",
+		"nombre": "termino_de_la_reparacin_con_pago_de_deducible_31",
+		"template": "Apreciable Cliente, Le informo que la reparación de su {{modelo_marca}} ha concluido. Para la entrega de su vehículo será necesario: 🔹Agendar una cita con el taller para programar la entrega. 🔹Realizar el pago del deducible correspondiente. 🔹Presentar el comprobante de pago impreso. Usted podrá obtener la referencia para el pago del deducible oprimiendo el siguiente botón.",
 		"variables": [
 			{
 				"name": "modelo_marca",
-				"valor": ""
-			},
-			{
-				"name": "numero_taller",
 				"valor": ""
 			}
 		]
