@@ -663,5 +663,12 @@
 				"valor": ""
 			}
 		]
+	},
+	{
+		"etiqueta": "Regístrate SoyCliente",
+		"cola": "Soy Cliente",
+		"nombre": "regstrate_soycliente",
+		"template": "Para registrarte en tu App Soy Cliente GNP 📱 solo sigue estos pasos, recuerda tener a la mano tu Póliza de Seguro GNP. 📄 Descarga la App aquí: http://onelink.to/bucp25 Consulta el tutorial aquí: https://bit.ly/TutorialRegistroApp", 
+		"variables": []
 	}
 ]
