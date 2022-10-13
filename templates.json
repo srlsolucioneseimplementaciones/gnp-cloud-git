@@ -670,5 +670,17 @@
 		"nombre": "regstrate_soycliente",
 		"template": "Para registrarte en tu App Soy Cliente GNP 📱 solo sigue estos pasos, recuerda tener a la mano tu Póliza de Seguro GNP. 📄 Descarga la App aquí: http://onelink.to/bucp25 Consulta el tutorial aquí: https://bit.ly/TutorialRegistroApp", 
 		"variables": []
+	},
+	{
+		"etiqueta": "F1 Ganadores Ok",
+		"cola": "Experiencia del cliente",
+		"nombre": "f1_ganadores_ok",
+		"template": "¡Felicidades {{nombre_cliente}}! Ganaste un pase doble 🎫 para asistir del 28 al 30 de octubre al FORMULA 1 GRAN PREMIO DE LA CIUDAD DE MÉXICO 2022 por participar en la dinámica “Asegura tu auto y participa ¡es rapidísimo!”. Confirma hoy tu asistencia aquí 👉https://bit.ly/3CvhcFY ¡Gracias por ser Cliente GNP! #Viviresincreíble", 
+		"variables": [
+			{
+				"name": "nombre_cliente",
+				"valor": ""
+			}
+		]
 	}
 ]
