@@ -650,6 +650,18 @@
 		"nombre": "recordatorio_de_la_entrega_del_vehculo_sin_pago_de_deducible_v4",
 		"template": "Apreciable Cliente,Recuerde que mañana es el día para recoger su vehículo, por ello le compartimos algunas recomendaciones:🔹Traer consigo una Identificación oficial🔹Verificar que la reparación se haya realizado de acuerdo a lo estipulado.Al momento de recibir su vehículo, el centro de reparación le entregará una carta de garantía que ampara la reparación realizada a su vehículo.¿Tiene alguna duda respecto a la información que le acabo de proporcionar?",
 		"variables": []
+	},
+	{
+		"etiqueta": "Dando seguimiento",
+		"cola": "Reparaciones",
+		"nombre": "gnpseguimiento",
+		"template": "Dando seguimiento a tu caso {{caso}}",
+		"variables": [
+			{
+				"name": "caso",
+				"valor": ""
+			}
+		]
 	}
 
 ]
