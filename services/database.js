@@ -596,6 +596,21 @@ var downloadMSJReport = (ids) => {
     });
 }
 
+var getMSJReport = (tel) => {
+    return new Promise((resolve, reject) => {
+        mssql.connect(config).then(pool => {
+            return pool.request()
+                .input('telefono', tel)
+                .execute('SP_OBTENER_HSM_V2')
+        })
+            .then(result => {
+                resolve(result);
+            })
+            .catch(err => {
+                reject(err);
+            })
+    });
+}
 
 module.exports = {
   searchMessage: searchMessage,
@@ -628,5 +643,6 @@ module.exports = {
   getConteoMSJFiltro: getConteoMSJFiltro,
   getMSJ: getMSJ,
   getMSJFiltro: getMSJFiltro,
-  downloadMSJReport: downloadMSJReport
+  downloadMSJReport: downloadMSJReport,
+  getMSJReport:getMSJReport
 }
