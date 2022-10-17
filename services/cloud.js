@@ -22,6 +22,7 @@ var ultimoMensajeEnviadoAYalo = "";
 var token;
 var wrapups = [];
 var users = [];
+var usersReporteo = [];
 var queueInfo = [];
 
 var Notifications = () => {
@@ -32,9 +33,8 @@ var Notifications = () => {
             data.entities.forEach((val, indx) => {
                 queues.push(val.id);
 				
-				queueInfo.push({id: val.id, name: val.name});
+		queueInfo.push({id: val.id, name: val.name});
                 topics.push("v2.routing.queues." + val.id + ".conversations.chats");
-				///topics.push("v2.routing.queues." + val.id + ".conversations.emails");
             });
 			
             reOpenSockets();
@@ -190,6 +190,26 @@ var getUsers = () => {
     })
 }
 
+var getUsersReporteo = () => {
+    return new Promise((resolve, reject) => {
+        let opts = {
+            "pageSize": 100,
+            "pageNumber": 1,
+            "state": "active"
+        };
+
+        usersApi.getUsers(opts)
+            .then((response) => {
+                response.entities.forEach((entity) => {
+                    usersReporteo.push({"id": entity.id, "name": entity.name});
+                })
+            })
+            .catch((error) => {
+                console.log(error);
+            })
+    })
+}
+
 var getQueueName = (queue) => {
     return new Promise((resolve, reject) => {
         routingApi.getRoutingQueue(queue)
@@ -218,6 +238,7 @@ var newCloudSession = () => {
 				token = response.accessToken;
 				getWrapups().then((resp) => {
 					getUsers().then((resp) => {}).catch((err) => {});
+					getUsersReporteo().then((response) => {console.log(response);}).catch((error) => {console.log(error);});
 				}).catch((err) => {});
 				console.log('Sesion creada');
                 resolve();
@@ -1388,6 +1409,171 @@ var getEmailsAll = (req, res) => {
     })
 }
 
+var getHistorialWebchat = (req, res) => {
+    var conversations = [];
+    var datosSql = [];
+
+    var resp = Promise.resolve(getChatConversations(req.params.remote));
+    resp.then((response) => {
+        conversations = response;
+        let datos = [];
+        var telefono = req.params.remote.replace("+52", "521");
+
+        dbServices.getMSJReport(telefono)
+        .then((sqlResponse) => {
+            datosSql = sqlResponse.recordset;
+            response.conversations.forEach((conversation) => {
+                getChatMessages(conversation.conversationId).then((r) => {
+                    r.forEach((dato) => {
+                        datos.push(dato);
+                    })
+                }).catch((err) => {
+                    console.log(err);
+                })
+            })
+        })
+        .catch((error) => {
+            console.log(error);
+        })
+   
+        setTimeout(() => {
+            var participants = [];
+
+            conversations.conversations.forEach((conv) => {
+                conv.participants.forEach((participant) => {
+                    if(participant.purpose == "customer") {
+                        part = {
+                            "participantId": participant.participantId,
+                            "participantName": participant.participantName,
+                            "sessionId": participant.sessions[0].sessionId,
+                            "purpose": participant.purpose
+                        }
+                    } else if(participant.purpose == "agent") {
+                        part = {
+                            "participantName": users[users.findIndex((user) => user.id == participant.userId)].name,
+                            "participantId": participant.userId,
+                            "sessionId": participant.sessions[0].sessionId,
+                            "purpose": participant.purpose
+                        }
+                    }
+
+                    participants.push(part);
+                })
+            });
+            
+            datos.forEach((dato) => {
+                var d = participants.find((p) => p.sessionId == dato.sender);
+                if(d) {
+                    if(d.purpose == "customer") {
+                        dato.name = d.participantName;
+                        dato.class = "customer";
+                    } else {
+                        dato.name = d.participantName + " (GNP)";
+                        dato.class = "agente";
+                    } 
+                }
+            })
+
+            datosSql.forEach((dd) => {
+                datos.push({
+                    name: users[users.findIndex((user) => user.id == dd.usuario)].name + " (GNP)",
+                    class: "agente",
+                    body: dd.body,
+                    timestamp: dd.timestamp
+                })
+            })
+            
+            datos.sort((a, b) => {
+                return moment(b.timestamp) - moment(a.timestamp);
+            })
+
+            var historial = "";
+
+            datos.forEach((val, index) => {
+                val.timestamp = moment(val.timestamp).format("DD/MM/YYYY HH:mm:ss");
+
+                if(req.params.type == "markdown") {
+                    historial += "**" + val.name + "**: " + val.body + "  \n*" + val.timestamp + "*\n \n";
+                } else if(req.params.type == "text") {
+                    historial += val.name + ": " + val.body + " \r\n" + val.timestamp + "\r\n";
+                } else {
+                    historial += "<div class='message "+ val.class +"'><div class='first-row'><div class='name'>" + val.name + ": </div><div class='text'>" + val.body + "</div></div><div class='date'>" + val.timestamp + "</div></div>";
+                }
+            })
+
+            res.status(200).json({"conversacion": historial});
+        }, 1000)
+    })
+    .catch((error) => {
+        console.log(error);
+        res.status(500).json({"conversacion": ""});
+    })
+}
+
+var getChatConversations = async (remote) => {
+    return new Promise((resolve, reject) => {
+        var endDate = moment().format("YYYY-MM-DDTHH:mm:ss.SSS");
+        var startDate = moment(endDate).subtract(30, 'days').format("YYYY-MM-DDTHH:mm:ss.SSS");
+
+        var query = {
+            "interval": startDate + "Z/" + endDate + "Z",
+            "order": "asc",
+            "orderBy": "conversationStart",
+            "paging": {
+                "pageSize": 100,
+                "pageNumber": 1
+            },
+            "segmentFilters": [{
+                "type": "or",
+                "clauses": [{
+                    "type": "or",
+                    "predicates": [{
+                        "type": "dimension",
+                        "dimension": "remote",
+                        "operator": "matches",
+                        "value": remote
+                    }]
+                }]
+            }]
+        };
+
+        conversationsApi.postAnalyticsConversationsDetailsQuery(query)
+            .then((response) => {
+                resolve(response);
+            })
+            .catch((error) => {
+                console.log(error);
+                reject(error);
+            })
+    })
+}
+
+var getChatMessages = async (conversationId) => {
+    return new Promise((resolve, reject) => {
+        conversationsApi.getConversationsChatMessages(conversationId)
+        .then((response) => {
+            var entities = [];
+            response.entities.forEach((entity) => {
+                if(entity.bodyType == "standard") {
+                    var conv = {
+                        conversationId: conversationId,
+                        messageId: entity.id,
+                        body: entity.body,
+                        timestamp: entity.timestamp,
+                        sender: entity.sender.id
+                    }
+                    entities.push(conv);
+                }
+            })
+
+            resolve(entities);
+        })
+        .catch((error) => {
+            reject(error);
+        })
+    })
+}
+
 newCloudSession();
 
 module.exports =  {
@@ -1407,5 +1593,6 @@ module.exports =  {
 	getConversations:getConversations,
 	getConteoEmails: getConteoEmails,
     getConteoEmailsFiltro: getConteoEmailsFiltro,
-    getEmailsAll: getEmailsAll
+    getEmailsAll: getEmailsAll,
+    getHistorialWebchat: getHistorialWebchat
 }
