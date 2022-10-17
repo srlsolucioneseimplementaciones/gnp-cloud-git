@@ -17,6 +17,7 @@ const database = require('./services/database');
 const reporte = path.join(__dirname + '/public/reporteCorreos.html');
 const whatsappHsm = path.join(__dirname + '/public/reporteWhatsappHSM.html');
 const whatsappMsj = path.join(__dirname + '/public/reporteWhatsappMSJ.html');
+const historialMensajes = path.join(__dirname + '/public/historialMensajes.html');
 
 const app = express();
 const PORT = 8443;
@@ -24,11 +25,6 @@ const PORT = 8443;
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 app.use(cors());
-
-								 
-												
-											
-		
 
 app.listen(PORT, () => {
     console.log('Escuchando en el puerto ' + PORT);
@@ -52,10 +48,9 @@ app.get('/whatsapp/msj', (req, res) => {
     res.status(200).sendFile(whatsappMsj);
 })
 
-
-
-
-
+app.get('/whatsapp/historial', (req, res) => {
+    res.status(200).sendFile(historialMensajes);
+})
 
 app.post('/api/messages/outbound', outbound.sendMessage);
 app.post('/api/messages/inbound', cloud.inboundMessage);
@@ -127,6 +122,7 @@ app.get('/api/cloud/get/whatsapp/msj/conteo/filtro', database.getConteoMSJFiltro
 app.get('/api/cloud/get/whatsapp/msj/filtro', database.getMSJFiltro);
 app.post('/api/cloud/get/whatsapp/msj', database.getMSJ);
 app.get('/api/cloud/get/whatsapp/queueid', database.getQueueId);
+app.get("/api/genesys/historial/:remote/:type", cloud.getHistorialWebchat);
 
 app.post('/api/cloud/get/whatsapp/hsm/download', (req, res) => {
     var ids = '';
