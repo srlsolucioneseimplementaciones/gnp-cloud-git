@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Historial conversacion</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap');
+
+        html, body {
+            margin: 0;
+            padding: 0;
+            width: auto;
+            height: auto;
+            background-color: #f5f5f5;
+        }
+
+        * {
+            font-family: 'Roboto', sans-serif;
+            font-size: 12px;
+        }
+
+        .conversacionContainer {
+            padding: 1rem;
+        }
+
+        #conversacion {
+            display: grid;
+            grid-template-rows: auto;
+            grid-row-gap: 1rem;
+            padding: 0 .5rem;
+            margin-bottom: 5rem;
+        }
+
+        .message {
+            display: grid;
+            grid-template-rows: auto 1fr;
+            grid-row-gap: .5rem;
+            padding: 1rem;
+            border-radius: 5px;
+            border: 1px solid #e1e1e1;
+        }
+
+        .first-row {
+            display: grid;
+            grid-template-rows: auto auto;
+            grid-row-gap: .5rem;
+        }
+
+        .agente {
+            background-color: #faebd7;
+        }
+
+        .customer {
+            background-color: #f0f8ff;
+        }
+
+        .date {
+            text-align: right;
+            font-size: 10px;
+            color: black;
+            margin-top: 1rem;
+            font-style: italic;
+        }
+
+        .name {
+            font-weight: 500;
+            border-bottom: 1px solid #e1e1e1;
+            padding-bottom: .5rem;
+            font-size: 12px;
+        }
+
+        .text {
+            padding-top: .5rem;
+        }
+
+        .form-container {
+            display: grid;
+            grid-template-columns: auto auto;
+            grid-column-gap: .5rem;
+            padding: 1rem;
+            justify-content: start;
+        }
+
+        .form-input {
+            display: grid;
+            grid-template-columns: auto auto;
+            grid-column-gap: .5rem;
+        }
+
+        label {
+            padding: 5px;
+            font-weight: 500;
+        }
+
+        input[type=text] {
+            width: 20rem;
+            border: 1px solid #E6E6EA;
+            border-radius: 5px;
+            padding: 5px;
+        }
+
+        button {
+            width: 10rem;
+            background-color: #2a60c8;
+            border: 1px solid #2a60c8;
+            color: white;
+            border-radius: 5px;
+            font-weight: 500;
+            cursor: pointer;
+            padding: 5px;
+        }
+
+        .topLink {
+            position: fixed;
+            bottom: 0;
+            right: 0;
+            margin-bottom: 10px;
+            margin-right: 10px;
+            background-color: #33383d;
+            padding: 1rem;
+            border-radius: 50%;
+            color: white;
+            width: 20px;
+            height: 20px;
+            text-decoration: none;
+            line-height: 20px;
+            text-align: center;
+            font-size: 2rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="form-container">
+        <div class="form-input">
+            <label>Remoto:</label>
+            <input type="text" id="numeroTelefonico"/>
+        </div>
+        <div class="form-button">
+            <button type="button" onclick="obtenerConversacion()">Buscar</button>
+        </div>
+    </div>
+    <div class="conversacionContainer">
+        <div id="conversacion"></div>
+    </div>
+    <a href="#top" class="topLink">&uArr;</a>
+    <script>
+        function obtenerConversacion () {
+            document.getElementById("conversacion").innerHTML = "";
+            var telefono = document.getElementById("numeroTelefonico").value;
+            fetch('https://ma2tskinym.us-east-1.awsapprunner.com/api/genesys/historial/' + telefono + '/html')
+            .then(response => response.json())
+            .then(data => {
+                document.getElementById("conversacion").innerHTML += data.conversacion;
+            });
+       }
+    </script>
+</body>
+</html>
