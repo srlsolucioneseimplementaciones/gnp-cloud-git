@@ -1438,8 +1438,8 @@ var getHistorialWebchat = (req, res) => {
    
         setTimeout(() => {
             var participants = [];
-
-            conversations.conversations.forEach((conv) => {
+	if(conversations.length > 0) {
+		conversations.conversations.forEach((conv) => {
                 conv.participants.forEach((participant) => {
                     if(participant.purpose == "customer") {
                         part = {
@@ -1502,11 +1502,15 @@ var getHistorialWebchat = (req, res) => {
             })
 
             res.status(200).json({"conversacion": historial});
+	} else {
+		res.status(200).json({"conversacion": []});
+	}
+            
         }, 1000)
     })
     .catch((error) => {
         console.log(error);
-        res.status(500).json({"conversacion": ""});
+        res.status(500).json({"conversacion": []});
     })
 }
 
