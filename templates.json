@@ -602,7 +602,7 @@
 		"etiqueta": "Inicio de la reparación (100% refacciones)",
 		"cola": "Reparaciones",
 		"nombre": "inicio_de_la_reparacin_100_refaccionesv2",
-		"template": "Apreciable Cliente, Buen día, mi nombre es {{nombre_agente}} de GNP Seguros, le escribo para darle seguimiento a la reparación de su vehículo {{marca_modelo}}.Le informo que derivado de la recepción del total de refacciones, el tallerha iniciado con la reparación de los daños en su vehículo. Estimamos queeste proceso tomará un tiempo aproximado de {{dias_habiles}} días hábiles.Le mantendré informado de cualquier avance en el proceso de reparación.¿Tiene alguna duda respecto a la información que le acabo de proporcionar?",
+		"template": "Apreciable Cliente, Buen día, mi nombre es {{nombre_agente}} de GNP Seguros, le escribo para darle seguimiento a la reparación de su vehículo {{marca_modelo}}.Le informo que derivado de la recepción del total de refacciones, el taller ha iniciado con la reparación de los daños en su vehículo. Estimamos que este proceso tomará un tiempo aproximado de {{dias_habiles}} días hábiles. Le mantendré informado de cualquier avance en el proceso de reparación. ¿Tiene alguna duda respecto a la información que le acabo de proporcionar?",
 		"variables": [{
 				"name": "nombre_agente",
 				"valor": ""
