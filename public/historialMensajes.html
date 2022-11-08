@@ -152,7 +152,11 @@
             fetch('https://ma2tskinym.us-east-1.awsapprunner.com/api/genesys/historial/' + telefono + '/html')
             .then(response => response.json())
             .then(data => {
-                document.getElementById("conversacion").innerHTML += data.conversacion;
+                if(data.conversacion == "") {
+                    alert("No hay mensajes");
+                } else {
+                    document.getElementById("conversacion").innerHTML += data.conversacion;
+                }
             });
        }
     </script>
