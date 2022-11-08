@@ -1416,21 +1416,36 @@ var getHistorialWebchat = (req, res) => {
     var resp = Promise.resolve(getChatConversations(req.params.remote));
     resp.then((response) => {
         conversations = response;
+
         let datos = [];
         var telefono = req.params.remote.replace("+52", "521");
 
         dbServices.getMSJReport(telefono)
         .then((sqlResponse) => {
             datosSql = sqlResponse.recordset;
-            response.conversations.forEach((conversation) => {
-                getChatMessages(conversation.conversationId).then((r) => {
-                    r.forEach((dato) => {
-                        datos.push(dato);
-                    })
-                }).catch((err) => {
-                    console.log(err);
-                })
+
+            datosSql.forEach((dd) => {
+                let t = {
+                    name: users[users.findIndex((user) => user.id == dd.usuario)] != undefined ? users[users.findIndex((user) => user.id == dd.usuario)].name + " (GNP)": "-",
+                    class: "agente",
+                    body: dd.body,
+                    timestamp: dd.timestamp
+                }
+                
+                datos.push(t);
             })
+
+            if(response.conversations) {
+                response.conversations.forEach((conversation) => {
+                    getChatMessages(conversation.conversationId).then((r) => {
+                        r.forEach((dato) => {
+                            datos.push(dato);
+                        })
+                    }).catch((err) => {
+                        console.log(err);
+                    })
+                })
+            }
         })
         .catch((error) => {
             console.log(error);
@@ -1438,29 +1453,31 @@ var getHistorialWebchat = (req, res) => {
    
         setTimeout(() => {
             var participants = [];
-	if(conversations.length > 0) {
-		conversations.conversations.forEach((conv) => {
-                conv.participants.forEach((participant) => {
-                    if(participant.purpose == "customer") {
-                        part = {
-                            "participantId": participant.participantId,
-                            "participantName": participant.participantName,
-                            "sessionId": participant.sessions[0].sessionId,
-                            "purpose": participant.purpose
-                        }
-                    } else if(participant.purpose == "agent") {
-                        part = {
-                            "participantName": users[users.findIndex((user) => user.id == participant.userId)].name,
-                            "participantId": participant.userId,
-                            "sessionId": participant.sessions[0].sessionId,
-                            "purpose": participant.purpose
-                        }
-                    }
 
-                    participants.push(part);
-                })
-            });
-            
+            if(conversations && conversations.conversations) {
+                conversations.conversations.forEach((conv) => {
+                    conv.participants.forEach((participant) => {
+                        if(participant.purpose == "customer") {
+                            part = {
+                                "participantId": participant.participantId,
+                                "participantName": participant.participantName,
+                                "sessionId": participant.sessions[0].sessionId,
+                                "purpose": participant.purpose
+                            }
+                        } else if(participant.purpose == "agent") {
+                            part = {
+                                "participantName": users[users.findIndex((user) => user.id == participant.userId)].name,
+                                "participantId": participant.userId,
+                                "sessionId": participant.sessions[0].sessionId,
+                                "purpose": participant.purpose
+                            }
+                        }
+    
+                        participants.push(part);
+                    })
+                });
+            }
+
             datos.forEach((dato) => {
                 var d = participants.find((p) => p.sessionId == dato.sender);
                 if(d) {
@@ -1474,21 +1491,12 @@ var getHistorialWebchat = (req, res) => {
                 }
             })
 
-            datosSql.forEach((dd) => {
-                datos.push({
-                    name: users[users.findIndex((user) => user.id == dd.usuario)].name + " (GNP)",
-                    class: "agente",
-                    body: dd.body,
-                    timestamp: dd.timestamp
-                })
-            })
-            
             datos.sort((a, b) => {
                 return moment(b.timestamp) - moment(a.timestamp);
             })
 
             var historial = "";
-
+            
             datos.forEach((val, index) => {
                 val.timestamp = moment(val.timestamp).format("DD/MM/YYYY HH:mm:ss");
 
@@ -1500,17 +1508,13 @@ var getHistorialWebchat = (req, res) => {
                     historial += "<div class='message "+ val.class +"'><div class='first-row'><div class='name'>" + val.name + ": </div><div class='text'>" + val.body + "</div></div><div class='date'>" + val.timestamp + "</div></div>";
                 }
             })
-
-            res.status(200).json({"conversacion": historial});
-	} else {
-		res.status(200).json({"conversacion": []});
-	}
             
-        }, 1000)
+            res.status(200).json({"conversacion": historial});
+        }, 2000)
     })
     .catch((error) => {
         console.log(error);
-        res.status(500).json({"conversacion": []});
+        res.status(500).json({"conversacion": ""});
     })
 }
 
