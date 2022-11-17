@@ -654,7 +654,7 @@
     "variables": []
 },
 {
-    "etiqueta": "Inicio de la reparación (Refacciones pendientes)",
+    "etiqueta": "Vehiculo en transito",
     "cola": "Reparaciones",
     "nombre": "vehiculo_en_transito",
     "template": "Apreciable Cliente: Buen día, mi nombre es {{nombre_agente}}. Me comunico de GNP Seguros para informarle que el taller {{nombre_taller}} ya cuenta con las piezas necesarias para efectuar la reparación de su vehículo. Por favor contacte al taller llamando al {{numero_taller}} y coordine la fecha en la que puede ingresar su vehículo para iniciar el proceso de reparación de los daños. En caso de que tenga alguna duda referente a lo que le acabo de mencionar, no dude en contactarme por este medio, estoy a sus órdenes.",
