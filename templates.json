@@ -671,5 +671,82 @@
          "name": "numero_taller",
         "valor": ""
         }]
+},
+{
+    "etiqueta": "Recordatorio evento v3",
+    "cola": "Experiencia del cliente",
+    "nombre": "recordatorio_evento_v3",
+    "template": "Hola {{nombre_cliente}} Te saluda {{nombre_agente}} de GNP Seguros. Recuerda que mañana tenemos una cita, disfruta la increíble experiencia {{evento}}. 👉No olvides {{detalles}} ¡Gracias por ser Cliente GNP! #Viviresincreíble",
+    "variables": [
+        {
+            "name": "nombre_cliente",
+            "valor": ""
+        },
+        {
+        "name": "nombre_agente",
+        "valor": ""
+        },
+        {  
+        "name": "evento",
+        "valor": ""
+        },
+        { 
+         "name": "detalles",
+        "valor": ""
+        }]
+},
+{
+    "etiqueta": "Envío de boletos + actividad v2",
+    "cola": "Experiencia del cliente",
+    "nombre": "envo_de_boletos_actividad_v2",
+    "template": "Hola {{nombre_cliente}} Soy {{nombre_agente}} de GNP Seguros, te escribo para contarte que tus boletos 🎫 de {{evento}} ya se encuentrán {{estatus}}. {{comentaro}}",
+    "variables": [
+        {
+            "name": "nombre_cliente",
+            "valor": ""
+        },
+        {
+        "name": "nombre_agente",
+        "valor": ""
+        },
+        {  
+        "name": "evento",
+        "valor": ""
+        },
+        {  
+        "name": "estatus",
+        "valor": ""
+        },
+        { 
+         "name": "comentaro",
+        "valor": ""
+        }]
+},
+{
+    "etiqueta": "Invitación en correo v3",
+    "cola": "Experiencia del cliente",
+    "nombre": "invitacin_en_correo_v3",
+    "template": "Hola {{nombre_cliente}} Te saluda {{nombre_agente}} de GNP Seguros, para contarte que en tu correo hay una invitación para celebrar🎉 tus {{aios}} años de decir Soy Cliente GNP. Nos encantaría que nos acompañes tu y un acompañante el próximo {{dia}} en {{evento}}.",
+    "variables": [
+        {
+        "name": "nombre_cliente",
+        "valor": ""
+        },
+        {  
+        "name": "nombre_agente",
+        "valor": ""
+        },
+        {  
+        "name": "aios",
+        "valor": ""
+        },
+        {  
+        "name": "dia",
+        "valor": ""
+        },
+        { 
+         "name": "evento",
+        "valor": ""
+        }]
 }
 ]
