@@ -1,794 +1,819 @@
 [{
-		"etiqueta": "Seguimiento de caso",
-		"cola": "Notificaciones",
-		"nombre": "gnpsegcaso",
-		"template": "Buenos días. Mi nombre es {{nombre_agente}}, me comunico de GNP Seguros para dar seguimiento a su caso {{folio}} a través de este medio. Consulta nuestro aviso de privacidad https://www.gnp.com.mx/aviso-de-privacidad/integral",
-		"variables": [{
-				"name": "nombre_agente",
-				"valor": ""
-			},
-			{
-				"name": "folio",
-				"valor": ""
-			}
-		]
-	},
-	{
-		"etiqueta": "Encuesta Evento v2",
-		"cola": "Experiencia del cliente",
-		"nombre": "encuesta_evento_v2",
-		"template": "Buen día {{nombre_cliente}}, Te saluda {{nombre_agente}} de GNP Seguros, para saber ¿cómo la pasaron {{dia}}? Nos encantaría conocer tu experiencia en {{evento}}. Sólo te tomará 3 minutos contestar nuestra encuesta en el siguiente enlace:👉🏼 {{Liga}} Gracias por tu tiempo, tomaremos en cuenta todos tus comentarios.",
-		"variables": [{
-				"name": "nombre_cliente",
-				"valor": ""
-			},
-			{
-				"name": "nombre_agente",
-				"valor": ""
-			},
-			{
-				"name": "dia",
-				"valor": ""
-			},
-			{
-				"name": "evento",
-				"valor": ""
-			},
-			{
-				"name": "Liga",
-				"valor": ""
-			}
-		]
-	},
-	{
-		"etiqueta": "Envío de boletos",
-		"cola": "Soy Cliente",
-		"nombre": "envo_de_boletos",
-		"template": "Hola {{nombre_cliente}} Soy {{nombre_agente}} de GNP Seguros, te escribo para contarte que tus boletos 🎫 de {{evento}} ya se encuentrán {{estatus}} ",
-		"variables": [{
-				"name": "nombre_cliente",
-				"valor": ""
-			},
-			{
-				"name": "nombre_agente",
-				"valor": ""
-			},
-			{
-				"name": "evento",
-				"valor": ""
-			},
-			{
-				"name": "estatus",
-				"valor": ""
-			}
-		]
-	},
-	{
-		"etiqueta": "Envío de boletos",
-		"cola": "Experiencia del cliente",
-		"nombre": "envo_de_boletos",
-		"template": "Hola {{nombre_cliente}} Soy {{nombre_agente}} de GNP Seguros, te escribo para contarte que tus boletos 🎫 de {{evento}} ya se encuentrán {{estatus}} ",
-		"variables": [{
-				"name": "nombre_cliente",
-				"valor": ""
-			},
-			{
-				"name": "nombre_agente",
-				"valor": ""
-			},
-			{
-				"name": "evento",
-				"valor": ""
-			},
-			{
-				"name": "estatus",
-				"valor": ""
-			}
-		]
-	},
-	{
-		"etiqueta": "Seguimiento de caso",
-		"cola": "Centro de Atención Virtual",
-		"nombre": "gnpsegcaso",
-		"template": "Buenos días. Mi nombre es {{nombre_agente}}, me comunico de GNP Seguros para dar seguimiento a su caso {{folio}} a través de este medio. Consulta nuestro aviso de privacidad https://www.gnp.com.mx/aviso-de-privacidad/integral",
-		"variables": [{
-				"name": "nombre_agente",
-				"valor": ""
-			},
-			{
-				"name": "folio",
-				"valor": ""
-			}
-		]
-	},
-	{
-		"etiqueta": "Segumiento error soy cliente",
-		"cola": "Soy Cliente",
-		"nombre": "gnpsegerrorsoycliente",
-		"template": "Hola soy {{nombre_agente}} me comunico de GNP Seguros, para dar continuidad al error reportado en Soy Cliente GNP. Consulta nuestro aviso de privacidad en: https://www.gnp.com.mx/aviso-de-privacidad/integral",
-		"variables": [{
-			"name": "nombre_agente",
-			"valor": ""
-		}]
-	},
-	{
-		"etiqueta": "Seguimiento soy cliente",
-		"cola": "Soy Cliente",
-		"nombre": "gnpsegsoycliente",
-		"template": "Hola soy {{nombre_agente}} me comunico de GNP Seguros, para dar continuidad a su proceso en Soy Cliente GNP. Consulta nuestro aviso de privacidad en: https://www.gnp.com.mx/aviso-de-privacidad/integral",
-		"variables": [{
-			"name": "nombre_agente",
-			"valor": ""
-		}]
-	},
-	{
-		"etiqueta": "Seguimiento de caso gastos medicos mayores",
-		"nombre": "gnpsegsgmm",
-		"cola": "Notificaciones",
-		"template": "Hola soy {{nombre_agente}} me comunico de GNP Seguros, para dar continuidad a su trámite de Seguro de Gastos Médicos Mayores {{folio}}, es necesario poder tener una llamada telefónica con usted para proporcionarle información. Consulta nuestro aviso de privacidad en: https://www.gnp.com.mx/aviso-de-privacidad/integral",
-		"variables": [{
-				"name": "nombre_agente",
-				"valor": ""
-			},
-			{
-				"name": "folio",
-				"valor": ""
-			}
-		]
-	},
-	{
-		"etiqueta": "Seguimiento despues de cierre",
-		"nombre": "segdespuescierre",
-		"cola": "Soy Cliente",
-		"template": "Hola, te escribo para darle seguimiento a tu caso sobre {{detalle_seguimiento}}",
-		"variables": [{
-			"name": "detalle_seguimiento",
-			"valor": ""
-		}]
-	},
-	{
-		"etiqueta": "Seguimiento despues de cierre GNP",
-		"nombre": "gnppostcierre",
-		"cola": "Soy Cliente",
-		"template": "Hola, te escribo de GNP para darle seguimiento a tu caso sobre {{detalle_seguimiento}}",
-		"variables": [{
-			"name": "detalle_seguimiento",
-			"valor": ""
-		}]
-	},
-	{
-		"etiqueta": "Actualizacion de caso",
-		"cola": "Soy Cliente",
-		"nombre": "gnpactualizacion",
-		"template": "Te tengo una actualización de tu {{caso}} ",
-		"variables": [{
-			"name": "caso",
-			"valor": ""
-		}]
-	}, {
-		"etiqueta": "Respuesta peticion",
-		"cola": "Soy Cliente",
-		"nombre": "gnprespuesta",
-		"template": "Tenemos una respuesta a tu petición {{peticion}}",
-		"variables": [{
-			"name": "peticion",
-			"valor": ""
-		}]
-	}, {
-		"etiqueta": "Respuesta peticion",
-		"cola": "Experiencia del cliente",
-		"nombre": "gnprespuesta",
-		"template": "Tenemos una respuesta a tu petición {{peticion}}",
-		"variables": [{
-			"name": "peticion",
-			"valor": ""
-		}]
-	},
-	{
-		"etiqueta": "Dando seguimiento",
-		"cola": "Soy Cliente",
-		"nombre": "gnpseguimiento",
-		"template": "Dando seguimiento a tu caso {{caso}}",
-		"variables": [{
-			"name": "caso",
-			"valor": ""
-		}]
-	},
-	{
-		"etiqueta": "Dando seguimiento",
-		"cola": "Experiencia del cliente",
-		"nombre": "gnpseguimiento",
-		"template": "Dando seguimiento a tu caso {{caso}}",
-		"variables": [{
-			"name": "caso",
-			"valor": ""
-		}]
-	},
-	{
-		"etiqueta": "Estamos de regreso",
-		"cola": "Soy Cliente",
-		"nombre": "gnpregreso",
-		"template": "Estamos de regreso para dar respuesta a {{peticion}}",
-		"variables": [{
-			"name": "peticion",
-			"valor": ""
-		}]
-	},
-	{
-		"etiqueta": "Buenas noticias",
-		"cola": "Soy Cliente",
-		"nombre": "gnpnoticias",
-		"template": "Te tengo buenas noticias {{noticia}}",
-		"variables": [{
-			"name": "noticia",
-			"valor": ""
-		}]
-	},
-	{
-		"etiqueta": "Buenas noticias",
-		"cola": "Densidad",
-		"nombre": "gnpbuenasnoticias",
-		"template": "Le tengo buenas noticias {{noticia}}",
-		"variables": [{
-			"name": "noticia",
-			"valor": ""
-		}]
-	},
-	{
-		"etiqueta": "Buenas noticias",
-		"cola": "Experiencia del cliente",
-		"nombre": "gnpbuenasnoticias",
-		"template": "Le tengo buenas noticias {{noticia}}",
-		"variables": [{
-			"name": "noticia",
-			"valor": ""
-		}]
-	},
-	{
-		"etiqueta": "Estamos de regreso",
-		"cola": "Densidad",
-		"nombre": "gnpestamosderegreso",
-		"template": "Estamos de regreso para dar respuesta a {{peticion}}",
-		"variables": [{
-			"name": "peticion",
-			"valor": ""
-		}]
-	},
-	{
-		"etiqueta": "Estamos de regreso",
-		"cola": "Experiencia del cliente",
-		"nombre": "gnpestamosderegreso",
-		"template": "Estamos de regreso para dar respuesta a {{peticion}}",
-		"variables": [{
-			"name": "peticion",
-			"valor": ""
-		}]
-	},
-	{
-		"etiqueta": "Seguimiento caso",
-		"cola": "Densidad",
-		"nombre": "gnpseguimientocaso",
-		"template": "Dando seguimiento a su caso {{numero_caso}}",
-		"variables": [{
-			"name": "numero_caso",
-			"valor": ""
-		}]
-	},
-	{
-		"etiqueta": "Peticion",
-		"cola": "Densidad",
-		"nombre": "gnppeticion",
-		"template": "Tenemos una respuesta a su petición {{peticion}}",
-		"variables": [{
-			"name": "peticion",
-			"valor": ""
-		}]
-	},
-	{
-		"etiqueta": "Ajustes cotizacion",
-		"cola": "Densidad",
-		"nombre": "gnpajustescotizacion",
-		"template": "Buen día {{nombre_cliente}}, Estoy de regreso con la actualización de su {{numero_caso}}",
-		"variables": [{
-				"name": "nombre_cliente",
-				"valor": ""
-			},
-			{
-				"name": "numero_caso",
-				"valor": ""
-			}
-		]
-	},
-	{
-		"etiqueta": "Seguimiento cotizacion",
-		"cola": "Densidad",
-		"nombre": "gnpseguimientocotizacion",
-		"template": "Hola {{nombre_cliente}}, Le escribo para darle seguimiento a la cotización de su Seguro de {{tipo_seguro}}. ¿Tiene alguna duda?",
-		"variables": [{
-				"name": "nombre_cliente",
-				"valor": ""
-			},
-			{
-				"name": "tipo_seguro",
-				"valor": ""
-			}
-		]
-	},
-	{
-		"etiqueta": "Entrega cotizacion",
-		"cola": "Densidad",
-		"nombre": "gnpentregacotizacion",
-		"template": "Hola {{nombre_cliente}}, Mi nombre es {{nombre_agente}} su Asesor Patrimonial de GNP Seguros. Le escribo para darle seguimiento a la cotización de su Seguro de {{tipo_seguro}}. {{liga_cotizacion}} ¿Gusta que agendemos una llamada para darle más detalles?",
-		"variables": [{
-				"name": "nombre_cliente",
-				"valor": ""
-			},
-			{
-				"name": "nombre_agente",
-				"valor": ""
-			},
-			{
-				"name": "tipo_seguro",
-				"valor": ""
-			},
-			{
-				"name": "liga_cotizacion",
-				"valor": ""
-			}
-		]
-	},
-	{
-		"etiqueta": "Intermitencia sistema GNP",
-		"cola": "Soy Cliente",
-		"nombre": "intermitenciasistemagnp",
-		"template": "Hola te escribe {{nombre_agente}}. En días pasados presentamos intermitencias en nuestro servicio de WhatsApp. ¿En qué podemos ayudarte?",
-		"variables": [{
-			"name": "nombre_agente",
-			"valor": ""
-		}]
-	},
-	{
-		"etiqueta": "Intermitencia sistema GNP",
-		"cola": "Experiencia del cliente",
-		"nombre": "intermitenciasistemagnp",
-		"template": "Hola te escribe {{nombre_agente}}. En días pasados presentamos intermitencias en nuestro servicio de WhatsApp. ¿En qué podemos ayudarte?",
-		"variables": [{
-			"name": "nombre_agente",
-			"valor": ""
-		}]
-	},
-	{
-		"etiqueta": "Formato de servicios asistidos",
-		"cola": "Densidad",
-		"nombre": "formato_de_servicios_asistidos",
-		"template": "Formato de Servicios Asistidos",
-		"variables": []
-	},
-	{
-		"etiqueta": "The silence of sound evento",
-		"cola": "Soy Cliente",
-		"nombre": "the_silence_of_sound_evento",
-		"template": "Hola {{nombre_cliente}}, Soy {{nombre_agente}} de GNP Seguros, te escribo para brindarte más información sobre tus accesos a “The Silence of Sound” para celebrar contigo por estos {{anio}} años de decir Soy Cliente GNP. ¿Estás listo para asistir a este evento increíble?",
-		"variables": [{
-				"name": "nombre_cliente",
-				"valor": ""
-			},
-			{
-				"name": "nombre_agente",
-				"valor": ""
-			},
-			{
-				"name": "anio",
-				"valor": ""
-			}
-		]
-	},
-	{
-		"etiqueta": "The silence of sound evento",
-		"cola": "Experiencia del cliente",
-		"nombre": "the_silence_of_sound_evento",
-		"template": "Hola {{nombre_cliente}}, Soy {{nombre_agente}} de GNP Seguros, te escribo para brindarte más información sobre tus accesos a “The Silence of Sound” para celebrar contigo por estos {{anio}} años de decir Soy Cliente GNP. ¿Estás listo para asistir a este evento increíble?",
-		"variables": [{
-				"name": "nombre_cliente",
-				"valor": ""
-			},
-			{
-				"name": "nombre_agente",
-				"valor": ""
-			},
-			{
-				"name": "anio",
-				"valor": ""
-			}
-		]
-	},
-	{
-		"etiqueta": "Regístrate SoyCliente",
-		"cola": "Soy Cliente",
-		"nombre": "regstrate_soycliente",
-		"template": "Para registrarte en tu App Soy Cliente GNP 📱 solo sigue estos pasos, recuerda tener a la mano tu Póliza de Seguro GNP. 📄 Descarga la App aquí: http://onelink.to/bucp25 Consulta el tutorial aquí: https://bit.ly/TutorialRegistroApp",
-		"variables": []
-	},
-	{
-		"etiqueta": "F1 Ganadores Ok",
-		"cola": "Experiencia del cliente",
-		"nombre": "f1_ganadores_ok",
-		"template": "¡Felicidades {{nombre_cliente}}! Ganaste un pase doble 🎫 para asistir del 28 al 30 de octubre al FORMULA 1 GRAN PREMIO DE LA CIUDAD DE MÉXICO 2022 por participar en la dinámica “Asegura tu auto y participa ¡es rapidísimo!”. Confirma hoy tu asistencia aquí 👉https://bit.ly/3CvhcFY ¡Gracias por ser Cliente GNP! #Viviresincreíble",
-		"variables": [{
-			"name": "nombre_cliente",
-			"valor": ""
-		}]
-	},
-	{
-		"etiqueta": "Genérica - Seguimiento al trámite v4",
-		"cola": "Reparaciones",
-		"nombre": "genrica_seguimiento_al_trmite_v4",
-		"template": "Apreciable Cliente, Mi nombre es {{nombre_agente}}, le escribo de GNP Seguros para darle seguimiento a la reparación de su vehículo {{marca_modelo}}. Le informo que {{detalle_seguimiento}} ¿Tiene alguna duda respecto a la información que le acabo de proporcionar?",
-		"variables": [{
-				"name": "nombre_agente",
-				"valor": ""
-			},
-			{
-				"name": "marca_modelo",
-				"valor": ""
-			},
-			{
-				"name": "detalle_seguimiento",
-				"valor": ""
-			}
-		]
-	},
-	{
-		"etiqueta": "Ingreso al Centro de Reparación v4",
-		"cola": "Reparaciones",
-		"nombre": "ingreso_al_centro_de_reparacin_v4",
-		"template": "Apreciable Cliente, Buen día, mi nombre es {{nombre_agente}}, le escribo de GNP Seguros Le confirmo que su vehículo {{marca_modelo}}, con número de siniestro {{siniestro}}, ingresó al centro de reparación {{nombre_taller}}, en el que se realizará la identificación de los daños a reparar. Este proceso se llevará a cabo en un tiempo estimado de {{numero_dias}} hábiles. Le mantendré informado del estatus de su vehículo Botón *Aviso de privacidad* : https://www.gnp.com.mx/aviso-de-privacidad/integral",
-		"variables": [{
-				"name": "nombre_agente",
-				"valor": ""
-			},
-			{
-				"name": "marca_modelo",
-				"valor": ""
-			},
-			{
-				"name": "siniestro",
-				"valor": ""
-			},
-			{
-				"name": "nombre_taller",
-				"valor": ""
-			},
-			{
-				"name": "numero_dias",
-				"valor": ""
-			}
-		]
-	},
-	{
-		"etiqueta": "Tardanza en la valuación v4.0",
-		"cola": "Reparaciones",
-		"nombre": "tardanza_en_la_valuacin_v40",
-		"template": "Apreciable Cliente,Esperando se encuentre bien, en atención a la reparación de su vehículo {{marca_modelo}}, le informamos que el taller encargado continúa en el proceso de revisión y valoración de las condiciones de su unidad.Una vez que este proceso haya finalizado, me pondré en contacto con usted para indicarle los resultados de la revisión.¿Tiene alguna duda respecto a la información que le acabo de proporcionar?",
-		"variables": [{
-				"name": "marca_modelo",
-				"valor": ""
-			}
+    "etiqueta": "Seguimiento de caso",
+    "cola": "Notificaciones",
+    "nombre": "gnpsegcaso",
+    "template": "Buenos días. Mi nombre es {{nombre_agente}}, me comunico de GNP Seguros para dar seguimiento a su caso {{folio}} a través de este medio. Consulta nuestro aviso de privacidad https://www.gnp.com.mx/aviso-de-privacidad/integral",
+    "variables": [{
+            "name": "nombre_agente",
+            "valor": ""
+        },
+        {
+            "name": "folio",
+            "valor": ""
+        }
+    ]
+},
+{
+    "etiqueta": "Encuesta Evento v2",
+    "cola": "Experiencia del cliente",
+    "nombre": "encuesta_evento_v2",
+    "template": "Buen día {{nombre_cliente}}, Te saluda {{nombre_agente}} de GNP Seguros, para saber ¿cómo la pasaron {{dia}}? Nos encantaría conocer tu experiencia en {{evento}}. Sólo te tomará 3 minutos contestar nuestra encuesta en el siguiente enlace:👉🏼 {{Liga}} Gracias por tu tiempo, tomaremos en cuenta todos tus comentarios.",
+    "variables": [{
+            "name": "nombre_cliente",
+            "valor": ""
+        },
+        {
+            "name": "nombre_agente",
+            "valor": ""
+        },
+        {
+            "name": "dia",
+            "valor": ""
+        },
+        {
+            "name": "evento",
+            "valor": ""
+        },
+        {
+            "name": "Liga",
+            "valor": ""
+        }
+    ]
+},
+{
+    "etiqueta": "Envío de boletos",
+    "cola": "Soy Cliente",
+    "nombre": "envo_de_boletos",
+    "template": "Hola {{nombre_cliente}} Soy {{nombre_agente}} de GNP Seguros, te escribo para contarte que tus boletos 🎫 de {{evento}} ya se encuentrán {{estatus}} ",
+    "variables": [{
+            "name": "nombre_cliente",
+            "valor": ""
+        },
+        {
+            "name": "nombre_agente",
+            "valor": ""
+        },
+        {
+            "name": "evento",
+            "valor": ""
+        },
+        {
+            "name": "estatus",
+            "valor": ""
+        }
+    ]
+},
+{
+    "etiqueta": "Envío de boletos",
+    "cola": "Experiencia del cliente",
+    "nombre": "envo_de_boletos",
+    "template": "Hola {{nombre_cliente}} Soy {{nombre_agente}} de GNP Seguros, te escribo para contarte que tus boletos 🎫 de {{evento}} ya se encuentrán {{estatus}} ",
+    "variables": [{
+            "name": "nombre_cliente",
+            "valor": ""
+        },
+        {
+            "name": "nombre_agente",
+            "valor": ""
+        },
+        {
+            "name": "evento",
+            "valor": ""
+        },
+        {
+            "name": "estatus",
+            "valor": ""
+        }
+    ]
+},
+{
+    "etiqueta": "Seguimiento de caso",
+    "cola": "Centro de Atención Virtual",
+    "nombre": "gnpsegcaso",
+    "template": "Buenos días. Mi nombre es {{nombre_agente}}, me comunico de GNP Seguros para dar seguimiento a su caso {{folio}} a través de este medio. Consulta nuestro aviso de privacidad https://www.gnp.com.mx/aviso-de-privacidad/integral",
+    "variables": [{
+            "name": "nombre_agente",
+            "valor": ""
+        },
+        {
+            "name": "folio",
+            "valor": ""
+        }
+    ]
+},
+{
+    "etiqueta": "Segumiento error soy cliente",
+    "cola": "Soy Cliente",
+    "nombre": "gnpsegerrorsoycliente",
+    "template": "Hola soy {{nombre_agente}} me comunico de GNP Seguros, para dar continuidad al error reportado en Soy Cliente GNP. Consulta nuestro aviso de privacidad en: https://www.gnp.com.mx/aviso-de-privacidad/integral",
+    "variables": [{
+        "name": "nombre_agente",
+        "valor": ""
+    }]
+},
+{
+    "etiqueta": "Seguimiento soy cliente",
+    "cola": "Soy Cliente",
+    "nombre": "gnpsegsoycliente",
+    "template": "Hola soy {{nombre_agente}} me comunico de GNP Seguros, para dar continuidad a su proceso en Soy Cliente GNP. Consulta nuestro aviso de privacidad en: https://www.gnp.com.mx/aviso-de-privacidad/integral",
+    "variables": [{
+        "name": "nombre_agente",
+        "valor": ""
+    }]
+},
+{
+    "etiqueta": "Seguimiento de caso gastos medicos mayores",
+    "nombre": "gnpsegsgmm",
+    "cola": "Notificaciones",
+    "template": "Hola soy {{nombre_agente}} me comunico de GNP Seguros, para dar continuidad a su trámite de Seguro de Gastos Médicos Mayores {{folio}}, es necesario poder tener una llamada telefónica con usted para proporcionarle información. Consulta nuestro aviso de privacidad en: https://www.gnp.com.mx/aviso-de-privacidad/integral",
+    "variables": [{
+            "name": "nombre_agente",
+            "valor": ""
+        },
+        {
+            "name": "folio",
+            "valor": ""
+        }
+    ]
+},
+{
+    "etiqueta": "Seguimiento despues de cierre",
+    "nombre": "segdespuescierre",
+    "cola": "Soy Cliente",
+    "template": "Hola, te escribo para darle seguimiento a tu caso sobre {{detalle_seguimiento}}",
+    "variables": [{
+        "name": "detalle_seguimiento",
+        "valor": ""
+    }]
+},
+{
+    "etiqueta": "Seguimiento despues de cierre GNP",
+    "nombre": "gnppostcierre",
+    "cola": "Soy Cliente",
+    "template": "Hola, te escribo de GNP para darle seguimiento a tu caso sobre {{detalle_seguimiento}}",
+    "variables": [{
+        "name": "detalle_seguimiento",
+        "valor": ""
+    }]
+},
+{
+    "etiqueta": "Actualizacion de caso",
+    "cola": "Soy Cliente",
+    "nombre": "gnpactualizacion",
+    "template": "Te tengo una actualización de tu {{caso}} ",
+    "variables": [{
+        "name": "caso",
+        "valor": ""
+    }]
+}, {
+    "etiqueta": "Respuesta peticion",
+    "cola": "Soy Cliente",
+    "nombre": "gnprespuesta",
+    "template": "Tenemos una respuesta a tu petición {{peticion}}",
+    "variables": [{
+        "name": "peticion",
+        "valor": ""
+    }]
+}, {
+    "etiqueta": "Respuesta peticion",
+    "cola": "Experiencia del cliente",
+    "nombre": "gnprespuesta",
+    "template": "Tenemos una respuesta a tu petición {{peticion}}",
+    "variables": [{
+        "name": "peticion",
+        "valor": ""
+    }]
+},
+{
+    "etiqueta": "Dando seguimiento",
+    "cola": "Soy Cliente",
+    "nombre": "gnpseguimiento",
+    "template": "Dando seguimiento a tu caso {{caso}}",
+    "variables": [{
+        "name": "caso",
+        "valor": ""
+    }]
+},
+{
+    "etiqueta": "Dando seguimiento",
+    "cola": "Experiencia del cliente",
+    "nombre": "gnpseguimiento",
+    "template": "Dando seguimiento a tu caso {{caso}}",
+    "variables": [{
+        "name": "caso",
+        "valor": ""
+    }]
+},
+{
+    "etiqueta": "Estamos de regreso",
+    "cola": "Soy Cliente",
+    "nombre": "gnpregreso",
+    "template": "Estamos de regreso para dar respuesta a {{peticion}}",
+    "variables": [{
+        "name": "peticion",
+        "valor": ""
+    }]
+},
+{
+    "etiqueta": "Buenas noticias",
+    "cola": "Soy Cliente",
+    "nombre": "gnpnoticias",
+    "template": "Te tengo buenas noticias {{noticia}}",
+    "variables": [{
+        "name": "noticia",
+        "valor": ""
+    }]
+},
+{
+    "etiqueta": "Buenas noticias",
+    "cola": "Densidad",
+    "nombre": "gnpbuenasnoticias",
+    "template": "Le tengo buenas noticias {{noticia}}",
+    "variables": [{
+        "name": "noticia",
+        "valor": ""
+    }]
+},
+{
+    "etiqueta": "Buenas noticias",
+    "cola": "Experiencia del cliente",
+    "nombre": "gnpbuenasnoticias",
+    "template": "Le tengo buenas noticias {{noticia}}",
+    "variables": [{
+        "name": "noticia",
+        "valor": ""
+    }]
+},
+{
+    "etiqueta": "Estamos de regreso",
+    "cola": "Densidad",
+    "nombre": "gnpestamosderegreso",
+    "template": "Estamos de regreso para dar respuesta a {{peticion}}",
+    "variables": [{
+        "name": "peticion",
+        "valor": ""
+    }]
+},
+{
+    "etiqueta": "Estamos de regreso",
+    "cola": "Experiencia del cliente",
+    "nombre": "gnpestamosderegreso",
+    "template": "Estamos de regreso para dar respuesta a {{peticion}}",
+    "variables": [{
+        "name": "peticion",
+        "valor": ""
+    }]
+},
+{
+    "etiqueta": "Seguimiento caso",
+    "cola": "Densidad",
+    "nombre": "gnpseguimientocaso",
+    "template": "Dando seguimiento a su caso {{numero_caso}}",
+    "variables": [{
+        "name": "numero_caso",
+        "valor": ""
+    }]
+},
+{
+    "etiqueta": "Peticion",
+    "cola": "Densidad",
+    "nombre": "gnppeticion",
+    "template": "Tenemos una respuesta a su petición {{peticion}}",
+    "variables": [{
+        "name": "peticion",
+        "valor": ""
+    }]
+},
+{
+    "etiqueta": "Ajustes cotizacion",
+    "cola": "Densidad",
+    "nombre": "gnpajustescotizacion",
+    "template": "Buen día {{nombre_cliente}}, Estoy de regreso con la actualización de su {{numero_caso}}",
+    "variables": [{
+            "name": "nombre_cliente",
+            "valor": ""
+        },
+        {
+            "name": "numero_caso",
+            "valor": ""
+        }
+    ]
+},
+{
+    "etiqueta": "Seguimiento cotizacion",
+    "cola": "Densidad",
+    "nombre": "gnpseguimientocotizacion",
+    "template": "Hola {{nombre_cliente}}, Le escribo para darle seguimiento a la cotización de su Seguro de {{tipo_seguro}}. ¿Tiene alguna duda?",
+    "variables": [{
+            "name": "nombre_cliente",
+            "valor": ""
+        },
+        {
+            "name": "tipo_seguro",
+            "valor": ""
+        }
+    ]
+},
+{
+    "etiqueta": "Entrega cotizacion",
+    "cola": "Densidad",
+    "nombre": "gnpentregacotizacion",
+    "template": "Hola {{nombre_cliente}}, Mi nombre es {{nombre_agente}} su Asesor Patrimonial de GNP Seguros. Le escribo para darle seguimiento a la cotización de su Seguro de {{tipo_seguro}}. {{liga_cotizacion}} ¿Gusta que agendemos una llamada para darle más detalles?",
+    "variables": [{
+            "name": "nombre_cliente",
+            "valor": ""
+        },
+        {
+            "name": "nombre_agente",
+            "valor": ""
+        },
+        {
+            "name": "tipo_seguro",
+            "valor": ""
+        },
+        {
+            "name": "liga_cotizacion",
+            "valor": ""
+        }
+    ]
+},
+{
+    "etiqueta": "Intermitencia sistema GNP",
+    "cola": "Soy Cliente",
+    "nombre": "intermitenciasistemagnp",
+    "template": "Hola te escribe {{nombre_agente}}. En días pasados presentamos intermitencias en nuestro servicio de WhatsApp. ¿En qué podemos ayudarte?",
+    "variables": [{
+        "name": "nombre_agente",
+        "valor": ""
+    }]
+},
+{
+    "etiqueta": "Intermitencia sistema GNP",
+    "cola": "Experiencia del cliente",
+    "nombre": "intermitenciasistemagnp",
+    "template": "Hola te escribe {{nombre_agente}}. En días pasados presentamos intermitencias en nuestro servicio de WhatsApp. ¿En qué podemos ayudarte?",
+    "variables": [{
+        "name": "nombre_agente",
+        "valor": ""
+    }]
+},
+{
+    "etiqueta": "Formato de servicios asistidos",
+    "cola": "Densidad",
+    "nombre": "formato_de_servicios_asistidos",
+    "template": "Formato de Servicios Asistidos",
+    "variables": []
+},
+{
+    "etiqueta": "The silence of sound evento",
+    "cola": "Soy Cliente",
+    "nombre": "the_silence_of_sound_evento",
+    "template": "Hola {{nombre_cliente}}, Soy {{nombre_agente}} de GNP Seguros, te escribo para brindarte más información sobre tus accesos a “The Silence of Sound” para celebrar contigo por estos {{anio}} años de decir Soy Cliente GNP. ¿Estás listo para asistir a este evento increíble?",
+    "variables": [{
+            "name": "nombre_cliente",
+            "valor": ""
+        },
+        {
+            "name": "nombre_agente",
+            "valor": ""
+        },
+        {
+            "name": "anio",
+            "valor": ""
+        }
+    ]
+},
+{
+    "etiqueta": "The silence of sound evento",
+    "cola": "Experiencia del cliente",
+    "nombre": "the_silence_of_sound_evento",
+    "template": "Hola {{nombre_cliente}}, Soy {{nombre_agente}} de GNP Seguros, te escribo para brindarte más información sobre tus accesos a “The Silence of Sound” para celebrar contigo por estos {{anio}} años de decir Soy Cliente GNP. ¿Estás listo para asistir a este evento increíble?",
+    "variables": [{
+            "name": "nombre_cliente",
+            "valor": ""
+        },
+        {
+            "name": "nombre_agente",
+            "valor": ""
+        },
+        {
+            "name": "anio",
+            "valor": ""
+        }
+    ]
+},
+{
+    "etiqueta": "Regístrate SoyCliente",
+    "cola": "Soy Cliente",
+    "nombre": "regstrate_soycliente",
+    "template": "Para registrarte en tu App Soy Cliente GNP 📱 solo sigue estos pasos, recuerda tener a la mano tu Póliza de Seguro GNP. 📄 Descarga la App aquí: http://onelink.to/bucp25 Consulta el tutorial aquí: https://bit.ly/TutorialRegistroApp",
+    "variables": []
+},
+{
+    "etiqueta": "F1 Ganadores Ok",
+    "cola": "Experiencia del cliente",
+    "nombre": "f1_ganadores_ok",
+    "template": "¡Felicidades {{nombre_cliente}}! Ganaste un pase doble 🎫 para asistir del 28 al 30 de octubre al FORMULA 1 GRAN PREMIO DE LA CIUDAD DE MÉXICO 2022 por participar en la dinámica “Asegura tu auto y participa ¡es rapidísimo!”. Confirma hoy tu asistencia aquí 👉https://bit.ly/3CvhcFY ¡Gracias por ser Cliente GNP! #Viviresincreíble",
+    "variables": [{
+        "name": "nombre_cliente",
+        "valor": ""
+    }]
+},
+{
+    "etiqueta": "Genérica - Seguimiento al trámite v4",
+    "cola": "Reparaciones",
+    "nombre": "genrica_seguimiento_al_trmite_v4",
+    "template": "Apreciable Cliente, Mi nombre es {{nombre_agente}}, le escribo de GNP Seguros para darle seguimiento a la reparación de su vehículo {{marca_modelo}}. Le informo que {{detalle_seguimiento}} ¿Tiene alguna duda respecto a la información que le acabo de proporcionar?",
+    "variables": [{
+            "name": "nombre_agente",
+            "valor": ""
+        },
+        {
+            "name": "marca_modelo",
+            "valor": ""
+        },
+        {
+            "name": "detalle_seguimiento",
+            "valor": ""
+        }
+    ]
+},
+{
+    "etiqueta": "Ingreso al Centro de Reparación v4",
+    "cola": "Reparaciones",
+    "nombre": "ingreso_al_centro_de_reparacin_v4",
+    "template": "Apreciable Cliente, Buen día, mi nombre es {{nombre_agente}}, le escribo de GNP Seguros Le confirmo que su vehículo {{marca_modelo}}, con número de siniestro {{siniestro}}, ingresó al centro de reparación {{nombre_taller}}, en el que se realizará la identificación de los daños a reparar. Este proceso se llevará a cabo en un tiempo estimado de {{numero_dias}} hábiles. Le mantendré informado del estatus de su vehículo Botón *Aviso de privacidad* : https://www.gnp.com.mx/aviso-de-privacidad/integral",
+    "variables": [{
+            "name": "nombre_agente",
+            "valor": ""
+        },
+        {
+            "name": "marca_modelo",
+            "valor": ""
+        },
+        {
+            "name": "siniestro",
+            "valor": ""
+        },
+        {
+            "name": "nombre_taller",
+            "valor": ""
+        },
+        {
+            "name": "numero_dias",
+            "valor": ""
+        }
+    ]
+},
+{
+    "etiqueta": "Tardanza en la valuación v4.0",
+    "cola": "Reparaciones",
+    "nombre": "tardanza_en_la_valuacin_v40",
+    "template": "Apreciable Cliente,Esperando se encuentre bien, en atención a la reparación de su vehículo {{marca_modelo}}, le informamos que el taller encargado continúa en el proceso de revisión y valoración de las condiciones de su unidad.Una vez que este proceso haya finalizado, me pondré en contacto con usted para indicarle los resultados de la revisión.¿Tiene alguna duda respecto a la información que le acabo de proporcionar?",
+    "variables": [{
+            "name": "marca_modelo",
+            "valor": ""
+        }
 
-		]
-	},
-	{
-		"etiqueta": "Valuación autorizada v4",
-		"cola": "Reparaciones",
-		"nombre": "valuacin_autorizada_v4",
-		"template": "Apreciable Cliente,Le escribo para informarle que ha finalizado la revisión de los daños en su {{marca_modelo}}.Le informaré cuando el taller inicie con la reparación de su vehículo.En caso de requerir mayor información, puede contactarme por este medio.",
-		"variables": [{
-				"name": "marca_modelo",
-				"valor": ""
-			}
+    ]
+},
+{
+    "etiqueta": "Valuación autorizada v4",
+    "cola": "Reparaciones",
+    "nombre": "valuacin_autorizada_v4",
+    "template": "Apreciable Cliente,Le escribo para informarle que ha finalizado la revisión de los daños en su {{marca_modelo}}.Le informaré cuando el taller inicie con la reparación de su vehículo.En caso de requerir mayor información, puede contactarme por este medio.",
+    "variables": [{
+            "name": "marca_modelo",
+            "valor": ""
+        }
 
-		]
-	},
-	{
-		"etiqueta": "Inicio de la reparación v4",
-		"cola": "Reparaciones",
-		"nombre": "inicio_de_la_reparacin_v4",
-		"template": "Apreciable Cliente,Mi nombre es {{nombre_agente}}, le escribo para informarle que el taller ha iniciado con la reparación de los daños en su vehículo {{modelo_marca}}Le mantendré informado de cualquier avance en el proceso de reparación.¿Tiene alguna duda respecto a la información que le acabo de proporcionar?",
-		"variables": [{
-				"name": "nombre_agente",
-				"valor": ""
-			},
-			{
-				"name": "modelo_marca",
-				"valor": ""
-			}
-		]
-	},
-	{
-		"etiqueta": "Tardanza en la reparación por falta de piezas v4",
-		"cola": "Reparaciones",
-		"nombre": "tardanza_en_la_reparacin_por_falta_de_piezas_v4",
-		"template": "Apreciable Cliente,Buen día, mi nombre es {{nombre_agente}}, le escribo de GNP Seguros para darle seguimiento a la reparación de su vehículo {{marca_modelo}}.Actualmente, estamos en proceso de búsqueda de algunas piezas necesarias para continuar con la reparación, las cuales están tomando más tiempo de lo planeado para localizarlas, por lo cual la duración de la reparación de su vehículo podría tardar más de lo habitual.¿Tiene alguna duda respecto a la información que le acabo de proporcionar?",
-		"variables": [{
-				"name": "nombre_agente",
-				"valor": ""
-			},
-			{
-				"name": "marca_modelo",
-				"valor": ""
-			}
-		]
-	},
-	{
-		"etiqueta": "Tardanza en la reparación por daños adicionales",
-		"cola": "Reparaciones",
-		"nombre": "tardanza_en_la_reparacin_por_daos_adicionales_v4",
-		"template": "Apreciable Cliente,Buen día, mi nombre es {{nombre_agente}}, le escribo de GNP Seguros para darle seguimiento a la reparación de su vehículo {{marca_modelo}}.Le informo que se encontraron daños adicionales, por lo que será necesario realizar una segunda revisión, me pondré en contacto con usted nuevamente más adelante para informarle los resultados.¿Tiene alguna duda respecto a la información que le acabo de proporcionar?",
-		"variables": [{
-				"name": "nombre_agente",
-				"valor": ""
-			},
-			{
-				"name": "marca_modelo",
-				"valor": ""
-			}
-		]
-	},
-	{
-		"etiqueta": "Surtido de piezas faltantes",
-		"cola": "Reparaciones",
-		"nombre": "surtido_de_piezas_faltantes",
-		"template": "Apreciable Cliente,Buen día, mi nombre es {{nombre_agente}}, le escribo de GNP Seguros para darle seguimiento a la reparación de su vehículo {{marca_modelo}}.Le informo que se encontraron daños adicionales, por lo que será necesario realizar una segunda revisión, me pondré en contacto con usted nuevamente más adelante para informarle los resultados.¿Tiene alguna duda respecto a la información que le acabo de proporcionar?",
-		"variables": [{
-				"name": "nombre_agente",
-				"valor": ""
-			},
-			{
-				"name": "marca_modelo",
-				"valor": ""
-			}
-		]
-	},
-	{
-		"etiqueta": "Término de la reparación CON pago de deducible v4",
-		"cola": "Reparaciones",
-		"nombre": "trmino_de_la_reparacin_con_pago_de_deducible_v4",
-		"template": "Apreciable Cliente,Le informo que la reparación de su {{modelo_marca}} ha concluido.Para la entrega de su vehículo será necesario:🔹Agendar una cita con el centro de reparación para programar la entrega.🔹Realizar el pago del deducible correspondiente.🔹Presentar el comprobante de pago impreso.🔹Presentar una identificación oficial vigente.Usted podrá obtener la referencia para el pago del deducible oprimiendo el siguiente botón.",
-		"variables": [{
-			"name": "modelo_marca",
-			"valor": ""
-		}]
-	},
-	{
-		"etiqueta": "Término de la reparación SIN pago de deducible v4",
-		"cola": "Reparaciones",
-		"nombre": "trmino_de_la_reparacin_sin_pago_de_deducible_v4",
-		"template": "Apreciable Cliente,Le informo que la reparación de su {{modelo_marca}} ha concluido.Para la entrega de su vehículo será necesario agendar una cita con el centro de reparación, llamando al {{numero_taller}}¿Tiene alguna duda respecto a la información que le acabo de proporcionar?",
-		"variables": [{
-				"name": "modelo_marca",
-				"valor": ""
-			},
-			{
-				"name": "numero_taller",
-				"valor": ""
-			}
-		]
-	},
-	{
-		"etiqueta": "Recordatorio de la entrega del vehículo CON pago de deducible v4",
-		"cola": "Reparaciones",
-		"nombre": "recordatorio_de_la_entrega_del_vehculo_con_pago_de_deducible_v4",
-		"template": "Apreciable Cliente,Recuerde que mañana es el día para recoger su vehículo, por ello le compartimos algunas recomendaciones:🔹Traer consigo una Identificación oficial🔹Llevar su comprobante de pago de deducible digital o impreso🔹Verificar que la reparación se haya realizado de acuerdo a lo estipulado.Al momento de recibir su vehículo, el centro de reparación le entregará una carta de garantía que ampara la reparación realizada a su vehículo.¿Tiene alguna duda respecto a la información que le acabo de proporcionar?",
-		"variables": []
-	},
-	{
-		"etiqueta": "Recordatorio de la entrega del vehículo SIN pago de deducible v4",
-		"cola": "Reparaciones",
-		"nombre": "recordatorio_de_la_entrega_del_vehculo_sin_pago_de_deducible_v4",
-		"template": "Apreciable Cliente,Recuerde que mañana es el día para recoger su vehículo, por ello le compartimos algunas recomendaciones:🔹Traer consigo una Identificación oficial🔹Verificar que la reparación se haya realizado de acuerdo a lo estipulado.Al momento de recibir su vehículo, el centro de reparación le entregará una carta de garantía que ampara la reparación realizada a su vehículo.¿Tiene alguna duda respecto a la información que le acabo de proporcionar?",
-		"variables": []
-	},
-	{
-		"etiqueta": "Dando seguimiento",
-		"cola": "Reparaciones",
-		"nombre": "gnpseguimiento",
-		"template": "Dando seguimiento a tu caso {{caso}}",
-		"variables": [{
-			"name": "caso",
-			"valor": ""
-		}]
-	},
-	{
-		"etiqueta": "Inicio de la reparación (100% refacciones)",
-		"cola": "Reparaciones",
-		"nombre": "inicio_de_la_reparacin_100_refaccionesv2",
-		"template": "Apreciable Cliente, Buen día, mi nombre es {{nombre_agente}} de GNP Seguros, le escribo para darle seguimiento a la reparación de su vehículo {{marca_modelo}}.Le informo que derivado de la recepción del total de refacciones, el taller ha iniciado con la reparación de los daños en su vehículo. Estimamos que este proceso tomará un tiempo aproximado de {{dias_habiles}} días hábiles. Le mantendré informado de cualquier avance en el proceso de reparación. ¿Tiene alguna duda respecto a la información que le acabo de proporcionar?",
-		"variables": [{
-				"name": "nombre_agente",
-				"valor": ""
-			},
-			{
-				"name": "marca_modelo",
-				"valor": ""
-			},
-			{
-				"name": "dias_habiles",
-				"valor": ""
-			}
-		]
-	},
-	{
-		"etiqueta": "Inicio de la reparación (No requiere refacciones) ",
-		"cola": "Reparaciones",
-		"nombre": "inicio_de_la_reparacin_no_requiere_refacciones",
-		"template": "Apreciable Cliente,Mi nombre es {{nombre_agente}} de GNP Seguros, le escribo para informarle que el taller ha iniciado con la reparación de los daños en su vehículo {{modelo_marca}}. Estimamos que este proceso tomará un tiempo aproximado de {{dias_habiles}} días hábiles. Le mantendré informado de cualquier avance en el proceso de reparación. ¿Tiene alguna duda respecto a la información que le acabo de proporcionar?",
-		"variables": [{
-				"name": "nombre_agente",
-				"valor": ""
-			},
-			{
-				"name": "modelo_marca",
-				"valor": ""
-			},
-			{
-				"name": "dias_habiles",
-				"valor": ""
-			}
-		]
-	},
-	{
-		"etiqueta": "Inicio de la reparación (Refacciones pendientes)",
-		"cola": "Reparaciones",
-		"nombre": "inicioreparacinrefaccionespendientes",
-		"template": "Apreciable Cliente, Mi nombre es {{nombre_agente}} de GNP Seguros, le informo que el taller ha iniciado con la reparación de los daños en su vehículo. En próximos días estaremos recibiendo las piezas faltantes para concluir con los trabajos en su vehículo. Más adelante me pondré en contacto con usted para confirmar la recepción de las mismas, así como de los avances en el proceso de reparación. ¿Tiene alguna duda respecto a la información que le acabo de proporcionar?",
-		"variables": [{
-			"name": "nombre_agente",
-			"valor": ""
-		}]
-	},
-	{
-		"etiqueta": "Actualización de datos fiscales",
-		"cola": "Soy Cliente",
-		"nombre": "actualizacindatosfiscales",
-		"template": "Actualiza tus datos fiscales desde tu App Soy Cliente GNP 📱 siguiendo estos pasos: 1. Descarga la App Soy Cliente GNP aquí: http://onelink.to/bucp25 2. Regístrate, puedes consultar el tutorial aquí: https://bit.ly/TutorialRegistroApp 3. Actualiza tus datos consultando el tutorial aquí: https://bit.ly/TutorialDatosFiscales Recuerda tener a la mano tu Póliza de Seguro GNP y tu Constancia de Situación Fiscal obtenida del portal del SAT. 📄",
-		"variables": []
-	},
-	{
-		"etiqueta": "Vehiculo en transito",
-		"cola": "Reparaciones",
-		"nombre": "vehiculo_en_transito",
-		"template": "Apreciable Cliente: Buen día, mi nombre es {{nombre_agente}}. Me comunico de GNP Seguros para informarle que el taller {{nombre_taller}} ya cuenta con las piezas necesarias para efectuar la reparación de su vehículo. Por favor contacte al taller llamando al {{numero_taller}} y coordine la fecha en la que puede ingresar su vehículo para iniciar el proceso de reparación de los daños. En caso de que tenga alguna duda referente a lo que le acabo de mencionar, no dude en contactarme por este medio, estoy a sus órdenes.",
-		"variables": [{
-				"name": "nombre_agente",
-				"valor": ""
-			},
-			{
-				"name": "nombre_taller",
-				"valor": ""
-			},
-			{
-				"name": "numero_taller",
-				"valor": ""
-			}
-		]
-	},
-	{
-		"etiqueta": "Recordatorio evento v3",
-		"cola": "Experiencia del cliente",
-		"nombre": "recordatorio_evento_v3",
-		"template": "Hola {{nombre_cliente}} Te saluda {{nombre_agente}} de GNP Seguros. Recuerda que mañana tenemos una cita, disfruta la increíble experiencia {{evento}}. 👉No olvides {{detalles}} ¡Gracias por ser Cliente GNP! #Viviresincreíble",
-		"variables": [{
-				"name": "nombre_cliente",
-				"valor": ""
-			},
-			{
-				"name": "nombre_agente",
-				"valor": ""
-			},
-			{
-				"name": "evento",
-				"valor": ""
-			},
-			{
-				"name": "detalles",
-				"valor": ""
-			}
-		]
-	},
-	{
-		"etiqueta": "Envío de boletos + actividad v2",
-		"cola": "Experiencia del cliente",
-		"nombre": "envo_de_boletos_actividad_v2",
-		"template": "Hola {{nombre_cliente}} Soy {{nombre_agente}} de GNP Seguros, te escribo para contarte que tus boletos 🎫 de {{evento}} ya se encuentrán {{estatus}}. {{comentaro}}",
-		"variables": [{
-				"name": "nombre_cliente",
-				"valor": ""
-			},
-			{
-				"name": "nombre_agente",
-				"valor": ""
-			},
-			{
-				"name": "evento",
-				"valor": ""
-			},
-			{
-				"name": "estatus",
-				"valor": ""
-			},
-			{
-				"name": "comentaro",
-				"valor": ""
-			}
-		]
-	},
-	{
-		"etiqueta": "Invitación en correo v3",
-		"cola": "Experiencia del cliente",
-		"nombre": "invitacin_en_correo_v3",
-		"template": "Hola {{nombre_cliente}} Te saluda {{nombre_agente}} de GNP Seguros, para contarte que en tu correo hay una invitación para celebrar🎉 tus {{aios}} años de decir Soy Cliente GNP. Nos encantaría que nos acompañes tu y un acompañante el próximo {{dia}} en {{evento}}.",
-		"variables": [{
-				"name": "nombre_cliente",
-				"valor": ""
-			},
-			{
-				"name": "nombre_agente",
-				"valor": ""
-			},
-			{
-				"name": "aios",
-				"valor": ""
-			},
-			{
-				"name": "dia",
-				"valor": ""
-			},
-			{
-				"name": "evento",
-				"valor": ""
-			}
-		]
-	},
-	{
-		"etiqueta": "Invitación en correo v4",
-		"cola": "Experiencia del cliente",
-		"nombre": "invitacin_en_correo_v4",
-		"template": "Hola {{nombre_cliente}} Te saluda {{nombre_agente}} de GNP Seguros, para contarte que en tu correo hay una invitación para celebrar🎉 tus {{aios}} años de decir Soy Cliente GNP. Nos encantaría que nos acompañes tu y un acompañante el próximo {{dia}} en {{evento}}.¿Podemos contar contigo?",
-		"variables": [{
-				"name": "nombre_cliente",
-				"valor": ""
-			},
-			{
-				"name": "nombre_agente",
-				"valor": ""
-			},
-			{
-				"name": "dia",
-				"valor": ""
-			},
-			{
-				"name": "aios",
-				"valor": ""
-			},
-			{
-				"name": "evento",
-				"valor": ""
-			}
-		]
-	},
-	{
-		"etiqueta": "Recuperación de contacto PT V1",
-		"cola": "Reparaciones",
-		"nombre": "recuperacin_de_contacto_pt_v1",
-		"template": "Buen día, mi nombre es {{nombre_agente}}, le escribo de GNP Seguros. Tenemos información relevante para dar seguimiento a su siniestro con folio {{numero_folio}}. Podría indicarme el día y hora en que puede recibir nuestra llamada, por favor. En caso de alguna duda, usted puede contactarme por este medio, estoy a sus órdenes.",
-		"variables": [{
-				"name": "nombre_agente",
-				"valor": ""
-			},
-			{
-				"name": "numero_folio",
-				"valor": ""
-			}
-		]
-	}
+    ]
+},
+{
+    "etiqueta": "Inicio de la reparación v4",
+    "cola": "Reparaciones",
+    "nombre": "inicio_de_la_reparacin_v4",
+    "template": "Apreciable Cliente,Mi nombre es {{nombre_agente}}, le escribo para informarle que el taller ha iniciado con la reparación de los daños en su vehículo {{modelo_marca}}Le mantendré informado de cualquier avance en el proceso de reparación.¿Tiene alguna duda respecto a la información que le acabo de proporcionar?",
+    "variables": [{
+            "name": "nombre_agente",
+            "valor": ""
+        },
+        {
+            "name": "modelo_marca",
+            "valor": ""
+        }
+    ]
+},
+{
+    "etiqueta": "Tardanza en la reparación por falta de piezas v4",
+    "cola": "Reparaciones",
+    "nombre": "tardanza_en_la_reparacin_por_falta_de_piezas_v4",
+    "template": "Apreciable Cliente,Buen día, mi nombre es {{nombre_agente}}, le escribo de GNP Seguros para darle seguimiento a la reparación de su vehículo {{marca_modelo}}.Actualmente, estamos en proceso de búsqueda de algunas piezas necesarias para continuar con la reparación, las cuales están tomando más tiempo de lo planeado para localizarlas, por lo cual la duración de la reparación de su vehículo podría tardar más de lo habitual.¿Tiene alguna duda respecto a la información que le acabo de proporcionar?",
+    "variables": [{
+            "name": "nombre_agente",
+            "valor": ""
+        },
+        {
+            "name": "marca_modelo",
+            "valor": ""
+        }
+    ]
+},
+{
+    "etiqueta": "Tardanza en la reparación por daños adicionales",
+    "cola": "Reparaciones",
+    "nombre": "tardanza_en_la_reparacin_por_daos_adicionales_v4",
+    "template": "Apreciable Cliente,Buen día, mi nombre es {{nombre_agente}}, le escribo de GNP Seguros para darle seguimiento a la reparación de su vehículo {{marca_modelo}}.Le informo que se encontraron daños adicionales, por lo que será necesario realizar una segunda revisión, me pondré en contacto con usted nuevamente más adelante para informarle los resultados.¿Tiene alguna duda respecto a la información que le acabo de proporcionar?",
+    "variables": [{
+            "name": "nombre_agente",
+            "valor": ""
+        },
+        {
+            "name": "marca_modelo",
+            "valor": ""
+        }
+    ]
+},
+{
+    "etiqueta": "Surtido de piezas faltantes",
+    "cola": "Reparaciones",
+    "nombre": "surtido_de_piezas_faltantes",
+    "template": "Apreciable Cliente,Buen día, mi nombre es {{nombre_agente}}, le escribo de GNP Seguros para darle seguimiento a la reparación de su vehículo {{marca_modelo}}.Le informo que se encontraron daños adicionales, por lo que será necesario realizar una segunda revisión, me pondré en contacto con usted nuevamente más adelante para informarle los resultados.¿Tiene alguna duda respecto a la información que le acabo de proporcionar?",
+    "variables": [{
+            "name": "nombre_agente",
+            "valor": ""
+        },
+        {
+            "name": "marca_modelo",
+            "valor": ""
+        }
+    ]
+},
+{
+    "etiqueta": "Término de la reparación CON pago de deducible v4",
+    "cola": "Reparaciones",
+    "nombre": "trmino_de_la_reparacin_con_pago_de_deducible_v4",
+    "template": "Apreciable Cliente,Le informo que la reparación de su {{modelo_marca}} ha concluido.Para la entrega de su vehículo será necesario:🔹Agendar una cita con el centro de reparación para programar la entrega.🔹Realizar el pago del deducible correspondiente.🔹Presentar el comprobante de pago impreso.🔹Presentar una identificación oficial vigente.Usted podrá obtener la referencia para el pago del deducible oprimiendo el siguiente botón.",
+    "variables": [{
+        "name": "modelo_marca",
+        "valor": ""
+    }]
+},
+{
+    "etiqueta": "Término de la reparación SIN pago de deducible v4",
+    "cola": "Reparaciones",
+    "nombre": "trmino_de_la_reparacin_sin_pago_de_deducible_v4",
+    "template": "Apreciable Cliente,Le informo que la reparación de su {{modelo_marca}} ha concluido.Para la entrega de su vehículo será necesario agendar una cita con el centro de reparación, llamando al {{numero_taller}}¿Tiene alguna duda respecto a la información que le acabo de proporcionar?",
+    "variables": [{
+            "name": "modelo_marca",
+            "valor": ""
+        },
+        {
+            "name": "numero_taller",
+            "valor": ""
+        }
+    ]
+},
+{
+    "etiqueta": "Recordatorio de la entrega del vehículo CON pago de deducible v4",
+    "cola": "Reparaciones",
+    "nombre": "recordatorio_de_la_entrega_del_vehculo_con_pago_de_deducible_v4",
+    "template": "Apreciable Cliente,Recuerde que mañana es el día para recoger su vehículo, por ello le compartimos algunas recomendaciones:🔹Traer consigo una Identificación oficial🔹Llevar su comprobante de pago de deducible digital o impreso🔹Verificar que la reparación se haya realizado de acuerdo a lo estipulado.Al momento de recibir su vehículo, el centro de reparación le entregará una carta de garantía que ampara la reparación realizada a su vehículo.¿Tiene alguna duda respecto a la información que le acabo de proporcionar?",
+    "variables": []
+},
+{
+    "etiqueta": "Recordatorio de la entrega del vehículo SIN pago de deducible v4",
+    "cola": "Reparaciones",
+    "nombre": "recordatorio_de_la_entrega_del_vehculo_sin_pago_de_deducible_v4",
+    "template": "Apreciable Cliente,Recuerde que mañana es el día para recoger su vehículo, por ello le compartimos algunas recomendaciones:🔹Traer consigo una Identificación oficial🔹Verificar que la reparación se haya realizado de acuerdo a lo estipulado.Al momento de recibir su vehículo, el centro de reparación le entregará una carta de garantía que ampara la reparación realizada a su vehículo.¿Tiene alguna duda respecto a la información que le acabo de proporcionar?",
+    "variables": []
+},
+{
+    "etiqueta": "Dando seguimiento",
+    "cola": "Reparaciones",
+    "nombre": "gnpseguimiento",
+    "template": "Dando seguimiento a tu caso {{caso}}",
+    "variables": [{
+        "name": "caso",
+        "valor": ""
+    }]
+},
+{
+    "etiqueta": "Inicio de la reparación (100% refacciones)",
+    "cola": "Reparaciones",
+    "nombre": "inicio_de_la_reparacin_100_refaccionesv2",
+    "template": "Apreciable Cliente, Buen día, mi nombre es {{nombre_agente}} de GNP Seguros, le escribo para darle seguimiento a la reparación de su vehículo {{marca_modelo}}.Le informo que derivado de la recepción del total de refacciones, el taller ha iniciado con la reparación de los daños en su vehículo. Estimamos que este proceso tomará un tiempo aproximado de {{dias_habiles}} días hábiles. Le mantendré informado de cualquier avance en el proceso de reparación. ¿Tiene alguna duda respecto a la información que le acabo de proporcionar?",
+    "variables": [{
+            "name": "nombre_agente",
+            "valor": ""
+        },
+        {
+            "name": "marca_modelo",
+            "valor": ""
+        },
+        {
+            "name": "dias_habiles",
+            "valor": ""
+        }
+    ]
+},
+{
+    "etiqueta": "Inicio de la reparación (No requiere refacciones) ",
+    "cola": "Reparaciones",
+    "nombre": "inicio_de_la_reparacin_no_requiere_refacciones",
+    "template": "Apreciable Cliente,Mi nombre es {{nombre_agente}} de GNP Seguros, le escribo para informarle que el taller ha iniciado con la reparación de los daños en su vehículo {{modelo_marca}}. Estimamos que este proceso tomará un tiempo aproximado de {{dias_habiles}} días hábiles. Le mantendré informado de cualquier avance en el proceso de reparación. ¿Tiene alguna duda respecto a la información que le acabo de proporcionar?",
+    "variables": [{
+            "name": "nombre_agente",
+            "valor": ""
+        },
+        {
+            "name": "modelo_marca",
+            "valor": ""
+        },
+        {
+            "name": "dias_habiles",
+            "valor": ""
+        }
+    ]
+},
+{
+    "etiqueta": "Inicio de la reparación (Refacciones pendientes)",
+    "cola": "Reparaciones",
+    "nombre": "inicioreparacinrefaccionespendientes",
+    "template": "Apreciable Cliente, Mi nombre es {{nombre_agente}} de GNP Seguros, le informo que el taller ha iniciado con la reparación de los daños en su vehículo. En próximos días estaremos recibiendo las piezas faltantes para concluir con los trabajos en su vehículo. Más adelante me pondré en contacto con usted para confirmar la recepción de las mismas, así como de los avances en el proceso de reparación. ¿Tiene alguna duda respecto a la información que le acabo de proporcionar?",
+    "variables": [{
+        "name": "nombre_agente",
+        "valor": ""
+    }]
+},
+{
+    "etiqueta": "Actualización de datos fiscales",
+    "cola": "Soy Cliente",
+    "nombre": "actualizacindatosfiscales",
+    "template": "Actualiza tus datos fiscales desde tu App Soy Cliente GNP 📱 siguiendo estos pasos: 1. Descarga la App Soy Cliente GNP aquí: http://onelink.to/bucp25 2. Regístrate, puedes consultar el tutorial aquí: https://bit.ly/TutorialRegistroApp 3. Actualiza tus datos consultando el tutorial aquí: https://bit.ly/TutorialDatosFiscales Recuerda tener a la mano tu Póliza de Seguro GNP y tu Constancia de Situación Fiscal obtenida del portal del SAT. 📄",
+    "variables": []
+},
+{
+    "etiqueta": "Vehiculo en transito",
+    "cola": "Reparaciones",
+    "nombre": "vehiculo_en_transito",
+    "template": "Apreciable Cliente: Buen día, mi nombre es {{nombre_agente}}. Me comunico de GNP Seguros para informarle que el taller {{nombre_taller}} ya cuenta con las piezas necesarias para efectuar la reparación de su vehículo. Por favor contacte al taller llamando al {{numero_taller}} y coordine la fecha en la que puede ingresar su vehículo para iniciar el proceso de reparación de los daños. En caso de que tenga alguna duda referente a lo que le acabo de mencionar, no dude en contactarme por este medio, estoy a sus órdenes.",
+    "variables": [
+        {
+        "name": "nombre_agente",
+        "valor": ""
+        },
+        {  
+        "name": "nombre_taller",
+        "valor": ""
+        },
+        { 
+         "name": "numero_taller",
+        "valor": ""
+        }]
+},
+{
+    "etiqueta": "Recordatorio evento v3",
+    "cola": "Experiencia del cliente",
+    "nombre": "recordatorio_evento_v3",
+    "template": "Hola {{nombre_cliente}} Te saluda {{nombre_agente}} de GNP Seguros. Recuerda que mañana tenemos una cita, disfruta la increíble experiencia {{evento}}. 👉No olvides {{detalles}} ¡Gracias por ser Cliente GNP! #Viviresincreíble",
+    "variables": [
+        {
+            "name": "nombre_cliente",
+            "valor": ""
+        },
+        {
+        "name": "nombre_agente",
+        "valor": ""
+        },
+        {  
+        "name": "evento",
+        "valor": ""
+        },
+        { 
+         "name": "detalles",
+        "valor": ""
+        }]
+},
+{
+    "etiqueta": "Envío de boletos + actividad v2",
+    "cola": "Experiencia del cliente",
+    "nombre": "envo_de_boletos_actividad_v2",
+    "template": "Hola {{nombre_cliente}} Soy {{nombre_agente}} de GNP Seguros, te escribo para contarte que tus boletos 🎫 de {{evento}} ya se encuentrán {{estatus}}. {{comentaro}}",
+    "variables": [
+        {
+            "name": "nombre_cliente",
+            "valor": ""
+        },
+        {
+        "name": "nombre_agente",
+        "valor": ""
+        },
+        {  
+        "name": "evento",
+        "valor": ""
+        },
+        {  
+        "name": "estatus",
+        "valor": ""
+        },
+        { 
+         "name": "comentaro",
+        "valor": ""
+        }]
+},
+{
+    "etiqueta": "Invitación en correo v3",
+    "cola": "Experiencia del cliente",
+    "nombre": "invitacin_en_correo_v3",
+    "template": "Hola {{nombre_cliente}} Te saluda {{nombre_agente}} de GNP Seguros, para contarte que en tu correo hay una invitación para celebrar🎉 tus {{aios}} años de decir Soy Cliente GNP. Nos encantaría que nos acompañes tu y un acompañante el próximo {{dia}} en {{evento}}.",
+    "variables": [
+        {
+        "name": "nombre_cliente",
+        "valor": ""
+        },
+        {  
+        "name": "nombre_agente",
+        "valor": ""
+        },
+        {  
+        "name": "aios",
+        "valor": ""
+        },
+        {  
+        "name": "dia",
+        "valor": ""
+        },
+        { 
+         "name": "evento",
+        "valor": ""
+        }]
+},
+{
+    "etiqueta": "Invitación en correo v4",
+    "cola": "Experiencia del cliente",
+    "nombre": "invitacin_en_correo_v4",
+    "template": "Hola {{nombre_cliente}} Te saluda {{nombre_agente}} de GNP Seguros, para contarte que en tu correo hay una invitación para celebrar🎉 tus {{aios}} años de decir Soy Cliente GNP. Nos encantaría que nos acompañes tu y un acompañante el próximo {{dia}} en {{evento}}.¿Podemos contar contigo?",
+    "variables": [
+        {
+            "name": "nombre_cliente",
+            "valor": ""
+        },
+        {
+        "name": "nombre_agente",
+        "valor": ""
+        },
+        {  
+        "name": "dia",
+        "valor": ""
+        },
+        {  
+        "name": "aios",
+        "valor": ""
+        },
+        { 
+         "name": "evento",
+        "valor": ""
+        }]
+},
+{
+    "etiqueta": "Recuperación de contacto PT V1",
+    "cola": "Reparaciones",
+    "nombre": "recuperacin_de_contacto_pt_v1",
+    "template": "Buen día, mi nombre es {{nombre_agente}}, le escribo de GNP Seguros. Tenemos información relevante para dar seguimiento a su siniestro con folio {{numero_folio}}. Podría indicarme el día y hora en que puede recibir nuestra llamada, por favor. En caso de alguna duda, usted puede contactarme por este medio, estoy a sus órdenes.",
+    "variables": [
+        {
+        "name": "nombre_agente",
+        "valor": ""
+        },
+        { 
+         "name": "numero_folio",
+        "valor": ""
+        }]
+},
+{
+    "etiqueta": "Recuperación de contacto PT V1 (Perdidas Totales)",
+    "cola": "Perdidas Totales",
+    "nombre": "recuperacin_de_contacto_pt_v1",
+    "template": "Buen día, mi nombre es {{nombre_agente}}, le escribo de GNP Seguros. Tenemos información relevante para dar seguimiento a su siniestro con folio {{numero_folio}}. Podría indicarme el día y hora en que puede recibir nuestra llamada, por favor. En caso de alguna duda, usted puede contactarme por este medio, estoy a sus órdenes.",
+    "variables": [
+        {
+        "name": "nombre_agente",
+        "valor": ""
+        },
+        { 
+         "name": "numero_folio",
+        "valor": ""
+        }]
+},
+{
+    "etiqueta": "Dando seguimiento (Perdidas Totales)",
+    "cola": "Perdidas Totales",
+    "nombre": "gnpseguimiento",
+    "template": "Dando seguimiento a tu caso {{caso}}",
+    "variables": [{
+        "name": "caso",
+        "valor": ""
+    }]
+}
 ]
