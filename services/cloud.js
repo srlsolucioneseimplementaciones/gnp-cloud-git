@@ -863,11 +863,11 @@ var getAllHistory = (req, res) => {
                     case "document":
                         if (val.document.mimeType == "application/pdf") {
                             if (val.from) {
-                                historial += "**" + val.from.substr(3, 10) + "**: [" + val.document.caption + "](" + val.document.url + ")\n";
+                                historial += "**" + val.from.substr(3, 10) + "**: [" + val.document.caption != ""? val.document.caption : "documento" + "](" + val.document.url + ")\n";
                             }
 
                             if (val.to) {
-                                historial += "**GNP**: [" + val.document.caption + "](" + val.document.url + ")\n";
+                                historial += "**GNP**: [" + val.document.caption != ""? val.document.caption : "documento" + "](" + val.document.url + ")\n";
                             }
                         }
                         break;
