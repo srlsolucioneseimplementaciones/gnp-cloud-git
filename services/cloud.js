@@ -771,22 +771,24 @@ var webhookYalo = (req, res) => {
 							
 							break;
 						case "image":
-						
+							if(datos.image.mimeType == "image/jpeg") {
 							m = {
 								phone: datos.from,
 								mensaje: "**: [" + datos.id + "](" + datos.image.url + ")\n"
 							}
+							}
 
 							break;
 						case "document":
-							if (datos.document.mimeType != "") {
+							if (datos.document.mimeType == "application/pdf") {
 								m = {
 									phone: datos.from,
 									mensaje: "**: [" + datos.document.caption + "](" + datos.document.url + ")\n"
 								}
 							}
+							break;
 						case "voice":
-							if (datos.voice.mimeType != "") {
+							if (datos.voice.mimeType == "audio/ogg; codec=opus") {
 								m = {
 									phone: datos.from,
 									mensaje: "**: [" + datos.id + "](" + datos.voice.url + ")\n"
