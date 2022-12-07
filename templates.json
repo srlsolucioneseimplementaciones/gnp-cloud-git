@@ -983,5 +983,19 @@
 			"name": "nombre_agente",
 			"valor": ""
 		}]
+	},
+	{
+		"etiqueta": "Foto y estacionamiento Olé CDMX",
+		"cola": "Experiencia del cliente",
+		"nombre": "foto_y_estacionamiento_ol_cdmx",
+		"template": "Hola {{nombre_cliente}} Soy {{nombre_agente}} de GNP Seguros, te escribo para contarte que tus boletos 🎫 de Olé México GNP ya se encuentrán en tu corre electrónico. Recuerda imprimir tus boletos y que podrás tomarte la foto al finalizar el evento. Además tenemos reservado para ti un lugar en el estacionamiento que está a un costado del Lunario, tu nombre ya está en la lista de invitados GNP y sólo te pedirán una identificación. Gracias por ser cliente GNP #Viviresincreíble",
+		"variables": [{
+			"name": "nombre_cliente",
+			"valor": ""
+		},
+		{
+			"name": "nombre_agente",
+			"valor": ""
+		}]
 	}
 ]
