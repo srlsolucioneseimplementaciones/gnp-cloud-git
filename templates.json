@@ -969,5 +969,19 @@
 		"nombre": "actualizacindatosfiscales",
 		"template": "Actualiza tus datos fiscales desde tu App Soy Cliente GNP 📱 siguiendo estos pasos: 1. Descarga la App Soy Cliente GNP aquí: http://onelink.to/bucp25 2. Regístrate, puedes consultar el tutorial aquí: https://bit.ly/TutorialRegistroApp 3. Actualiza tus datos consultando el tutorial aquí: https://bit.ly/TutorialDatosFiscales Recuerda tener a la mano tu Póliza de Seguro GNP y tu Constancia de Situación Fiscal obtenida del portal del SAT. 📄",
 		"variables": []
+	},
+	{
+		"etiqueta": "Foto Olé",
+		"cola": "Experiencia del cliente",
+		"nombre": "foto_ol",
+		"template": "Hola {{nombre_cliente}} Soy {{nombre_agente}} de GNP Seguros, te escribo para contarte que tus boletos 🎫 de Olé México GNP ya se encuentrán en tu corre electrónico. Recuerda que podrás tomarte la foto al finalizar el evento. Gracias por ser cliente GNP #Viviresincreíble",
+		"variables": [{
+			"name": "nombre_cliente",
+			"valor": ""
+		},
+		{
+			"name": "nombre_agente",
+			"valor": ""
+		}]
 	}
 ]
