@@ -506,14 +506,14 @@ var sendMessageToCloud = (data) => {
         var validateRegex = regex.exec(data.message);
 
         if (validateRegex != null) {
-            data.message = "[Archivo adjunto]("+ process.env.MEDIA_URL + "/" + data.message+")";
+            data.message = "Archivo adjunto";
         }
 		
 		var regexNumerico = /^[0-9]{15,}$/g;
 		var validateRegexNumerico = regexNumerico.exec(data.message);
 		
 		if (validateRegexNumerico != null) {
-            data.message = "[Archivo adjunto]("+ process.env.MEDIA_URL + "/" + data.message+")";
+            data.message = "Archivo adjunto";
         }
 
         let msg = {
