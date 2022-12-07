@@ -771,7 +771,7 @@ var webhookYalo = (req, res) => {
 							
 							break;
 						case "image":
-							if(datos.image.mimeType == "image/jpeg") {
+							if(datos.image.mimeType != "") {
 							m = {
 								phone: datos.from,
 								mensaje: "**: [" + datos.id + "](" + datos.image.url + ")\n"
@@ -780,7 +780,7 @@ var webhookYalo = (req, res) => {
 
 							break;
 						case "document":
-							if (datos.document.mimeType == "application/pdf") {
+							if (datos.document.mimeType != "") {
 								m = {
 									phone: datos.from,
 									mensaje: "**: [" + datos.document.caption + "](" + datos.document.url + ")\n"
@@ -788,7 +788,7 @@ var webhookYalo = (req, res) => {
 							}
 							break;
 						case "voice":
-							if (datos.voice.mimeType == "audio/ogg; codec=opus") {
+							if (datos.voice.mimeType != "") {
 								m = {
 									phone: datos.from,
 									mensaje: "**: [" + datos.id + "](" + datos.voice.url + ")\n"
@@ -846,7 +846,7 @@ var getAllHistory = (req, res) => {
                         
                         break;
                     case "image":
-                        if (val.image.mimeType != "") {
+                        if (val.image.mimeType == "image/jpeg") {
                             if (val.from) {
                                 historial += "**" + val.from.substr(3, 10) + "**: [" + val.id + "](" + val.image.url + ')\n';
                             }
@@ -858,7 +858,7 @@ var getAllHistory = (req, res) => {
 
                         break;
                     case "document":
-                        if (val.document.mimeType != "") {
+                        if (val.document.mimeType == "application/pdf") {
                             if (val.from) {
                                 historial += "**" + val.from.substr(3, 10) + "**: [" + val.document.caption + "](" + val.document.url + ")\n";
                             }
@@ -869,7 +869,7 @@ var getAllHistory = (req, res) => {
                         }
                         break;
 					case "voice":
-                        if (val.voice.mimeType != "") {
+                        if (val.voice.mimeType == "audio/ogg; codec=opus") {
                             if (val.from) {
                                 historial += "**" + val.from.substr(3, 10) + "**: [" + val.id + "](" + val.voice.url + ")\n";
                             }
@@ -898,7 +898,7 @@ var getImagesHistory = (req, res) => {
             response.forEach((val, index) => {
                 switch (val.type) {
                     case "image":
-                        if (val.image.mimeType != "") {
+                        if (val.image.mimeType == "image/jpeg") {
                             if (val.from) {
                                 historial += "**" + val.from.substr(3, 10) + "**: [" + val.id + "](" + val.image.url + ") *" + val.date + "*\n";
                             }
@@ -928,7 +928,7 @@ var getDocumentsHistory = (req, res) => {
             response.forEach((val, index) => {
                 switch (val.type) {
                     case "document":
-                        if (val.document.mimeType != "") {
+                        if (val.document.mimeType == "application/pdf") {
                             if (val.from) {
                                 historial += "**" + val.from.substr(3, 10) + "**: [" + val.document.caption + "](" + val.document.url + ") *" + val.date + "* \n";
                             }
@@ -957,7 +957,7 @@ var getVoiceHistory = (req, res) => {
             response.forEach((val, index) => {
                 switch (val.type) {
                     case "voice":
-                        if (val.voice.mimeType != "") {
+                        if (val.voice.mimeType == "audio/ogg; codec=opus") {
                             if (val.from) {
                                 historial += "**" + val.from.substr(3, 10) + "**: [" + val.id + "](" + val.voice.url + ") *" + val.date + "* \n";
                             }
