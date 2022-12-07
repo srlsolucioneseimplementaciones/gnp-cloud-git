@@ -822,7 +822,7 @@ var webhookYalo = (req, res) => {
 	}*/
 	
 	console.log("*****************************INSERTAR_NUEVO_MENSAJE_MONGO********************");
-	console.log("*****************************" + JSON.strigify(datos) + "*****************************")
+	console.log("*****************************" + JSON.stringify(datos) + "*****************************")
 	
     mongoServices.InsertMessageToHistory(datos).then((response) => {
         res.status(200).json({ "response": "OK" });
