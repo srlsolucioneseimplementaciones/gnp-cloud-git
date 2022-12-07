@@ -821,6 +821,9 @@ var webhookYalo = (req, res) => {
 		logger.Error(exception);
 	}*/
 	
+	console.log("*****************************INSERTAR_NUEVO_MENSAJE_MONGO********************");
+	console.log("*****************************" + JSON.strigify(datos) + "*****************************")
+	
     mongoServices.InsertMessageToHistory(datos).then((response) => {
         res.status(200).json({ "response": "OK" });
     }).catch((error) => {
