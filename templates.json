@@ -997,5 +997,19 @@
 			"name": "nombre_agente",
 			"valor": ""
 		}]
+	},
+	{
+		"etiqueta": "Foto Olé todos",
+		"cola": "Experiencia del cliente",
+		"nombre": "foto_ol_todos",
+		"template": "Hola {{nombre_cliente}} Soy {{nombre_agente}} de GNP Seguros, te escribo para contarte que tus boletos 🎫 de Olé México GNP ya se encuentrán en tu correo electrónico. Recuerda que podrás tomarte la foto al finalizar el evento. Gracias por ser cliente GNP #Viviresincreíble",
+		"variables": [{
+			"name": "nombre_cliente",
+			"valor": ""
+		},
+		{
+			"name": "nombre_agente",
+			"valor": ""
+		}]
 	}
 ]
