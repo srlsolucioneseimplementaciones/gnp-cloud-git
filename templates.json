@@ -971,44 +971,12 @@
 		"variables": []
 	},
 	{
-		"etiqueta": "Foto Olé",
+		"etiqueta": "Guadalajara Olé",
 		"cola": "Experiencia del cliente",
-		"nombre": "foto_ol",
-		"template": "Hola {{nombre_cliente}} Soy {{nombre_agente}} de GNP Seguros, te escribo para contarte que tus boletos 🎫 de Olé México GNP ya se encuentrán en tu corre electrónico. Recuerda que podrás tomarte la foto al finalizar el evento. Gracias por ser cliente GNP #Viviresincreíble",
+		"nombre": "guadalajara_ol",
+		"template": "Buen día {{nombre_cliente}} Tenemos noticias , con respecto al evento Olé México GNP que se llevará acabo este jueves 15 de diciembre a las 21 hrs en Auditorio Telmex. Como parte de los beneficios por ser Cliente GNP se tenía considerado que al final se tomaran una fotografía con la Directora de Orquesta Alondra de la Parra y el talento del espectáculo; sin embargo, por nuevo protocolo COVID de la gira, no será posible llevar a cabo esta actividad. En agradecimiento por tu comprensión ante esta disposición que está fuera de nuestro control, GNP te hará llegar una fotografía oficial de la Gira autografíada y personalizada por la Directora Alondra de la Parra al domicilio que nos indiques, por lo que te pedimos nos compartas la dirección completa en donde deseas recibirlo, así como tu nombre completo por este medio. El envío se llevará a cabo entre el  27 de diciembre y 13 de enero. Muchas gracias por tu atención y nos vemos el día de mañana para disfrutar al máximo del espectáculo.",
 		"variables": [{
 			"name": "nombre_cliente",
-			"valor": ""
-		},
-		{
-			"name": "nombre_agente",
-			"valor": ""
-		}]
-	},
-	{
-		"etiqueta": "Foto y estacionamiento Olé CDMX",
-		"cola": "Experiencia del cliente",
-		"nombre": "foto_y_estacionamiento_ol_cdmx",
-		"template": "Hola {{nombre_cliente}} Soy {{nombre_agente}} de GNP Seguros, te escribo para contarte que tus boletos 🎫 de Olé México GNP ya se encuentrán en tu corre electrónico. Recuerda imprimir tus boletos y que podrás tomarte la foto al finalizar el evento. Además tenemos reservado para ti un lugar en el estacionamiento que está a un costado del Lunario, tu nombre ya está en la lista de invitados GNP y sólo te pedirán una identificación. Gracias por ser cliente GNP #Viviresincreíble",
-		"variables": [{
-			"name": "nombre_cliente",
-			"valor": ""
-		},
-		{
-			"name": "nombre_agente",
-			"valor": ""
-		}]
-	},
-	{
-		"etiqueta": "Foto Olé todos",
-		"cola": "Experiencia del cliente",
-		"nombre": "foto_ol_todos",
-		"template": "Hola {{nombre_cliente}} Soy {{nombre_agente}} de GNP Seguros, te escribo para contarte que tus boletos 🎫 de Olé México GNP ya se encuentrán en tu correo electrónico. Recuerda que podrás tomarte la foto al finalizar el evento. Gracias por ser cliente GNP #Viviresincreíble",
-		"variables": [{
-			"name": "nombre_cliente",
-			"valor": ""
-		},
-		{
-			"name": "nombre_agente",
 			"valor": ""
 		}]
 	}
