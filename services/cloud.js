@@ -327,7 +327,8 @@ var getMessages = (body) => {
                                 conversationId: response.conversationId,
                                 memberId: response.memberid,
                                 message: body.mensaje,
-                                jwt: response.jwt
+                                jwt: response.jwt,
+				    tipo: body.tipo
                             }
 							
 							console.log('enviando mensaje a cloud');
@@ -447,7 +448,8 @@ var createWebchatConversation = (data) => {
                                     state: 1,
                                     callback: 0,
                                     dbid: data.dbId,
-                                    message: data.mensaje
+                                    message: data.mensaje,
+					tipo: data.tipo
                                 }
 								
 								logger.Info('Se envia el primer mensaje');
