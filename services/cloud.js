@@ -511,12 +511,20 @@ var sendMessageToCloud = (data) => {
         if (validateRegex != null && data.tipo == "audio") {
             data.message = "[Archivo adjunto]("+ process.env.MEDIA_URL + "/" + data.message+")";
         }
+	    
+	 if (validateRegex != null && data.tipo != "audio") {
+            data.message = "Archivo adjunto";
+        }
 		
 		var regexNumerico = /^[0-9]{15,}$/g;
 		var validateRegexNumerico = regexNumerico.exec(data.message);
 		
 		if (validateRegexNumerico != null && data.tipo == "audio") {
             data.message = "[Archivo adjunto]("+ process.env.MEDIA_URL + "/" + data.message+")";
+        }
+	    
+	    if (validateRegexNumerico != null && data.tipo != "audio") {
+            data.message = "Archivo adjunto";
         }
 
         let msg = {
