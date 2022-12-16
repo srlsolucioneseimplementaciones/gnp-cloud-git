@@ -508,14 +508,14 @@ var sendMessageToCloud = (data) => {
         var regex = /^[0-9a-z]{8}-[0-9a-z]{4}-[0-9a-z]{4}-[0-9a-z]{4}-[0-9a-z]{12}$/g;
         var validateRegex = regex.exec(data.message);
 
-        if (validateRegex != null) {
+        if (validateRegex != null && data.tipo == "audio") {
             data.message = "[Archivo adjunto]("+ process.env.MEDIA_URL + "/" + data.message+")";
         }
 		
 		var regexNumerico = /^[0-9]{15,}$/g;
 		var validateRegexNumerico = regexNumerico.exec(data.message);
 		
-		if (validateRegexNumerico != null) {
+		if (validateRegexNumerico != null && data.tipo == "audio") {
             data.message = "[Archivo adjunto]("+ process.env.MEDIA_URL + "/" + data.message+")";
         }
 
