@@ -499,7 +499,8 @@ var sendMessageToCloud = (data) => {
     return new Promise((resolve, reject) => {
         platformChatClient.ApiClient.instance.setJwt(data.jwt);
         let apiInstance = new platformChatClient.WebChatApi();
-		
+	    
+		console.log("ENVIANDO MENSAJE A CLOUD");
 		console.log("data");
 		console.log(data);
 		logger.Info(data);
