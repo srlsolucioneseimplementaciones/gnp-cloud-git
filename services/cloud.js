@@ -509,22 +509,46 @@ var sendMessageToCloud = (data) => {
         var validateRegex = regex.exec(data.message);
 
         if (validateRegex != null && data.tipo == "audio") {
-            data.message = "[Archivo adjunto]("+ process.env.MEDIA_URL + "/" + data.message+")";
+            data.message = "[Audio]("+ process.env.MEDIA_URL + "/" + data.message+")";
         }
 	    
-	 if (validateRegex != null && data.tipo != "audio") {
-            data.message = "Archivo adjunto";
-        }
-		
-		var regexNumerico = /^[0-9]{15,}$/g;
-		var validateRegexNumerico = regexNumerico.exec(data.message);
-		
-		if (validateRegexNumerico != null && data.tipo == "audio") {
-            data.message = "[Archivo adjunto]("+ process.env.MEDIA_URL + "/" + data.message+")";
+	if (validateRegex != null && data.tipo == "sticker") {
+            data.message = "[Sticker]("+ process.env.MEDIA_URL + "/" + data.message+")";
         }
 	    
-	    if (validateRegexNumerico != null && data.tipo != "audio") {
+	if (validateRegex != null && data.tipo != "audio") {
             data.message = "Archivo adjunto";
+        }
+	    
+	if (validateRegex != null && data.tipo != "document") {
+            data.message = "Documento";
+        }
+	    
+	if (validateRegex != null && data.tipo != "image") {
+            data.message = "Imagen";
+        }
+		
+	var regexNumerico = /^[0-9]{15,}$/g;
+	var validateRegexNumerico = regexNumerico.exec(data.message);
+		
+	if (validateRegexNumerico != null && data.tipo == "audio") {
+            data.message = "[Audio]("+ process.env.MEDIA_URL + "/" + data.message+")";
+        }
+	    
+	if (validateRegexNumerico != null && data.tipo != "audio") {
+            //data.message = "Archivo adjunto";
+        }
+	    
+	if (validateRegexNumerico != null && data.tipo == "sticker") {
+            data.message = "[Sticker]("+ process.env.MEDIA_URL + "/" + data.message+")";
+        }
+	    
+	if (validateRegexNumerico != null && data.tipo != "document") {
+            data.message = "Documento";
+        }
+	    
+	if (validateRegexNumerico != null && data.tipo != "image") {
+            data.message = "Imagen";
         }
 
         let msg = {
