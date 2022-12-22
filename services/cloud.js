@@ -520,11 +520,11 @@ var sendMessageToCloud = (data) => {
             data.message = "Archivo adjunto";
         }
 	    
-	if (validateRegex != null && data.tipo != "document") {
+	if (validateRegex != null && data.tipo == "document") {
             data.message = "Documento";
         }
 	    
-	if (validateRegex != null && data.tipo != "image") {
+	if (validateRegex != null && data.tipo == "image") {
             data.message = "Imagen";
         }
 		
@@ -543,11 +543,11 @@ var sendMessageToCloud = (data) => {
             data.message = "[Sticker]("+ process.env.MEDIA_URL + "/" + data.message+")";
         }
 	    
-	if (validateRegexNumerico != null && data.tipo != "document") {
+	if (validateRegexNumerico != null && data.tipo == "document") {
             data.message = "Documento";
         }
 	    
-	if (validateRegexNumerico != null && data.tipo != "image") {
+	if (validateRegexNumerico != null && data.tipo == "image") {
             data.message = "Imagen";
         }
 
