@@ -48,7 +48,7 @@ app.directive('submitForm', function (ApiService, $timeout) {
         link: function (scope, elem, attrs) {
             elem.on('submit', function (e) {
                 var msj = scope.mensaje;
-
+		msj.callback = true;
                 msj.template = scope.templateFinal;
                 msj.cloudUser = scope.cloudUser.id;
                 msj.variables = scope.template.variables;
