@@ -979,5 +979,35 @@
 			"name": "nombre_cliente",
 			"valor": ""
 		}]
+	},
+	{
+		"etiqueta": "Ganador dinámica",
+		"cola": "Experiencia del cliente",
+		"nombre": "ganador_dinmica",
+		"template": "👋 Hola {{nombre_cliente}} Felicidades tú eres ganador de la dinámica de experiencia increíble para vivir {{evento}} en {{lugar}} en {{sede}} {{fechas}}. En breve un representante de GNP se pondrá en contacto contigo para brindarte detalle del premio. Gracias por ser #ClienteGNP",
+		"variables": [{
+			"name": "nombre_cliente",
+			"valor": ""
+		},
+		{
+			"name": "ganador",
+			"valor": ""
+		},
+		{
+			"name": "evento",
+			"valor": ""
+		},
+		{
+			"name": "lugar",
+			"valor": ""
+		},
+		{
+			"name": "sede",
+			"valor": ""
+		},
+		{
+			"name": "fechas",
+			"valor": ""
+		}]
 	}
 ]
