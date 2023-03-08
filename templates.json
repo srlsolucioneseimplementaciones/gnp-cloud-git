@@ -1014,5 +1014,24 @@
         "name": "marca_modelo",
         "valor": ""
     }]
+},
+{
+    "etiqueta": "Confirmación Invitación",
+    "cola": "Experiencia del cliente",
+    "nombre": "confirmacin_invitacin",
+    "template": "{{nombre_cliente}}, queremos celebrar contigo por estos {{aios}} años de decir #SoyClienteGNP🎉 Revisa y confirma desde tu correo electrónico, te enviamos una invitación con un pase doble, 🎫🎫para ti y un acompañante. Disfruta de {{evento}} este próximo {{dia}}. 📆",
+    "variables": [{
+        "name": "nombre_cliente",
+        "valor": ""
+    },{
+        "name": "aios",
+        "valor": ""
+    },{
+        "name": "evento",
+        "valor": ""
+    },{
+        "name": "dia",
+        "valor": ""
+    }]
 }
 ]
