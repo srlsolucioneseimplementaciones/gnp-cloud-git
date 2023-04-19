@@ -1033,5 +1033,36 @@
         "name": "dia",
         "valor": ""
     }]
+},
+{
+    "etiqueta": "Boletos físicos",
+    "cola": "Experiencia del cliente",
+    "nombre": "boletos_fsicos",
+    "template": "¡Felicidades! ¡Hola {{nombre}}! 🎉 Has sido seleccionado como ganador para disfrutar de nuestra experiencia en {{evento}}🎟️ Puedes recoger tu pase {{tipo_pase}} el {{dia}} de {{hora}} en {{recoleccion_pase}}. Tu nombre ya está en la lista de invitados solo indica que eres Cliente de GNP Seguros y presenta una identificación.📍 {{direccion}}📲 También puedes comunicarte al {{numero}} para cualquier duda el día del evento.",
+    "variables": [{
+        "name": "nombre",
+        "valor": ""
+    },{
+        "name": "evento",
+        "valor": ""
+    },{
+        "name": "tipo_pase",
+        "valor": ""
+    },{
+        "name": "dia",
+        "valor": ""
+    },{
+        "name": "hora",
+        "valor": ""
+    },{
+        "name": "recoleccion_pase",
+        "valor": ""
+    },{
+        "name": "direccion",
+        "valor": ""
+    },{
+        "name": "numero",
+        "valor": ""
+    }]
 }
 ]
