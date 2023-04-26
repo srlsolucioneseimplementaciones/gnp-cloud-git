@@ -1160,17 +1160,17 @@
     ]
 },
 {
-    "etiqueta": "Reparaciones - No open",
+    "etiqueta": "Reparaciones - No clic",
     "cola": "Experiencia del cliente",
-    "nombre": "reparaciones_no_open",
-    "template": "Hola {{nombre_cliente}},¡Es un gusto contactarte! El pasado jueves te enviamos un correo electrónico desde nuestra firma [comunicados@gnp.com.mx](mailto:comunicados@gnp.com.mx), en el que te proporcionamos un código de regalo de Uber como alternativa de transporte mientras tu vehículo esta en reparación. Si aún no has revisado tu correo electrónico, te invito a hacerlo y canjearlo directamente en la App de Uber. Si por alguna razón no pudiste encontrar el correo electrónico, no te preocupes, estoy aqui para ayudarte en lo que necesites.Si necesitas ayuda o tienes alguna pregunta sobre el código de regalo, por favor no dudes en ponerte en contacto conmigo para apoyarte.¡Espero tu respuesta, saludos!",
+    "nombre": "reparaciones_no_clic",
+    "template": "Hola {{nombre_cliente}}! En GNP Seguros nos preocupamos por ti y queremos asegurarnos de que utilices el código de regalo para viajes en Uber que te enviamos mientras tu vehículo continúa en reparación. Te invitamos a que canjes tu código directamente en la App de Uber para que puedas disfrutar de esta alternativa de transporte. Si necesitas ayuda o tienes alguna pregunta sobre el código de regalo, por favor no dudes en ponerte en contacto conmigo para apoyarte. ¡Estamos para servirte! Saludos.",
     "variables": [{
         "name": "nombre_cliente",
         "valor": ""
     }]
 },
 {
-    "etiqueta": "Reparaciones- no clic 2",
+    "etiqueta": "Reparaciones- no open 2",
     "cola": "Experiencia del cliente",
     "nombre": "reparaciones_no_open_2",
     "template": "Hola {{nombre_cliente}}, ¡Es un gusto contactarte! El pasado jueves te enviamos un correo electrónico desde nuestra firma {{firma}}, en el que te proporcionamos un código de regalo de Uber como alternativa de transporte mientras tu vehículo esta en reparación.Si aún no has revisado tu correo electrónico, te invito a hacerlo y canjearlo directamente en la App de Uber. Si por alguna razón no pudiste encontrar el correo electrónico, no te preocupes, estoy aqui para ayudarte en lo que necesites. Si necesitas ayuda o tienes alguna pregunta sobre el código de regalo, por favor no dudes en ponerte en contacto conmigo para apoyarte. ¡Espero tu respuesta, saludos!",
