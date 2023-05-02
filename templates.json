@@ -650,7 +650,12 @@
         {
             "name": "dia",
             "valor": ""
+        },
+        {
+            "name": "evento",
+            "valor": ""
         }
+        
     ]
 },
 {
