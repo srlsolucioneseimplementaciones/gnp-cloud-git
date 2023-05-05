@@ -1138,5 +1138,29 @@
 				"valor": ""
 			}
 		]
+	},
+	{
+		"etiqueta": "GNP PASS BOLETOS 2",
+		"cola": "Experiencia del cliente",
+		"nombre": "gnp_pass_boletos_2",
+		"template": "¡Hola {{nombre_cliente}}! 🎉Recuerda que tus boletos para {{evento}} te estarán esperando {{dia}} En {{lugar}}.📍{{direccion}}",
+		"variables": [{
+				"name": "nombre_cliente",
+				"valor": ""
+			},
+			{
+				"name": "evento",
+				"valor": ""
+			}, {
+				"name": "dia",
+				"valor": ""
+			}, {
+				"name": "lugar",
+				"valor": ""
+			}, {
+				"name": "direccion",
+				"valor": ""
+			}
+		]
 	}
 ]
