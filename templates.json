@@ -1202,5 +1202,41 @@
         "name": "numero_caso",
         "valor": ""
     }]
+},
+{
+    "etiqueta": "Ganadores Alejandro Fernández",
+    "cola": "Experiencia del cliente",
+    "nombre": "ganadores_alejandro_fernndez",
+    "template": "👋 Hola {{nombre_cliente}} ¡Felicidades! Eres el ganador de la dinámica en Soy Cliente GNP para disfrutar del concierto de Alejandro Fernández el sábado 20 de mayo en La México. Tus boletos ya se encuentran en tu correo electrónico. Por favor, confírmame que los has recibido y asegúrate de descargarlos e imprimirlos.Mi nombre es {{nombre_agente}} y estoy aquí para ayudarte en caso de cualquier duda.Gracias por ser #ClienteGNP.#Viviresincreíble",
+    "variables": [{
+            "name": "nombre_cliente",
+            "valor": ""
+        },
+        {
+            "name": "nombre_agente",
+            "valor": ""
+        }
+    ]
+},
+{
+    "etiqueta": "Confirmación Invitación antigüedad (revisa y confirma) v2",
+    "cola": "Experiencia del cliente",
+    "nombre": "confirmacin_invitacin_antigedad_revisa_y_confirma_v2",
+    "template": "👋 Hola {{nombre_cliente}}  Queremos celebrar contigo estos {{aios}} años diciendo #SoyClienteGNP. Te hemos enviado una invitación al {{evento}} a  tu correo electrónico. 👉Por favor, confírmame por este medio que has recibido la invitación y que podrás asistir.  ¡Esperamos contar contigo para celebrar juntos! Mi nombre es {{nombre_agente}} y estoy aquí para ayudarte en caso de cualquier duda. Gracias por ser #ClienteGNP.#Viviresincreíble",
+    "variables": [{
+            "name": "nombre_cliente",
+            "valor": ""
+        },
+        {
+            "name": "aios",
+            "valor": ""
+        }, {
+            "name": "evento",
+            "valor": ""
+        }, {
+            "name": "nombre_agente",
+            "valor": ""
+        }
+    ]
 }
 ]
