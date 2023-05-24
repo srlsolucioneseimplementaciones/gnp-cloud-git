@@ -1238,5 +1238,195 @@
             "valor": ""
         }
     ]
+},
+{
+    "etiqueta": "Envío de boletos",
+    "cola": "GMM Soy Cliente",
+    "nombre": "envo_de_boletos",
+    "template": "Hola {{nombre_cliente}} Soy {{nombre_agente}} de GNP Seguros, te escribo para contarte que tus boletos 🎫 de {{evento}} ya se encuentrán {{estatus}} ",
+    "variables": [{
+            "name": "nombre_cliente",
+            "valor": ""
+        },
+        {
+            "name": "nombre_agente",
+            "valor": ""
+        },
+        {
+            "name": "evento",
+            "valor": ""
+        },
+        {
+            "name": "estatus",
+            "valor": ""
+        }
+    ]
+},
+{
+    "etiqueta": "Segumiento error soy cliente",
+    "cola": "GMM Soy Cliente",
+    "nombre": "gnpsegerrorsoycliente",
+    "template": "Hola soy {{nombre_agente}} me comunico de GNP Seguros, para dar continuidad al error reportado en Soy Cliente GNP. Consulta nuestro aviso de privacidad en: https://www.gnp.com.mx/aviso-de-privacidad/integral",
+    "variables": [{
+        "name": "nombre_agente",
+        "valor": ""
+    }]
+},
+{
+    "etiqueta": "Seguimiento soy cliente",
+    "cola": "GMM Soy Cliente",
+    "nombre": "gnpsegsoycliente",
+    "template": "Hola soy {{nombre_agente}} me comunico de GNP Seguros, para dar continuidad a su proceso en Soy Cliente GNP. Consulta nuestro aviso de privacidad en: https://www.gnp.com.mx/aviso-de-privacidad/integral",
+    "variables": [{
+        "name": "nombre_agente",
+        "valor": ""
+    }]
+},
+{
+    "etiqueta": "Seguimiento despues de cierre",
+    "nombre": "segdespuescierre",
+    "cola": "GMM Soy Cliente",
+    "template": "Hola, te escribo para darle seguimiento a tu caso sobre {{detalle_seguimiento}}",
+    "variables": [{
+        "name": "detalle_seguimiento",
+        "valor": ""
+    }]
+},
+{
+    "etiqueta": "Seguimiento despues de cierre GNP",
+    "nombre": "gnppostcierre",
+    "cola": "GMM Soy Cliente",
+    "template": "Hola, te escribo de GNP para darle seguimiento a tu caso sobre {{detalle_seguimiento}}",
+    "variables": [{
+        "name": "detalle_seguimiento",
+        "valor": ""
+    }]
+},
+{
+    "etiqueta": "Actualizacion de caso",
+    "cola": "GMM Soy Cliente",
+    "nombre": "gnpactualizacion",
+    "template": "Te tengo una actualización de tu {{caso}} ",
+    "variables": [{
+        "name": "caso",
+        "valor": ""
+    }]
+},
+{
+    "etiqueta": "Respuesta peticion",
+    "cola": "GMM Soy Cliente",
+    "nombre": "gnprespuesta",
+    "template": "Tenemos una respuesta a tu petición {{peticion}}",
+    "variables": [{
+        "name": "peticion",
+        "valor": ""
+    }]
+},
+{
+    "etiqueta": "Dando seguimiento",
+    "cola": "GMM Soy Cliente",
+    "nombre": "gnpseguimiento",
+    "template": "Dando seguimiento a tu caso {{caso}}",
+    "variables": [{
+        "name": "caso",
+        "valor": ""
+    }]
+},
+{
+    "etiqueta": "Estamos de regreso",
+    "cola": "GMM Soy Cliente",
+    "nombre": "gnpregreso",
+    "template": "Estamos de regreso para dar respuesta a {{peticion}}",
+    "variables": [{
+        "name": "peticion",
+        "valor": ""
+    }]
+},
+{
+    "etiqueta": "Buenas noticias",
+    "cola": "GMM Soy Cliente",
+    "nombre": "gnpnoticias",
+    "template": "Te tengo buenas noticias {{noticia}}",
+    "variables": [{
+        "name": "noticia",
+        "valor": ""
+    }]
+},
+{
+    "etiqueta": "Intermitencia sistema GNP",
+    "cola": "GMM Soy Cliente",
+    "nombre": "intermitenciasistemagnp",
+    "template": "Hola te escribe {{nombre_agente}}. En días pasados presentamos intermitencias en nuestro servicio de WhatsApp. ¿En qué podemos ayudarte?",
+    "variables": [{
+        "name": "nombre_agente",
+        "valor": ""
+    }]
+},
+{
+    "etiqueta": "The silence of sound evento",
+    "cola": "GMM Soy Cliente",
+    "nombre": "the_silence_of_sound_evento",
+    "template": "Hola {{nombre_cliente}}, Soy {{nombre_agente}} de GNP Seguros, te escribo para brindarte más información sobre tus accesos a “The Silence of Sound” para celebrar contigo por estos {{anio}} años de decir Soy Cliente GNP. ¿Estás listo para asistir a este evento increíble?",
+    "variables": [{
+            "name": "nombre_cliente",
+            "valor": ""
+        },
+        {
+            "name": "nombre_agente",
+            "valor": ""
+        },
+        {
+            "name": "anio",
+            "valor": ""
+        }
+    ]
+},
+{
+    "etiqueta": "Regístrate SoyCliente",
+    "cola": "GMM Soy Cliente",
+    "nombre": "regstrate_soycliente",
+    "template": "Para registrarte en tu App Soy Cliente GNP 📱 solo sigue estos pasos, recuerda tener a la mano tu Póliza de Seguro GNP. 📄 Descarga la App aquí: http://onelink.to/bucp25 Consulta el tutorial aquí: https://bit.ly/TutorialRegistroApp",
+    "variables": [
+
+    ]
+},
+{
+    "etiqueta": "Actualización de datos fiscales",
+    "cola": "GMM Soy Cliente",
+    "nombre": "actualizacindatosfiscales",
+    "template": "Actualiza tus datos fiscales desde tu App Soy Cliente GNP 📱 siguiendo estos pasos: 1. Descarga la App Soy Cliente GNP aquí: http://onelink.to/bucp25 2. Regístrate, puedes consultar el tutorial aquí: https://bit.ly/TutorialRegistroApp 3. Actualiza tus datos consultando el tutorial aquí: https://bit.ly/TutorialDatosFiscales Recuerda tener a la mano tu Póliza de Seguro GNP y tu Constancia de Situación Fiscal obtenida del portal del SAT. 📄",
+    "variables": [
+
+    ]
+},
+{
+    "etiqueta": "Hola, buenas noticias",
+    "cola": "GMM Soy Cliente",
+    "nombre": "hola_buenas_noticias",
+    "template": "Buen día {{nombre_cliente}} Te escribo para darte una buena noticia. {{noticia}} Si tienes alguna duda hazmelo saber.",
+    "variables": [{
+            "name": "nombre_cliente",
+            "valor": ""
+        },
+        {
+            "name": "noticia",
+            "valor": ""
+        }
+    ]
+},
+{
+    "etiqueta": "Hola, seguimiento",
+    "cola": "GMM Soy Cliente",
+    "nombre": "hola_seguimiento",
+    "template": "Buen día {{cliente}} Te escribo para dar seguimiento {{error}}",
+    "variables": [{
+            "name": "cliente",
+            "valor": ""
+        },
+        {
+            "name": "error",
+            "valor": ""
+        }
+    ]
 }
 ]
