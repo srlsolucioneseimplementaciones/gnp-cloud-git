@@ -714,6 +714,9 @@ var sendMessage = (mensaje) => {
                     }
                 })
             };
+	    
+	    console.log("**************OPTIONS******************");
+	    console.log(options);
 			
 			request(options, function (error, response) {
 					if (error) {
@@ -722,6 +725,7 @@ var sendMessage = (mensaje) => {
 						reject();
 					} else {
 						ultimoMensajeEnviadoAYalo = mensaje.texto;
+						console.log(response.body);
 						resolve();
 					}
 				});
