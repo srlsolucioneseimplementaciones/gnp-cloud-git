@@ -1428,5 +1428,35 @@
             "valor": ""
         }
     ]
+},
+{
+    "etiqueta": "Hola, seguimiento",
+    "cola": "Reforma Fiscal",
+    "nombre": "hola_seguimiento",
+    "template": "Buen día {{cliente}} Te escribo para dar seguimiento {{error}}",
+    "variables": [{
+            "name": "cliente",
+            "valor": ""
+        },
+        {
+            "name": "error",
+            "valor": ""
+        }
+    ]
+},
+{
+    "etiqueta": "Hola, buenas noticias",
+    "cola": "Reforma Fiscal",
+    "nombre": "hola_buenas_noticias",
+    "template": "Buen día {{nombre_cliente}} Te escribo para darte una buena noticia. {{noticia}} Si tienes alguna duda hazmelo saber.",
+    "variables": [{
+            "name": "nombre_cliente",
+            "valor": ""
+        },
+        {
+            "name": "noticia",
+            "valor": ""
+        }
+    ]
 }
 ]
