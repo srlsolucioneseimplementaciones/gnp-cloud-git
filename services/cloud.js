@@ -717,13 +717,16 @@ var sendMessage = (mensaje) => {
 	    
 	    console.log("**************OPTIONS******************");
 	    console.log(options);
-			
+			console.log("ultimoMensaje: ", ultimoMensajeEnviadoAYalo);
+	    
 			request(options, function (error, response) {
 					if (error) {
 						console.log("ERROR EN ENVIO MENSAJE A YALO");
 						logger.Error(error);
 						reject();
 					} else {
+						console.log("ultimoMensaje2: ", ultimoMensajeEnviadoAYalo);
+						console.log("mensaje: ", mensaje);
 						ultimoMensajeEnviadoAYalo = mensaje.texto;
 						console.log(response.body);
 						resolve();
