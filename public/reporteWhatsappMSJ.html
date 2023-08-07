@@ -106,7 +106,7 @@
 						<li class="page-item" ng-class="{'disabled': pages.length == 1}">
 							<a class="page-link" href="#" subtract-page>Anterior</a>
 						</li>
-						<li class="page-item" ng-class="{'active': currentPage == t}" ng-repeat="t in pages">
+						<li class="page-item" ng-class="{'active': currentPage == t}" ng-repeat="t in (pages | MaxPagesFilter:currentPage)">
 							<a class="page-link" href="#" change-page>{{t}}</a>
 						</li>
 						<li class="page-item" ng-class="{'disabled': pages.length == 1}">
