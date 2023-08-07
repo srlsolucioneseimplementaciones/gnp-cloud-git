@@ -14,7 +14,7 @@ body, html {
 .navigation {
     display: grid;
     grid-template-columns: auto;
-    justify-content: end;
+    justify-content: center;
     padding: 1rem;
 }
 
